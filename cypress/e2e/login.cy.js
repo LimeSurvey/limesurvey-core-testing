@@ -2,7 +2,9 @@ describe('Login', () => {
   it('user can log in with valid credentials', function () {
     cy.visit('admin')
     cy.login(this.auth['admin'].username, this.auth['admin'].password)
-    cy.get('a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]').should('exist')
+    cy.get(
+      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
+    ).should('exist')
   })
 
   it('user can not log in with invalid credentials', function () {
@@ -10,7 +12,9 @@ describe('Login', () => {
     // user enters wrong password
     cy.login(this.auth['admin'].username, 'wrongpass')
     // check that logout is not available
-    cy.get('a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]').should('not.exist')
+    cy.get(
+      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
+    ).should('not.exist')
     // user gets feedback
     cy.get('#notif-container > .alert.alert-danger')
       .should('be.visible')
@@ -21,11 +25,13 @@ describe('Login', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      '/admin',
+      '/admin'
     )
-    
+
     cy.get('a').contains('admin').click()
-    cy.get('a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]').click()
+    cy.get(
+      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
+    ).click()
     cy.get('input#user').should('be.visible')
   })
 
@@ -43,10 +49,10 @@ describe('Login', () => {
         loginlang: 'default',
         action: 'login',
         width: Cypress.config('viewportWidth'),
-        login_submit: 'login'
+        login_submit: 'login',
       },
     })
-    .its('status')
-    .should('eq', 403)
+      .its('status')
+      .should('eq', 403)
   })
 })

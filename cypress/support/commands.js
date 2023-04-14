@@ -4,7 +4,7 @@ Cypress.Commands.add('login', (username, password) => {
   cy.get('button[type="submit"]').click()
 })
 
-Cypress.Commands.add('loginByCSRF', (user, password, path, lang='en') => {
+Cypress.Commands.add('loginByCSRF', (user, password, path, lang = 'en') => {
   cy.request(`${Cypress.config('baseUrl')}admin/authentication/sa/login`)
     .its('body')
     .then((body) => {
@@ -23,7 +23,7 @@ Cypress.Commands.add('loginByCSRF', (user, password, path, lang='en') => {
           loginlang: lang,
           action: 'login',
           width: Cypress.config('viewportWidth'),
-          login_submit: 'login'
+          login_submit: 'login',
         },
       })
 
