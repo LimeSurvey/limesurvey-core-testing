@@ -82,3 +82,5 @@ typings/
 screenshots/
 videos/
 
+# Database backup
+cypress/data/database-backup.sql

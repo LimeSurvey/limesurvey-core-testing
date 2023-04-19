@@ -35,7 +35,7 @@ describe('Login', () => {
     cy.get('input#user').should('be.visible')
   })
 
-  it('403 status without a valid CSRF token', function () {
+  it('400 status without a valid CSRF token', function () {
     cy.request({
       method: 'POST',
       url: `${Cypress.config('baseUrl')}admin/authentication/sa/login`,
@@ -53,6 +53,6 @@ describe('Login', () => {
       },
     })
       .its('status')
-      .should('eq', 403)
+      .should('eq', 400)
   })
 })

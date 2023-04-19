@@ -6,10 +6,34 @@ This is the home of automated tests for Limesurvey core application using [Cypre
 
 * [Node.js](https://nodejs.org/en)
 * [Yarn](https://yarnpkg.com/)
+* MySQL
+* local dev environment setup using [ls-docker-dev-env](https://bitbucket.org/limesurvey/ls-docker-dev-env/src/master/)
 
 ## Local Setup
 
 To install dependencies run ```yarn```
+
+### Data
+
+Create mysql config file ```~/.my.cnf``` with this content:
+```
+[mysql]
+user=root
+password=root
+host=ls-dev-mysql
+```
+
+Cd into ```cypress/data``` directory.
+
+Dump your data:
+```mysqldump --no-create-db --no-create-info --column-statistics=0 ls-ce > database_backup.sql```
+
+Truncate tables:
+```mysql -Nse 'show tables' ls-ce | while read table; do mysql -e "truncate table $table" ls-ce; done```
+
+Seed the data:
+```mysql ls-ce < ls-ce.sql```
+
 
 ## How to use it
 
@@ -17,8 +41,3 @@ To install dependencies run ```yarn```
 * ```yarn cypress:e2e:run``` - run e2e tests in headless mode
 
 * ```yarn cypress:e2e:run --browser chrome``` - run e2e tests in headless chrome browser
-
-## Note
-
-I still need to implement communication with local database and seeding of data needed for the tests.
-If you want to run the tests with expected outcome, you just need to change credentials in ```fixtures/auth.json``` to existing ones in your local database.
