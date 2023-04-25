@@ -124,13 +124,14 @@ jobs:
         run: |
           mysql -Nse 'show tables' limesurvey | while read table; do mysql -e "truncate table $table" limesurvey; done
           mysql limesurvey < cypress/data/ls-ce.sql
+          php application/commands/console.php updatedb
 
       - name: Cypress run
         id: cypress
         uses: cypress-io/github-action@v3
         continue-on-error: true
         env:
-          CYPRESS_BASE_URL: 'http://localhost'
+          CYPRESS_BASE_URL: 'http://localhost/index.php?r='
           CYPRESS_DB_HOST: 'localhost'
           CYPRESS_DB_DATABASE: 'limesurvey'
         with:
