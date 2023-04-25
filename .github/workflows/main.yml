@@ -124,7 +124,10 @@ jobs:
         run: |
           mysql -Nse 'show tables' limesurvey | while read table; do mysql -e "truncate table $table" limesurvey; done
           mysql limesurvey < cypress/data/ls-ce.sql
-          php application/commands/console.php updatedb
+
+      - name: Update database
+        working-directory: limesurvey
+        run: php application/commands/console.php updatedb
 
       - name: Cypress run
         id: cypress
