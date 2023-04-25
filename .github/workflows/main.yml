@@ -8,7 +8,7 @@ jobs:
     env:
       DBENGINE: INNODB
 
-    name: Install App
+    name: Install app and run tests
     steps:
       - name: Checkout current repo
         uses: actions/checkout@v3
@@ -31,6 +31,7 @@ jobs:
       - name: Start the MySQL service
         run: |
           sudo systemctl start mysql.service
+          echo -e '[mysql]\nuser="root"\npassword="root"\nhost="ls-dev-mysql"' > "$HOME/.my.cnf"
 
       - name: Initilize and check all dependencies
         working-directory: limesurvey
@@ -83,11 +84,11 @@ jobs:
 
           sudo systemctl start mysql
           sudo service mysql status
-          mysql -uroot -proot -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';" || true
-          mysql -uroot -proot -e "Show  variables like '%large%';"
-          mysql -uroot -proot -e "Show  variables like '%innodb_file%';"
-          mysql -uroot -proot -e "Show  variables like '%innodb_default%';"
-          mysql -uroot -proot -e "CREATE DATABASE limesurvey;"
+          mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';" || true
+          mysql -e "Show  variables like '%large%';"
+          mysql -e "Show  variables like '%innodb_file%';"
+          mysql -e "Show  variables like '%innodb_default%';"
+          mysql -e "CREATE DATABASE limesurvey;"
 
       - name: Load custom console and start the Application
         working-directory: limesurvey
