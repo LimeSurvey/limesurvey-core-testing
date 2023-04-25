@@ -2,6 +2,12 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   video: false,
+  env: {
+    DB_HOST: 'ls-dev-mysql',
+    DB_USER: 'root',
+    DB_PASSWORD: 'root',
+    DB_DATABASE: 'ls-ce',
+  },
   e2e: {
     baseUrl: 'http://ls-ce/index.php?r=',
     viewportWidth: 1920,
@@ -15,11 +21,5 @@ module.exports = defineConfig({
         },
       })
     },
-  },
-  db: {
-    host: 'ls-dev-mysql',
-    user: 'root',
-    password: 'root',
-    database: 'ls-ce',
   },
 })

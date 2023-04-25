@@ -31,7 +31,7 @@ jobs:
       - name: Start the MySQL service
         run: |
           sudo systemctl start mysql.service
-          echo -e '[mysql]\nuser="root"\npassword="root"\nhost="ls-dev-mysql"' > "$HOME/.my.cnf"
+          echo -e '[mysql]\nuser="root"\npassword="root"\nhost="localhost"' > "$HOME/.my.cnf"
 
       - name: Initilize and check all dependencies
         working-directory: limesurvey
@@ -122,8 +122,8 @@ jobs:
       - name: Seed data
         working-directory: limesurvey-core-testing
         run: |
-          mysql -Nse 'show tables' ls-ce | while read table; do mysql -e "truncate table $table" ls-ce; done
-          mysql ls-ce < cypress/data/ls-ce.sql
+          mysql -Nse 'show tables' limesurvey | while read table; do mysql -e "truncate table $table" limesurvey; done
+          mysql limesurvey < cypress/data/ls-ce.sql
 
       - name: Cypress run
         id: cypress
@@ -131,9 +131,11 @@ jobs:
         continue-on-error: true
         env:
           CYPRESS_BASE_URL: 'http://localhost/index.php?r='
+          CYPRESS_DB_HOST: 'localhost'
+          CYPRESS_DB_DATABASE: 'limesurvey'
         with:
           working-directory: limesurvey-core-testing
-          command: yarn cypress:run
+          command: yarn cypress:e2e:run
           browser: chrome
           wait-on: "http://localhost"
 
