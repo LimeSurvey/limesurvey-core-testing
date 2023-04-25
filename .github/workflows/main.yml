@@ -94,9 +94,7 @@ jobs:
         working-directory: limesurvey
         run: |
           cp application/config/config-sample-mysql.php application/config/config.php
-          php application/commands/console.php install admin password TravisLS no@email.com verbose
-          php application/commands/console.php updatedb
-
+          php application/commands/console.php install admin pass TravisLS no@email.com verbose
 
           # Enable debug=2 in config file. OBS: This assumes debug is on line 61.
           # TODO: Disable, a lines was added to config file and some tests started to fail.
@@ -126,10 +124,6 @@ jobs:
         run: |
           mysql -Nse 'show tables' limesurvey | while read table; do mysql -e "truncate table $table" limesurvey; done
           mysql limesurvey < cypress/data/ls-ce.sql
-
-      - name: Update database
-        working-directory: limesurvey
-        run: php application/commands/console.php updatedb
 
       - name: Cypress run
         id: cypress
