@@ -140,10 +140,9 @@ jobs:
           wait-on: "http://localhost"
 
       - name: Upload Screenshots
-        if: steps.cypress.outcome != 'success'
-        working-directory: limesurvey-core-testing
         uses: actions/upload-artifact@v3
+        if: steps.cypress.outcome != 'success'
         with:
           name: screenshots
-          path: cypress/screenshots/
+          path: limesurvey-core-testing/cypress/screenshots/
           retention-days: 5
