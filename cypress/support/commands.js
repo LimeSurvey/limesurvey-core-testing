@@ -5,14 +5,14 @@ Cypress.Commands.add('login', (username, password) => {
 })
 
 Cypress.Commands.add('loginByCSRF', (user, password, path, lang = 'en') => {
-  cy.request(`${Cypress.config('baseUrl')}admin/authentication/sa/login`)
+  cy.request(`${Cypress.config('baseUrl')}/admin/authentication/sa/login`)
     .its('body')
     .then((body) => {
       const csrfToken = Cypress.$(body).find('input[name=YII_CSRF_TOKEN]').val()
 
       cy.request({
         method: 'POST',
-        url: `${Cypress.config('baseUrl')}admin/authentication/sa/login`,
+        url: `${Cypress.config('baseUrl')}/admin/authentication/sa/login`,
         failOnStatusCode: false,
         form: true,
         body: {

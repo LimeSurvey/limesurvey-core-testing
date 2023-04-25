@@ -2,9 +2,9 @@ describe('Login', () => {
   it('user can log in with valid credentials', function () {
     cy.visit('admin')
     cy.login(this.auth['admin'].username, this.auth['admin'].password)
-    cy.get(
-      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
-    ).should('exist')
+    cy.get('a.dropdown-item[href="/admin/authentication/sa/logout"]').should(
+      'exist'
+    )
   })
 
   it('user can not log in with invalid credentials', function () {
@@ -12,9 +12,9 @@ describe('Login', () => {
     // user enters wrong password
     cy.login(this.auth['admin'].username, 'wrongpass')
     // check that logout is not available
-    cy.get(
-      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
-    ).should('not.exist')
+    cy.get('a.dropdown-item[href="/admin/authentication/sa/logout"]').should(
+      'not.exist'
+    )
     // user gets feedback
     cy.get('#notif-container > .alert.alert-danger')
       .should('be.visible')
@@ -29,16 +29,14 @@ describe('Login', () => {
     )
 
     cy.get('a').contains('admin').click()
-    cy.get(
-      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
-    ).click()
+    cy.get('a.dropdown-item[href="/admin/authentication/sa/logout"]').click()
     cy.get('input#user').should('be.visible')
   })
 
   it('400 status without a valid CSRF token', function () {
     cy.request({
       method: 'POST',
-      url: `${Cypress.config('baseUrl')}admin/authentication/sa/login`,
+      url: `${Cypress.config('baseUrl')}/admin/authentication/sa/login`,
       failOnStatusCode: false,
       form: true,
       body: {

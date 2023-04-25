@@ -130,7 +130,7 @@ jobs:
         uses: cypress-io/github-action@v3
         continue-on-error: true
         env:
-          CYPRESS_BASE_URL: 'http://localhost/index.php?r='
+          CYPRESS_BASE_URL: 'http://localhost'
           CYPRESS_DB_HOST: 'localhost'
           CYPRESS_DB_DATABASE: 'limesurvey'
         with:
