@@ -122,7 +122,7 @@ jobs:
       - name: Seed data
         working-directory: limesurvey-core-testing
         run: |
-          mysql -Nse 'show tables' limesurvey | while read table; do mysql -e "truncate table $table" limesurvey; done
+          mysql -Nse 'show tables' limesurvey | while read table; do if [ $table != "lime_settings_global"]; then mysql -e "truncate table $table" limesurvey; fi; done
           mysql limesurvey < cypress/data/ls-ce.sql
 
       - name: Cypress run
