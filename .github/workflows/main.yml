@@ -1,10 +1,13 @@
 name: LimeSurvey - E2E testing
-# Triggers the workflow on push or pull request events on all branches
-on: [push]
+
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   test:
-    runs-on: ubuntu-20.04    # ubuntu runner hosted by Github
+    runs-on: ubuntu-20.04
     env:
       DBENGINE: INNODB
 
@@ -27,7 +30,6 @@ jobs:
         with:
           php-version: 8.1
 
-      # Start the MySQL service
       - name: Start the MySQL service
         run: |
           sudo systemctl start mysql.service
@@ -122,7 +124,9 @@ jobs:
       - name: Seed data
         working-directory: limesurvey-core-testing
         run: |
+          # truncate all tables except lime_settings_global to prevent need for upgrading database
           mysql -Nse 'show tables' limesurvey | while read table; do if [ $table != "lime_settings_global" ]; then mysql -e "truncate table $table" limesurvey; fi; done
+          # seed data (shouldn't contain lime_settings_global)
           mysql limesurvey < cypress/data/ls-ce.sql
 
       - name: Cypress run
@@ -137,7 +141,7 @@ jobs:
           working-directory: limesurvey-core-testing
           command: yarn cypress:e2e:run
           browser: chrome
-          wait-on: "http://localhost"
+          wait-on: 'http://localhost'
 
       - name: Upload Screenshots
         uses: actions/upload-artifact@v3

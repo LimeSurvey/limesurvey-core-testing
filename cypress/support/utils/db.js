@@ -1,4 +1,4 @@
-const mysql = require('mysql2')
+const mysql = require('mysql')
 
 const runQuery = (query, config) => {
   // creates a new mysql connection using credentials from cypress.json env's
@@ -8,15 +8,15 @@ const runQuery = (query, config) => {
     password: config.env.DB_PASSWORD,
     database: config.env.DB_DATABASE,
   })
+
   // start connection to db
   connection.connect((err) => {
     if (err) {
       console.error('error connecting: ' + err.stack)
       return
     }
-
-    console.log('connected as id ' + connection.threadId)
   })
+
   // exec query + disconnect to db as a Promise
   return new Promise((resolve, reject) => {
     connection.query(query, (error, results) => {
