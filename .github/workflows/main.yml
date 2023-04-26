@@ -131,8 +131,8 @@ jobs:
         continue-on-error: true
         env:
           CYPRESS_BASE_URL: 'http://localhost/index.php?r='
-          CYPRESS_DB_HOST: 'localhost'
-          CYPRESS_DB_DATABASE: 'limesurvey'
+          CYPRESS_DB_HOST: localhost
+          CYPRESS_DB_DATABASE: limesurvey
         with:
           working-directory: limesurvey-core-testing
           command: yarn cypress:e2e:run
