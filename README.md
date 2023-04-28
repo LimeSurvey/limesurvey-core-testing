@@ -41,3 +41,4 @@ Seed the data:
 * ```yarn cypress:e2e:run``` - run e2e tests in headless mode
 
 * ```yarn cypress:e2e:run --browser chrome``` - run e2e tests in headless chrome browser
+* ```yarn cypress:e2e:run --spec cypress/e2e/create_survey.cy.js``` - run tests from specific file

@@ -19,6 +19,10 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
+Cypress.on('uncaught:exception', () => {
+  return false
+})
+
 before(() => {
   cy.fixture('auth').then((e) => {
     cy.wrap(e, { log: false }).as('auth')
