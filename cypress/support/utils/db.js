@@ -2,16 +2,27 @@ const mysql = require('mysql')
 
 const runQuery = (query, config) => {
   // creates a new mysql connection using credentials from cypress.json env's
-  const connection = mysql.createConnection(config.db)
+  const connection = mysql.createConnection({
+    host: config.env.DB_HOST,
+    user: config.env.DB_USER,
+    password: config.env.DB_PASSWORD,
+    database: config.env.DB_DATABASE,
+  })
+
   // start connection to db
-  connection.connect()
+  connection.connect((err) => {
+    if (err) {
+      console.error('error connecting: ' + err.stack)
+      return
+    }
+  })
+
   // exec query + disconnect to db as a Promise
   return new Promise((resolve, reject) => {
     connection.query(query, (error, results) => {
       if (error) reject(error)
       else {
         connection.end()
-        // console.log(results)
         return resolve(results)
       }
     })
