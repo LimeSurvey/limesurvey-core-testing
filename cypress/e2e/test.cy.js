@@ -13,6 +13,6 @@ describe('Test DB Connection', () => {
     )
 
     cy.get('img').should('be.visible').and('have.length', 2)
-    cy.screenshot()
+    cy.screenshot({capture: 'runner'})
   })
 })
