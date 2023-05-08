@@ -128,6 +128,8 @@ jobs:
           mysql -Nse 'show tables' limesurvey | while read table; do if [ $table != "lime_settings_global" ]; then mysql -e "truncate table $table" limesurvey; fi; done
           # seed data (shouldn't contain lime_settings_global)
           mysql limesurvey < cypress/data/ls-ce.sql
+          # copy upload directory
+          cp -RT cypress/data/upload ../limesurvey/upload
 
       - name: Cypress run
         id: cypress

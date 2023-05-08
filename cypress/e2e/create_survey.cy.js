@@ -51,6 +51,7 @@ describe('Survey creation', () => {
 
     cy.get('[data-form-id="importsurvey"]').click()
     cy.get('input[type=file]').selectFile('cypress/surveys/date_and_time.lss')
+    cy.get('#translinksfields').should('be.checked') // default state
     cy.get('#import-submit').click()
 
     cy.url().should('include', 'surveyAdministration/copy')

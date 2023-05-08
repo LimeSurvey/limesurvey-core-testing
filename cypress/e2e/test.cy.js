@@ -4,4 +4,15 @@ describe('Test DB Connection', () => {
       expect(count).to.have.lengthOf(1)
     })
   })
+
+  it('upload dir images are accessible', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      'survey/index/action/previewquestion/sid/841748/gid/4/qid/28'
+    )
+
+    cy.get('img').should('be.visible').and('have.length', 2)
+    cy.screenshot()
+  })
 })
