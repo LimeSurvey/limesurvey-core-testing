@@ -65,6 +65,6 @@ Cypress.Commands.add(
             .trigger('mouseup', { which: 1, force: true })
         })
       })
-    cy.wait(500)
+    cy.wait(1000)
   }
 )
