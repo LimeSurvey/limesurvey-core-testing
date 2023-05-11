@@ -12,10 +12,11 @@ describe('Test DB Connection', () => {
       'survey/index/action/previewquestion/sid/841748/gid/4/qid/28'
     )
 
-    cy.get('img').should('be.visible')
-    .and(($img) => {
-      expect($img[0].naturalWidth).to.be.greaterThan(0)
-    })
-    cy.screenshot({capture: 'runner'})
+    cy.get('img')
+      .should('be.visible')
+      .and(($img) => {
+        expect($img[0].naturalWidth).to.be.greaterThan(0)
+      })
+    cy.screenshot({ capture: 'runner' })
   })
 })

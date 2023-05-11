@@ -1,3 +1,5 @@
+const { getSurveyIdFromUrl } = require('../support/utils/common')
+
 describe('Survey creation', () => {
   it('user can create a simple survey', function () {
     cy.intercept(
@@ -39,27 +41,137 @@ describe('Survey creation', () => {
     })
   })
 
-  it('user can import survey (structure only)', function () {
+  it('user can import survey (structure only); convert resource links', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
       '/surveyAdministration/newSurvey'
     )
 
-    const survey_id = '727741'
-    const survey_title = 'Date and time'
+    const survey_title = 'Colors'
+    let survey_id = ''
 
     cy.get('[data-form-id="importsurvey"]').click()
-    cy.get('input[type=file]').selectFile('cypress/surveys/date_and_time.lss')
+    cy.get('input[type=file]').selectFile('cypress/data/surveys/colors.lss')
     cy.get('#translinksfields').should('be.checked') // default state
     cy.get('#import-submit').click()
 
     cy.url().should('include', 'surveyAdministration/copy')
-    // TODO: Add this back in once https://github.com/cypress-io/cypress/issues/23772 is resolved
-    // cy.get('input').contains('Go to survey').click()
-    // cy.url().should('include',`questionAdministration/view&surveyid=${survey_id}`)
+    cy.checkImportSummary('table', {
+      surveys: 1,
+      languages: 1,
+      question_groups: 2,
+      questions: 4,
+      question_attributes: 129,
+      answers: 2,
+      subquestions: 11,
+      default_answers: 0,
+      assessments: 0,
+      quotas: 1,
+      quota_members: 2,
+      quota_language_settings: 1,
+      themes: 1,
+    })
+    cy.get('input[type="submit"]')
+      .invoke('attr', 'onclick')
+      .then((c) => {
+        survey_id = getSurveyIdFromUrl(c)
 
-    // check that the survey was really created
+        // TODO: Add this back in once https://github.com/cypress-io/cypress/issues/23772 is resolved
+        // cy.get('input').contains('Go to survey').click()
+        // cy.url().should('include',`questionAdministration/view&surveyid=${survey_id}`)
+
+        // check that the survey was really created
+        cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
+          .contains('Surveys')
+          .click()
+        cy.contains(survey_id).closest('tr').should('contain', survey_title)
+      })
+  })
+
+  it('user can copy survey; convert resource links enabled', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      '/surveyAdministration/newSurvey'
+    )
+
+    const survey_title = 'Colors Copy1'
+    let survey_id = '12345'
+
+    cy.get('[data-form-id="copysurveyform"]').click()
+    cy.get('#select2-copysurveylist-container').click()
+    cy.get('input[type="search"]').type('color{enter}')
+    cy.get('input#copysurveyname').type(survey_title)
+    cy.get('input#copysurveyid').type(survey_id)
+
+    cy.get('#copysurveytranslinksfields').should('be.checked') // default state
+    cy.get('input[type="submit"]').contains('Copy survey').click()
+
+    cy.url().should('include', 'surveyAdministration/copy')
+    cy.checkImportSummary('table', {
+      surveys: 1,
+      languages: 1,
+      question_groups: 2,
+      questions: 4,
+      question_attributes: 129,
+      answers: 2,
+      subquestions: 11,
+      default_answers: 0,
+      assessments: 0,
+      quotas: 1,
+      quota_members: 2,
+      quota_language_settings: 1,
+      themes: 1,
+    })
+
+    cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
+      .contains('Surveys')
+      .click()
+    cy.contains(survey_id).closest('tr').should('contain', survey_title)
+  })
+
+  it('user can copy survey; select all exclude and reset options', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      '/surveyAdministration/newSurvey'
+    )
+
+    const survey_title = 'Colors Copy2'
+    let survey_id = '12346'
+
+    cy.get('[data-form-id="copysurveyform"]').click()
+    cy.get('#select2-copysurveylist-container').click()
+    cy.get('input[type="search"]').type('color{enter}')
+    cy.get('input#copysurveyname').type(survey_title)
+    cy.get('input#copysurveyid').type(survey_id)
+
+    cy.get('#copysurveyexcludequotas').click()
+    cy.get('#copysurveyexcludepermissions').click()
+    cy.get('#copysurveyexcludeanswers').click()
+    cy.get('#copysurveyresetconditions').click()
+    cy.get('#copysurveyresetstartenddate').click()
+    cy.get('#copysurveyresetresponsestartid').click()
+    cy.get('input[type="submit"]').contains('Copy survey').click()
+
+    cy.url().should('include', 'surveyAdministration/copy')
+    cy.checkImportSummary('table', {
+      surveys: 1,
+      languages: 1,
+      question_groups: 2,
+      questions: 4,
+      question_attributes: 129,
+      answers: 0,
+      subquestions: 11,
+      default_answers: 0,
+      assessments: 0,
+      quotas: 0,
+      quota_members: 0,
+      quota_language_settings: 0,
+      themes: 1,
+    })
+
     cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
       .contains('Surveys')
       .click()

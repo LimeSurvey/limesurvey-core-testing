@@ -5,6 +5,13 @@ const randomString = (length) => {
     .join('')
 }
 
+const toCapitalizedStr = (s) =>
+  s.replace(/^_*(.)|_+(.)/g, (s, c, d) => (c ? c.toUpperCase() : ' ' + d))
+
+const getSurveyIdFromUrl = (s) => s.match('surveyid=([0-9]*)&')[1]
+
 module.exports = {
   randomString,
+  toCapitalizedStr,
+  getSurveyIdFromUrl,
 }
