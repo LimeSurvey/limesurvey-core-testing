@@ -22,6 +22,33 @@ SET time_zone = "+00:00";
 --
 
 --
+-- Table structure for table `lime_survey_841748`
+--
+
+CREATE TABLE `lime_survey_841748` (
+  `id` int(11) NOT NULL,
+  `token` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `submitdate` datetime DEFAULT NULL,
+  `lastpage` int(11) DEFAULT NULL,
+  `startlanguage` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `seed` varchar(31) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X3SQ001` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X3SQ002` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X3SQ003` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X3SQ004` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X3SQ005` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X3SQ006` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X3SQ007` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X3SQ008` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X3SQ009` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X3SQ010` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X3SQ011` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `841748X3X26` text COLLATE utf8mb4_unicode_ci,
+  `841748X3X27` text COLLATE utf8mb4_unicode_ci,
+  `841748X4X28` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
 -- Dumping data for table `lime_answers`
 --
 
