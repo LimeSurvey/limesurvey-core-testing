@@ -142,7 +142,6 @@ jobs:
         with:
           working-directory: limesurvey-core-testing
           command: yarn cypress:e2e:run --browser chrome
-          browser: chrome
           wait-on: 'http://localhost'
 
       - name: Upload Screenshots
@@ -152,3 +151,7 @@ jobs:
           name: screenshots
           path: limesurvey-core-testing/cypress/screenshots/
           retention-days: 5
+
+      - name: Fail workflow if tests fail
+        if: steps.cypress.outcome != 'success'
+        run: exit 1
