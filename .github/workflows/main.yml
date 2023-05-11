@@ -141,7 +141,7 @@ jobs:
           CYPRESS_DB_DATABASE: limesurvey
         with:
           working-directory: limesurvey-core-testing
-          command: yarn cypress:e2e:run
+          command: yarn cypress:e2e:run --browser chrome
           browser: chrome
           wait-on: 'http://localhost'
 
