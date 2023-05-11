@@ -51,6 +51,7 @@ Cypress.Commands.add(
     subjectSelector,
     subjectIndex,
     targetIndex,
+    addY = 0,
     targetSelector = subjectSelector
   ) => {
     cy.get(targetSelector)
@@ -61,7 +62,7 @@ Cypress.Commands.add(
           cy.get(subjectSelector) // eslint-disable-line cypress/unsafe-to-chain-command
             .eq(subjectIndex)
             .trigger('mousedown', { which: 1 })
-            .trigger('mousemove', { pageX: rect.left, pageY: rect.top })
+            .trigger('mousemove', { pageX: rect.left, pageY: rect.top + addY })
             .trigger('mouseup', { which: 1, force: true })
         })
       })

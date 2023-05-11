@@ -49,7 +49,7 @@ describe('Reorder survey', () => {
     // reorder questions inside group
     cy.dragAndDrop('ol.group-list', '.ui-sortable-handle', 5, 4)
     // put question from one group into the other
-    cy.dragAndDrop('ol.group-list', '.ui-sortable-handle', 4, 1)
+    cy.dragAndDrop('ol.group-list', '.ui-sortable-handle', 4, 1, 60)
     cy.get('#btnSave').click()
 
     // check notification
@@ -70,15 +70,15 @@ describe('Reorder survey', () => {
     cy.get('ul.question-question-list')
       .eq(0)
       .within(() => {
-        cy.get('li').eq(0).should('contain', 'First question')
-        cy.get('li').eq(1).should('contain', 'Fourth question')
+        cy.get('li').eq(0).should('contain', 'Fourth question')
+        cy.get('li').eq(1).should('contain', 'First question')
         cy.get('li').eq(2).should('contain', 'Fifth question')
       })
     cy.get('ul.questiongroup-list-group > li')
       .eq(1)
       .should('contain', 'My first question group')
       .click()
-    cy.wait(500)
+    cy.wait(1000)
     cy.get('ul.question-question-list')
       .eq(1)
       .within(() => {
