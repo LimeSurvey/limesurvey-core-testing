@@ -1,7 +1,7 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  video: false,
+  video: true,
   env: {
     DB_HOST: 'ls-dev-mysql',
     DB_USER: 'root',
