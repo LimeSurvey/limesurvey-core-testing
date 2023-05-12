@@ -45,30 +45,24 @@ Cypress.Commands.add('checkImportSummary', (table_selector, json) => {
 })
 
 Cypress.Commands.add(
-  'dragAndDrop',
-  (
-    parentSelector,
-    subjectSelector,
-    subjectIndex,
-    targetIndex,
-    addY = 0,
-    targetSelector = subjectSelector
-  ) => {
-    cy.get(targetSelector)
-      .eq(targetIndex)
-      .then((target) => {
-        let rect = target[0].getBoundingClientRect()
-        cy.get(parentSelector).within(() => {
-          cy.get(subjectSelector) // eslint-disable-line cypress/unsafe-to-chain-command
-            .eq(subjectIndex)
+  'reorder',
+  (parentSelector, subjectSelector, targetSelector) => {
+    cy.get('[href="#reorder"]').click()
+    cy.get('#loader-sidemenuLoaderWidget').should('not.exist')
+    cy.get(parentSelector).within(() => {
+      cy.contains(targetSelector)
+        .then(($el) => $el[0].getBoundingClientRect())
+        .then((rect) => {
+          cy.contains(subjectSelector) // eslint-disable-line cypress/unsafe-to-chain-command
             .trigger('mousedown', { which: 1 })
-            .trigger('mousemove', { pageX: rect.left, pageY: rect.top + addY })
+            .trigger('mousemove', { pageX: rect.left, pageY: rect.top })
             .then(() => {
               cy.get('.ui-sortable-placeholder').should('be.visible')
             })
             .trigger('mouseup', { which: 1, force: true })
         })
-      })
-    cy.wait(1000)
+    })
+    cy.wait(500)
+    cy.get('#btnSave').click()
   }
 )

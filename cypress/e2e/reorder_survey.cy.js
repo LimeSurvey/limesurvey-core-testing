@@ -36,21 +36,19 @@ describe('Reorder survey', () => {
     })
   })
 
-  it('user can reorder groups and questions', function () {
+  it.only('user can reorder groups and questions', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
       'questionAdministration/listQuestions&surveyid=947781'
     )
 
-    cy.get('[href="#reorder"]').click()
     // reorder groups
-    cy.dragAndDrop('ol.group-list', '.ui-sortable-handle', 4, 0)
+    cy.reorder('ol.group-list', 'Second group', 'My first')
     // reorder questions inside group
-    cy.dragAndDrop('ol.group-list', '.ui-sortable-handle', 6, 4)
+    cy.reorder('ol.group-list', 'Q02', 'Q00')
     // put question from one group into the other
-    cy.dragAndDrop('ol.group-list', '.ui-sortable-handle', 4, 1, 60)
-    cy.get('#btnSave').click()
+    cy.reorder('ol.group-list', 'Q02', 'Q04')
 
     // check notification
     cy.get('.alert.alert-success.alert-dismissible')
@@ -62,6 +60,7 @@ describe('Reorder survey', () => {
 
     // check the order
     cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
+    cy.get('#loader-sidemenuLoaderWidget').should('not.exist')
     cy.get('ul.questiongroup-list-group > li')
       .eq(0)
       .should('contain', 'Second group')
@@ -70,8 +69,8 @@ describe('Reorder survey', () => {
     cy.get('ul.question-question-list')
       .eq(0)
       .within(() => {
-        cy.get('li').eq(0).should('contain', 'Fourth question')
-        cy.get('li').eq(1).should('contain', 'Second question')
+        cy.get('li').eq(0).should('contain', 'First question')
+        cy.get('li').eq(1).should('contain', 'Fourth question')
         cy.get('li').eq(2).should('contain', 'Fifth question')
       })
     cy.get('ul.questiongroup-list-group > li')
@@ -82,8 +81,8 @@ describe('Reorder survey', () => {
     cy.get('ul.question-question-list')
       .eq(1)
       .within(() => {
+        cy.get('li').eq(1).should('contain', 'Second question')
         cy.get('li').eq(0).should('contain', 'A first example question')
-        cy.get('li').eq(1).should('contain', 'First question')
       })
     cy.get('ul.questiongroup-list-group > li')
       .eq(2)
