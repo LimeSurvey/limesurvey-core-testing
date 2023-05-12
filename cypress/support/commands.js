@@ -1,4 +1,5 @@
 const { toCapitalizedStr } = require('./utils/common')
+require('@4tw/cypress-drag-drop')
 
 Cypress.Commands.add('login', (username, password) => {
   cy.get('#user').type(username)
