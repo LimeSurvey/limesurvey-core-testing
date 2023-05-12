@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: ls-dev-mysql:3306
--- Generation Time: May 12, 2023 at 02:06 PM
+-- Generation Time: May 12, 2023 at 02:11 PM
 -- Server version: 5.7.39
 -- PHP Version: 8.1.17
 
@@ -601,24 +601,6 @@ INSERT INTO `lime_quota_languagesettings` (`quotals_id`, `quotals_quota_id`, `qu
 INSERT INTO `lime_quota_members` (`id`, `sid`, `qid`, `quota_id`, `code`) VALUES
 (1, 841748, 3, 1, 'SQ009'),
 (2, 841748, 3, 1, 'SQ011');
-
---
--- Dumping data for table `lime_settings_global`
---
-
-INSERT INTO `lime_settings_global` (`stg_name`, `stg_value`) VALUES
-('sendadmincreationemail', '1'),
-('admincreationemailsubject', 'User registration at \'{SITENAME}\''),
-('admincreationemailtemplate', '<p>Hello {FULLNAME}, </p><p>This is an automated email notification that a user has been created for you on the website <strong>\'{SITENAME}\'</strong>.</p><p></p><p>You can use now the following credentials to log in:</p><p><strong>Username</strong>: {USERNAME}</p><p><a href=\"{LOGINURL}\">Click here to set your password</a></p><p>If you have any questions regarding this email, please do not hesitate to contact the site administrator at {SITEADMINEMAIL}.</p><p> </p><p>Thank you!</p>'),
-('DBVersion', '606'),
-('SessionName', 'ARTXJGFBIBFZGHRSHBTERROSDEPMNBYIEMOTMNBIWKVYGCVTJGYXAEXELCYPJTUQ'),
-('sitename', 'LimeSurvey'),
-('siteadminname', 'Administrator'),
-('siteadminemail', 'your-email@example.net'),
-('siteadminbounce', 'your-email@example.net'),
-('defaultlang', 'en'),
-('AssetsVersion', '30335'),
-('last_survey_1', '947781');
 
 --
 -- Dumping data for table `lime_settings_user`
