@@ -57,6 +57,7 @@ Cypress.Commands.add(
             .trigger('mousedown', { which: 1 })
             .trigger('mousemove', { pageX: rect.left, pageY: rect.top })
             .then(() => {
+              cy.wait(500)
               cy.get('.ui-sortable-placeholder').should('be.visible')
             })
             .trigger('mouseup', { which: 1, force: true })
