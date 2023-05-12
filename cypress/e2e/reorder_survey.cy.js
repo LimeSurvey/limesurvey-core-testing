@@ -62,11 +62,11 @@ describe('Reorder survey', () => {
 
     // check the order
     cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
-    cy.wait(500)
     cy.get('ul.questiongroup-list-group > li')
       .eq(0)
       .should('contain', 'Second group')
       .click()
+    cy.wait(1000)
     cy.get('ul.question-question-list')
       .eq(0)
       .within(() => {
