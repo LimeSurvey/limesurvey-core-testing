@@ -36,7 +36,7 @@ describe('Reorder survey', () => {
     })
   })
 
-  it.skip('user can reorder groups and questions', function () {
+  it.only('user can reorder groups and questions', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
