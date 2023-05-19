@@ -47,22 +47,53 @@ Cypress.Commands.add('checkImportSummary', (table_selector, json) => {
 
 Cypress.Commands.add(
   'reorder',
-  (parentSelector, subjectSelector, targetSelector) => {
+  (subjectSelector, targetSelector, position = 0, r = 5) => {
     cy.get('[href="#reorder"]').click()
     cy.get('#loader-sidemenuLoaderWidget').should('not.exist')
-    cy.get('.ui-sortable-handle').contains(targetSelector)
-      .then(($el) => $el[0].getBoundingClientRect())
-      .then((rect) => {
-        cy.get('.ui-sortable-handle').contains(subjectSelector) // eslint-disable-line cypress/unsafe-to-chain-command
-          .wait(1000).trigger('mousedown', { which: 1 })
-          .wait(1000).trigger('mousemove', { pageX: rect.left, pageY: rect.top })
-          .then(() => {
-            cy.wait(1000)
-            cy.get('.ui-sortable-placeholder').should('be.visible')
+    cy.recursionLoop(() => {
+      if (!Cypress.$('.ui-sortable li').eq(position).is(subjectSelector)) {
+        console.log('here')
+        cy.get(`${targetSelector} > div`)
+          .then(($el) => $el[0].getBoundingClientRect())
+          .then((rect) => {
+            cy.get(`${subjectSelector} > div`) // eslint-disable-line cypress/unsafe-to-chain-command
+              .trigger('mousedown', { which: 1 })
+              .trigger('mousemove', {
+                which: 1,
+                pageX: rect.left,
+                pageY: rect.top - r,
+              })
+              .trigger('mouseup', { which: 1, force: true })
           })
-          .wait(1000).trigger('mouseup', { which: 1, force: true })
-      })
+          .then(() => {
+            r = r - 5
+            console.log(r)
+            console.log(
+              Cypress.$('.ui-sortable li').eq(position).is(subjectSelector)
+            )
+            cy.wait(500)
+          })
+        return Cypress.$('.ui-sortable li').eq(position).is(subjectSelector)
+      }
+    })
     cy.wait(500)
     cy.get('#btnSave').click()
+  }
+)
+
+Cypress.Commands.add(
+  'recursionLoop',
+  { times: 'optional' },
+  function (fn, times) {
+    if (typeof times === 'undefined') {
+      times = 0
+    }
+
+    cy.then(() => {
+      const result = fn(++times)
+      if (result === false) {
+        cy.recursionLoop(fn, times)
+      }
+    })
   }
 )

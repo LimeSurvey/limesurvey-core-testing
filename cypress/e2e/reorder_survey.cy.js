@@ -44,11 +44,11 @@ describe('Reorder survey', () => {
     )
 
     // reorder groups
-    cy.reorder('ol.group-list', 'Second group', 'My first')
+    cy.reorder('#list_g6', '#list_g5')
     // reorder questions inside group
-    cy.reorder('ol.group-list', 'Q02', 'Q00')
+    cy.reorder('#list_q30', '#list_q29', 4)
     // put question from one group into the other
-    cy.reorder('ol.group-list', 'Q02', 'Q04')
+    cy.reorder('#list_q30', '#list_q32', 1)
 
     // check notification
     cy.get('.alert.alert-success.alert-dismissible')
