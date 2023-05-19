@@ -54,13 +54,13 @@ Cypress.Commands.add(
       .then(($el) => $el[0].getBoundingClientRect())
       .then((rect) => {
         cy.get('.ui-sortable-handle').contains(subjectSelector) // eslint-disable-line cypress/unsafe-to-chain-command
-          .wait(300).trigger('mousedown', { which: 1 })
-          .wait(300).trigger('mousemove', { pageX: rect.left, pageY: rect.top })
+          .wait(1000).trigger('mousedown', { which: 1 })
+          .wait(1000).trigger('mousemove', { pageX: rect.left, pageY: rect.top })
           .then(() => {
-            cy.wait(500)
+            cy.wait(1000)
             cy.get('.ui-sortable-placeholder').should('be.visible')
           })
-          .wait(300).trigger('mouseup', { which: 1, force: true })
+          .wait(1000).trigger('mouseup', { which: 1, force: true })
       })
     cy.wait(500)
     cy.get('#btnSave').click()
