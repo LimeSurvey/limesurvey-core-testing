@@ -50,6 +50,8 @@ describe('Reorder survey', () => {
     // put question from one group into the other
     cy.reorder('#list_q30', '#list_q32', 1)
 
+    cy.get('#btnSave').click()
+
     // check notification
     cy.get('.alert.alert-success.alert-dismissible')
       .should('be.visible')

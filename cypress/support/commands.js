@@ -52,7 +52,6 @@ Cypress.Commands.add(
     cy.get('#loader-sidemenuLoaderWidget').should('not.exist')
     cy.recursionLoop(() => {
       if (!Cypress.$('.ui-sortable li').eq(position).is(subjectSelector)) {
-        console.log('here')
         cy.get(`${targetSelector} > div`)
           .then(($el) => $el[0].getBoundingClientRect())
           .then((rect) => {
@@ -67,17 +66,12 @@ Cypress.Commands.add(
           })
           .then(() => {
             r = r - 5
-            console.log(r)
-            console.log(
-              Cypress.$('.ui-sortable li').eq(position).is(subjectSelector)
-            )
-            cy.wait(500)
+            cy.wait(300)
           })
         return Cypress.$('.ui-sortable li').eq(position).is(subjectSelector)
       }
     })
-    cy.wait(500)
-    cy.get('#btnSave').click()
+    cy.wait(300)
   }
 )
 
