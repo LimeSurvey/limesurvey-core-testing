@@ -39,55 +39,63 @@ describe('Survey creation', () => {
     cy.get('@surveyId').then((id) => {
       cy.contains(id).closest('tr').should('contain', survey_title)
     })
-  })
+  })[('colors.lss', 'colors.lsa', 'colors.txt')].forEach((file) => {
+    it(`user can import survey ${file} - convert resource links enabled`, function () {
+      cy.loginByCSRF(
+        this.auth['admin'].username,
+        this.auth['admin'].password,
+        '/surveyAdministration/newSurvey'
+      )
 
-  it('user can import survey (structure only); convert resource links', function () {
-    cy.loginByCSRF(
-      this.auth['admin'].username,
-      this.auth['admin'].password,
-      '/surveyAdministration/newSurvey'
-    )
+      const survey_title = 'Colors'
+      let survey_id = ''
+      const question_attributes = file == 'colors.txt' ? 51 : 129
+      const themes = file == 'colors.txt' ? 0 : 1
 
-    const survey_title = 'Colors'
-    let survey_id = ''
+      cy.get('[data-form-id="importsurvey"]').click()
+      cy.get('input[type=file]').selectFile(`cypress/data/surveys/${file}`)
+      cy.get('#translinksfields').should('be.checked') // default state
+      cy.get('#import-submit').click()
 
-    cy.get('[data-form-id="importsurvey"]').click()
-    cy.get('input[type=file]').selectFile('cypress/data/surveys/colors.lss')
-    cy.get('#translinksfields').should('be.checked') // default state
-    cy.get('#import-submit').click()
-
-    cy.url().should('include', 'surveyAdministration/copy')
-    cy.checkImportSummary('table', {
-      surveys: 1,
-      languages: 1,
-      question_groups: 2,
-      questions: 4,
-      question_attributes: 129,
-      answers: 2,
-      subquestions: 11,
-      default_answers: 0,
-      assessments: 0,
-      quotas: 1,
-      quota_members: 2,
-      quota_language_settings: 1,
-      themes: 1,
-    })
-    cy.get('input[type="submit"]')
-      .invoke('attr', 'onclick')
-      .then((c) => {
-        survey_id = getSurveyIdFromUrl(c)
-
-        // TODO: Add this back in once https://github.com/cypress-io/cypress/issues/23772 is resolved
-        // cy.get('input').contains('Go to survey').click()
-        // cy.url().should('include',`questionAdministration/view&surveyid=${survey_id}`)
-
-        // check that the survey was really created
-        cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
-          .contains('Surveys')
-          .click()
-        cy.contains(survey_id).closest('tr').should('contain', survey_title)
+      cy.url().should('include', 'surveyAdministration/copy')
+      cy.checkImportSummary('table', {
+        surveys: 1,
+        languages: 1,
+        question_groups: 2,
+        questions: 4,
+        question_attributes,
+        answers: 2,
+        subquestions: 11,
+        default_answers: 0,
+        assessments: 0,
+        quotas: 1,
+        quota_members: 2,
+        quota_language_settings: 1,
+        themes,
       })
+      cy.get('input[type="submit"]')
+        .invoke('attr', 'onclick')
+        .then((c) => {
+          survey_id = getSurveyIdFromUrl(c)
+
+          // TODO: Add this back in once https://github.com/cypress-io/cypress/issues/23772 is resolved
+          // cy.get('input').contains('Go to survey').click()
+          // cy.url().should('include',`questionAdministration/view&surveyid=${survey_id}`)
+
+          // check that the survey was really created
+          cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
+            .contains('Surveys')
+            .click()
+          cy.contains(survey_id).closest('tr').should('contain', survey_title)
+        })
+
+      // after this has been fixed https://bugs.limesurvey.org/view.php?id=18701
+      // we should check that the resource links have been translated
+    })
   })
+
+  // after this has been fixed https://bugs.limesurvey.org/view.php?id=18700
+  // write same as previous test, but with translate links disabled
 
   it('user can copy survey; convert resource links enabled', function () {
     cy.loginByCSRF(
