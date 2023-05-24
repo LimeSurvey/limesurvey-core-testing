@@ -1,6 +1,7 @@
 const { getSurveyIdFromUrl } = require('../support/utils/common')
+const files = ['colors.lss', 'colors.lsa', 'colors.txt']
 
-describe('Survey creation', () => {
+describe('Survey creation', function () {
   it('user can create a simple survey', function () {
     cy.intercept(
       'POST',
@@ -39,7 +40,9 @@ describe('Survey creation', () => {
     cy.get('@surveyId').then((id) => {
       cy.contains(id).closest('tr').should('contain', survey_title)
     })
-  })[('colors.lss', 'colors.lsa', 'colors.txt')].forEach((file) => {
+  })
+
+  files.forEach((file) => {
     it(`user can import survey ${file} - convert resource links enabled`, function () {
       cy.loginByCSRF(
         this.auth['admin'].username,
