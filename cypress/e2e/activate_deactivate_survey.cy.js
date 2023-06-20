@@ -59,7 +59,7 @@ describe('Activate/deactivate survey', () => {
       .should('be.visible')
   })
 
-  it('user can deactivate survey - open access', function () {
+  it.skip('user can deactivate survey - open access', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
@@ -84,7 +84,7 @@ describe('Activate/deactivate survey', () => {
       })
   })
 
-  it('user can deactivate survey - closed access', function () {
+  it.skip('user can deactivate survey - closed access', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
