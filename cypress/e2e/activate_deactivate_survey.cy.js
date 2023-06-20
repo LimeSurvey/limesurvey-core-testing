@@ -59,19 +59,82 @@ describe('Activate/deactivate survey', () => {
       .should('be.visible')
   })
 
-  it.skip('user can deactivate survey - open access', function () {
+  it('user can deactivate survey - open access', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
       'surveyAdministration/view&surveyid=124686'
     )
+
+    cy.get('[name="stop-survey"]').click()
+    // check that both options are available
+    cy.get('[value="Expire survey"]').should('be.visible')
+    cy.get('.table-rename')
+      .invoke('text')
+      .then((text) => {
+        let textArray = text.trim().split('_')
+        cy.get('[value="Deactivate survey"]').click()
+        // check the feedback and table name
+        cy.contains('Your survey(124686) was deactivated.').should('be.visible')
+        cy.contains(textArray.slice(0, textArray.length - 1).join('_')).should(
+          'be.visible'
+        )
+        cy.get('a').contains('Close').click()
+        cy.get('#ls-activate-survey').should('be.visible')
+      })
   })
 
-  it.skip('user can deactivate survey - closed access', function () {
+  it('user can deactivate survey - closed access', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
       'surveyAdministration/view&surveyid=841736'
     )
+
+    cy.get('[name="stop-survey"]').click()
+    cy.get('.table-rename')
+      .invoke('text')
+      .then((text) => {
+        let textArray = text.trim().split('_')
+        cy.get('[value="Deactivate survey"]').click()
+        // check the feedback and table name
+        cy.contains('Your survey(841736) was deactivated.').should('be.visible')
+        cy.contains(textArray.slice(0, textArray.length - 1).join('_')).should(
+          'be.visible'
+        )
+        cy.contains(
+          textArray
+            .slice(0, textArray.length - 1)
+            .join('_')
+            .replace('survey', 'tokens')
+        ).should('be.visible')
+        cy.get('a').contains('Close').click()
+        cy.get('#ls-activate-survey').should('be.visible')
+      })
+  })
+
+  it('user can activate deactivated survey - closed access', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      'surveyAdministration/view&surveyid=177311'
+    )
+
+    cy.get('#ls-activate-survey').click()
+    // check that the modal content loaded
+    cy.get('label[for="anonymized_1"]').should('be.visible')
+    // you can choose between open and closed access
+    cy.get('label[for="openAccessMode_1"]').should('be.visible')
+    cy.get('label[for="openAccessMode_2"]').click()
+    // activate survey
+    cy.get('#saveactivateBtn').click()
+    // option to restore old survey participants table
+    cy.get('[name="oldtable"]').select(0)
+    cy.get('[value="Restore"]').click()
+    cy.contains(
+      'A survey participants table has been created for this survey'
+    ).should('be.visible')
+    cy.visit('admin/tokens/sa/index/surveyid/177311')
+    cy.contains('some.guy@survey.it').should('be.visible')
   })
 })
