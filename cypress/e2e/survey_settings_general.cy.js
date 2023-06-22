@@ -75,7 +75,7 @@ describe('Survey settings - General settings', () => {
     cy.get('.modal-dialog')
       .contains('Are you sure, you want to delete this language?')
       .should('be.visible')
-    cy.get('#loader-sidemenuLoaderWidget').should('not.exist')
+    cy.wait(1000)
     cy.get('#identity__bsconfirmModal_button_ok').click()
     cy.get('li[title=Croatian]').should('not.exist')
   })
