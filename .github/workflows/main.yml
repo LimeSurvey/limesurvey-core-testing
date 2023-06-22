@@ -7,6 +7,9 @@ on:
 
 jobs:
   test:
+    strategy:
+      matrix:
+        group: [ 'group1', 'group2' ]
     runs-on: ubuntu-20.04
     env:
       DBENGINE: INNODB
@@ -141,7 +144,7 @@ jobs:
           CYPRESS_DB_DATABASE: limesurvey
         with:
           working-directory: limesurvey-core-testing
-          command: yarn cypress:e2e:run --browser chrome
+          command: yarn cypress:e2e:run --browser chrome --spec cypress/e2e/${{ matrix.group }}/*.js
           wait-on: 'http://localhost'
 
       - name: Upload Screenshots

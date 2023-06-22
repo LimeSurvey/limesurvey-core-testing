@@ -1,4 +1,4 @@
-const { getSurveyIdFromUrl } = require('../support/utils/common')
+const { getSurveyIdFromUrl } = require('../../support/utils/common')
 const files = ['colors.lss', 'colors.lsa', 'colors.txt']
 
 describe('Survey creation', function () {
