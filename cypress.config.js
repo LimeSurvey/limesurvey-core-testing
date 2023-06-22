@@ -8,6 +8,7 @@ module.exports = defineConfig({
     DB_PASSWORD: 'root',
     DB_DATABASE: 'ls-ce',
   },
+  scrollBehavior: 'center',
   e2e: {
     baseUrl: 'http://ls-ce/index.php?r=',
     viewportWidth: 1920,
