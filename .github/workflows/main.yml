@@ -148,16 +148,16 @@ jobs:
           wait-on: 'http://localhost'
 
       - name: Compress run_times.json
-        id: run-times-dir
+        id: run-times-dir-${{ matrix.group }}
         if: steps.cypress.outcome == 'success'
-        run: zip -qq -r run-times.zip limesurvey-core-testing/run_times.json
+        run: zip -qq -r run-times-${{ matrix.group }}.zip limesurvey-core-testing/run_times.json
 
       - name: Upload run-times.zip
         uses: actions/upload-artifact@v3
         if: steps.cypress.outcome == 'success'
         with:
-          name: run-times-dir
-          path: run-times.zip
+          name: run-times-${{ matrix.group }}
+          path: run-times-${{ matrix.group }}.zip
           retention-days: 3
 
       # - name: Upload Screenshots
