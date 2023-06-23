@@ -154,7 +154,7 @@ jobs:
 
       - name: Upload run-times.zip
         uses: actions/upload-artifact@v3
-        if: steps.cypress.outcome != 'success'
+        if: steps.cypress.outcome == 'success'
         with:
           name: run-times-dir
           path: run-times.zip
