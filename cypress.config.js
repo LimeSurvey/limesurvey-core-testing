@@ -2,6 +2,13 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   video: false,
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/reports',
+    overwrite: false,
+    html: false,
+    json: true,
+  },
   env: {
     DB_HOST: 'ls-dev-mysql',
     DB_USER: 'root',

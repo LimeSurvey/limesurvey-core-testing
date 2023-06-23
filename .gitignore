@@ -81,6 +81,12 @@ typings/
 # Cypress reporting
 screenshots/
 videos/
+reports/
+templates/test-result.html
+
+# Cypress custom files
+group*.json
+run_times.json
 
 # Database backup
 cypress/data/database-backup.sql

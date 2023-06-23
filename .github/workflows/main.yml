@@ -144,16 +144,29 @@ jobs:
           CYPRESS_DB_DATABASE: limesurvey
         with:
           working-directory: limesurvey-core-testing
-          command: yarn cypress:e2e:run --browser chrome --spec cypress/e2e/${{ matrix.group }}/*.js
+          command: yarn cypress:run --browser chrome --spec cypress/e2e/${{ matrix.group }}/*.js
           wait-on: 'http://localhost'
 
-      - name: Upload Screenshots
+      - name: Compress run_times.json
+        id: run-times-dir
+        if: steps.cypress.outcome == 'success'
+        run: zip -qq -r run-times.zip limesurvey-core-testing/run_times.json
+
+      - name: Upload run-times.zip
         uses: actions/upload-artifact@v3
         if: steps.cypress.outcome != 'success'
         with:
-          name: screenshots
-          path: limesurvey-core-testing/cypress/screenshots/
-          retention-days: 5
+          name: run-times-dir
+          path: run-times.zip
+          retention-days: 3
+
+      # - name: Upload Screenshots
+      #   uses: actions/upload-artifact@v3
+      #   if: steps.cypress.outcome != 'success'
+      #   with:
+      #     name: screenshots
+      #     path: limesurvey-core-testing/cypress/screenshots/
+      #     retention-days: 5
 
       # - name: Upload Videos
       #   uses: actions/upload-artifact@v3
@@ -162,6 +175,19 @@ jobs:
       #     name: videos
       #     path: limesurvey-core-testing/cypress/videos/
       #     retention-days: 3
+
+      - name: Compress html report
+        id: html-report-dir
+        if: steps.cypress.outcome != 'success'
+        run: zip -qq -r html-report.zip limesurvey-core-testing/templates/test-result.html
+
+      - name: Upload html report
+        uses: actions/upload-artifact@v3
+        if: steps.cypress.outcome != 'success'
+        with:
+          name: html-report
+          path: html-report.zip
+          retention-days: 3
 
       - name: Fail workflow if tests fail
         if: steps.cypress.outcome != 'success'
