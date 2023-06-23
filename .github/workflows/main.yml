@@ -148,7 +148,7 @@ jobs:
           wait-on: 'http://localhost'
 
       - name: Compress run_times.json
-        id: run-times-dir-${{ matrix.group }}
+        id: run-times-dir
         if: steps.cypress.outcome == 'success'
         run: zip -qq -r run-times-${{ matrix.group }}.zip limesurvey-core-testing/run_times.json
 
