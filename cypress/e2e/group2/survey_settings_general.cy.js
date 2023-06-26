@@ -79,4 +79,82 @@ describe('Survey settings - General settings', () => {
     cy.get('#identity__bsconfirmModal_button_ok').click()
     cy.get('li[title=Croatian]').should('not.exist')
   })
+
+  it('user can change survey owner', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+    )
+
+    cy.get('#owner_id').select('johnw - John Wick', { force: true })
+    cy.get('#save-button').click()
+    // check notification
+    cy.get('.alert.alert-success.alert-dismissible')
+      .should('be.visible')
+      .and('contain', 'Survey settings were successfully saved.')
+    cy.visit(
+      'surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=148569&active=&gsid=&yt0=Search'
+    )
+    cy.get('tr').contains('148569').parents('tr').contains('johnw')
+  })
+
+  it('user can change survey group', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+    )
+
+    cy.get('#gsid').select('Survey settings', { force: true })
+    cy.get('#save-button').click()
+    // check notification
+    cy.get('.alert.alert-success.alert-dismissible')
+      .should('be.visible')
+      .and('contain', 'Survey settings were successfully saved.')
+    cy.visit(
+      'surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=148569&active=&gsid=&yt0=Search'
+    )
+    cy.get('tr').contains('148569').parents('tr').contains('Survey settings')
+  })
+
+  it.only('user can change survey format', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+    )
+
+    // check all in one
+    cy.get('input[name="format"][value="A"]').check({ force: true })
+    cy.get('#save-button').click()
+    // check notification
+    cy.get('.alert.alert-success.alert-dismissible')
+      .should('be.visible')
+      .and('contain', 'Survey settings were successfully saved.')
+    cy.visit('survey/index&sid=148569&newtest=Y&lang=en')
+    // all questions are visible
+    cy.get('#question43').should('be.visible')
+    cy.get('#question44').should('be.visible')
+    cy.get('#question45').should('be.visible')
+
+    cy.visit(
+      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+    )
+    // check question by question
+    cy.get('input[name="format"][value="S"]').check({ force: true })
+    cy.get('#save-button').click()
+    // wait on notification
+    cy.get('.alert.alert-success.alert-dismissible')
+      .should('be.visible')
+      .and('contain', 'Survey settings were successfully saved.')
+    cy.visit('survey/index&sid=148569&newtest=Y&lang=en')
+    // go through the survey
+    cy.get('button[value="movenext"]').click()
+    cy.get('#question43').should('be.visible')
+    cy.get('button[value="movenext"]').click()
+    cy.get('#question45').should('be.visible')
+    cy.get('button[value="movenext"]').click()
+    cy.get('#question44').should('be.visible')
+  })
 })
