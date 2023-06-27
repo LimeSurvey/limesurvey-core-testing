@@ -59,6 +59,7 @@ describe('Activate/deactivate survey', () => {
       .should('be.visible')
   })
 
+  // CR-1230 needs to be fixed first
   it.skip('user can deactivate survey - open access', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
@@ -84,6 +85,7 @@ describe('Activate/deactivate survey', () => {
       })
   })
 
+  // CR-1230 needs to be fixed first
   it.skip('user can deactivate survey - closed access', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,

@@ -118,7 +118,7 @@ describe('Survey settings - General settings', () => {
     cy.get('tr').contains('148569').parents('tr').contains('Survey settings')
   })
 
-  it.only('user can change survey format', function () {
+  it('user can change survey format', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
@@ -156,5 +156,52 @@ describe('Survey settings - General settings', () => {
     cy.get('#question45').should('be.visible')
     cy.get('button[value="movenext"]').click()
     cy.get('#question44').should('be.visible')
+  })
+
+  it('user can change survey theme', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+    )
+
+    cy.get('#template').select('vanilla', { force: true })
+    // preview should change
+    cy.get('#preview-image-container').within(() => {
+      cy.get('img[src="/themes/survey/vanilla/files/preview.png"]').should(
+        'be.visible'
+      )
+    })
+    cy.get('#save-button').click()
+    // check notification
+    cy.get('.alert.alert-success.alert-dismissible')
+      .should('be.visible')
+      .and('contain', 'Survey settings were successfully saved.')
+    // check survey theme
+    cy.visit('survey/index&sid=148569&newtest=Y&lang=en')
+    cy.get('.btn-primary')
+      .eq(0)
+      .should('have.css', 'background-color', 'rgb(13, 110, 253)')
+  })
+
+  // improve when CR-1253 gets fixed
+  it('user can change administrator, admin email, and bounce email', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+    )
+
+    cy.get('input[name="adminbutton"][value="N"]').check({ force: true })
+    cy.get('input#admin').type('HomerSimpson')
+    cy.get('input[name="adminemailbutton"][value="N"]').check({ force: true })
+    cy.get('input#adminemail').type('homer.simpson@email.us')
+    cy.get('input[name="bounce_emailbutton"][value="N"]').check({ force: true })
+    cy.get('input#bounce_email').type('homer.simpson@email.us.not')
+    cy.get('#save-button').click()
+    // check notification
+    cy.get('.alert.alert-success.alert-dismissible')
+      .should('be.visible')
+      .and('contain', 'Survey settings were successfully saved.')
   })
 })
