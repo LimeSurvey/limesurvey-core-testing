@@ -192,9 +192,7 @@ describe('Survey settings - General settings', () => {
       'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
     )
 
-    cy.get('input[name="adminbutton"][value="N"]').check({ force: true })
-    cy.get('input#admin').type('HomerSimpson')
-    cy.get('input[name="adminemailbutton"][value="N"]').check({ force: true })
+    cy.get('input[name="adminbutton"][value="N"]').check({ force: true });cy.get('input#admin').type('HomerSimpson');cy.get('input[name="adminemailbutton"][value="N"]').check({ force: true })
     cy.get('input#adminemail').type('homer.simpson@email.us')
     cy.get('input[name="bounce_emailbutton"][value="N"]').check({ force: true })
     cy.get('input#bounce_email').type('homer.simpson@email.us.not')
