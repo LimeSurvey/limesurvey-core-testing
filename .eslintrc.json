@@ -16,7 +16,8 @@
         "_": true
     },
     "rules": {
-        "prettier/prettier": "error",
-        "cypress/no-unnecessary-waiting": 0
+        "prettier/prettier": 2,
+        "cypress/no-unnecessary-waiting": 0,
+        "no-console": 1
     }
 }
