@@ -6,7 +6,7 @@ describe('Survey settings - General settings', () => {
       'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
     )
 
-    cy.get('ul.select2-selection__rendered').click()
+    cy.get('ul.select2-selection__rendered2').click()
     cy.get('.select2-search__field').type('German{enter}')
     cy.get('ul.select2-selection__rendered').click()
     cy.get('.select2-search__field').type('French{enter}')

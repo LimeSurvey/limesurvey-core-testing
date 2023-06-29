@@ -1,6 +1,6 @@
 describe('Login', () => {
   it('user can log in with valid credentials', function () {
-    cy.visit('admin')
+    cy.visit('admins')
     cy.login(this.auth['admin'].username, this.auth['admin'].password)
     cy.get(
       'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
