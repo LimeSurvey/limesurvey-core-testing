@@ -10,8 +10,20 @@ const toCapitalizedStr = (s) =>
 
 const getSurveyIdFromUrl = (s) => s.match('surveyid=([0-9]*)&')[1]
 
+const getIframeDocument = (selector) => {
+  return cy.get(selector).its('0.contentDocument').should('exist')
+}
+
+const getIframeBody = (selector) => {
+  return getIframeDocument(selector)
+    .its('body')
+    .should('not.be.undefined')
+    .then(cy.wrap)
+}
+
 module.exports = {
   randomString,
   toCapitalizedStr,
   getSurveyIdFromUrl,
+  getIframeBody,
 }
