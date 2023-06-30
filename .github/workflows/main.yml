@@ -180,14 +180,14 @@ jobs:
       - name: Compress html report
         id: html-report-dir
         if: steps.cypress.outcome != 'success'
-        run: zip -qq -r html-report.zip limesurvey-core-testing/templates/test-result.html
+        run: zip -qq -r html-report-${{ matrix.group }}.zip limesurvey-core-testing/templates/test-result.html
 
       - name: Upload html report
         uses: actions/upload-artifact@v3
         if: steps.cypress.outcome != 'success'
         with:
-          name: html-report
-          path: html-report.zip
+          name: html-report-${{ matrix.group }}
+          path: html-report-${{ matrix.group }}.zip
           retention-days: 3
 
       - name: Fail workflow if tests fail
