@@ -7,8 +7,8 @@ on:
 
 jobs:
   test:
-    if: always()
     strategy:
+      fail-fast: false
       matrix:
         group: [ 'group1', 'group2' ]
     runs-on: ubuntu-20.04
