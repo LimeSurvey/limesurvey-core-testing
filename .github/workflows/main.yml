@@ -144,7 +144,7 @@ jobs:
           CYPRESS_DB_DATABASE: limesurvey
         with:
           working-directory: limesurvey-core-testing
-          command: yarn cypress:run --browser chrome --spec cypress/e2e/${{ matrix.group }}/*.js
+          command: yarn cypress:run --browser chrome --spec cypress/e2e/${{ matrix.group }}/*.js --parallel y
           wait-on: 'http://localhost'
 
       - name: Compress run_times.json

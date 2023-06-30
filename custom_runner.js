@@ -18,6 +18,11 @@ const argv = yargs
       describe: 'run test with specific spec file',
       default: 'cypress/e2e/**/*.cy.js',
     },
+    parallel: {
+      alias: 'p',
+      describe: 'run test in parallel',
+      default: 'n',
+    },
   })
   .help().argv
 
@@ -45,9 +50,11 @@ async function formatResults(jsonReport) {
                 includeHeader = false
               }
               let image = fse.readFileSync(
-                `${result.file.replace('e2e', 'screenshots')}/${
-                  suite.title
-                } -- ${test.title
+                `./cypress/screenshots/${
+                  argv.parallel == 'y'
+                    ? result.file.split('/').slice(-1)[0]
+                    : result.file.split('/').slice(-2).join('/')
+                }/${suite.title} -- ${test.title
                   .replaceAll('/', '')
                   .replaceAll('"', '')} (failed).png`,
                 'base64'
