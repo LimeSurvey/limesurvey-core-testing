@@ -90,7 +90,7 @@ describe('Survey settings - Text elements', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
     // check url
-    cy.visit('http://ls-ce/index.php?r=alias-hr')
+    cy.visit(`${Cypress.config('baseUrl')}alias-hr`)
     cy.get('.survey-welcome').should('contain', '21.6.2033')
   })
 

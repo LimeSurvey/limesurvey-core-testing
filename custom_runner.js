@@ -45,10 +45,9 @@ async function formatResults(jsonReport) {
                 includeHeader = false
               }
               let image = fse.readFileSync(
-                `./cypress/screenshots/${result.file
-                  .split('/')
-                  .slice(-2)
-                  .join('/')}/${suite.title} -- ${test.title
+                `${result.file.replace('e2e', 'screenshots')}/${
+                  suite.title
+                } -- ${test.title
                   .replaceAll('/', '')
                   .replaceAll('"', '')} (failed).png`,
                 'base64'
