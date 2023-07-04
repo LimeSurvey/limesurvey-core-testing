@@ -72,13 +72,30 @@ describe('Survey settings - Overview', () => {
           .eq(0)
           .within(() => {
             cy.get('.card-label').should('contain', 'Description:')
-            cy.get('#description')
-              .should('have.class', 'line-clamp-3')
-              .and('contain', 'Lorem ipsum dolor sit amet')
-              .next()
-              .click()
-            cy.get('#description').should('not.have.class', 'line-clamp-3')
-            cy.contains('...more').should('not.be.visible')
+            cy.get('.selector__toggle_description_text')
+              .eq(1)
+              .should('not.be.visible')
+            cy.get('.selector__toggle_description_text')
+              .eq(0)
+              .should('be.visible')
+              .and(
+                'contain',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend risus in felis euismod pellentesque. Nam at pretiu...'
+              )
+            cy.get('.selector__toggle_full_text').click()
+            cy.get('.selector__toggle_description_text')
+              .eq(0)
+              .should('not.be.visible')
+            cy.get('.selector__toggle_description_text')
+              .eq(1)
+              .should('be.visible')
+              .and(
+                'contain',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend risus in felis euismod pellentesque. Nam at pretium nisi. Nunc odio eros, euismod a diam non, interdum cursus sem. Quisque vitae sagittis tellus. Morbi accumsan quis neque eu condimentum.'
+              )
+            cy.get('[data-target=".selector__toggle_description_text"]').should(
+              'not.be.visible'
+            )
           })
         cy.get('ul.list-group li')
           .eq(1)
@@ -224,7 +241,7 @@ describe('Survey settings - Overview', () => {
             cy.get('.card-label')
               .should('contain', 'Theme:')
               .next()
-              .should('contain', 'Fruity Theme ( fruity)')
+              .should('contain', 'Fruity Theme ( fruity )')
             cy.get('a[title="Edit theme options"]')
               .should('have.attr', 'href')
               .and(
