@@ -69,7 +69,6 @@ describe('Survey settings - Privacy policy', () => {
     getIframeBody('iframe[title="Editor, datasecerror_en"]').type(
       'privacy policy error test'
     )
-    cy.wait(500)
     cy.get('#save-button').click()
 
     // check notification

@@ -169,13 +169,13 @@ jobs:
       #     path: limesurvey-core-testing/cypress/screenshots/
       #     retention-days: 5
 
-      # - name: Upload Videos
-      #   uses: actions/upload-artifact@v3
-      #   if: steps.cypress.outcome != 'success'
-      #   with:
-      #     name: videos
-      #     path: limesurvey-core-testing/cypress/videos/
-      #     retention-days: 3
+      - name: Upload Videos
+        uses: actions/upload-artifact@v3
+        if: steps.cypress.outcome != 'success'
+        with:
+          name: videos
+          path: limesurvey-core-testing/cypress/videos/
+          retention-days: 3
 
       - name: Compress html report
         id: html-report-dir
