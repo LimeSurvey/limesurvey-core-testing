@@ -8,8 +8,8 @@ describe('Ranking question', () => {
 
     cy.wait(1000)
     cy.get('[data-value="AO03"]').drag('.sortable-rank')
-    cy.get('[data-value="AO01"]').drag('.sortable-rank')
     cy.get('[data-value="AO02"]').drag('.sortable-rank')
+    cy.get('[data-value="AO01"]').drag('.sortable-rank')
 
     // check the ranking
     cy.get('.sortable-rank').within(() => {
