@@ -69,12 +69,14 @@ describe('Survey settings - Privacy policy', () => {
     getIframeBody('iframe[title="Editor, datasecerror_en"]').type(
       'privacy policy error test'
     )
+    cy.screenshot()
     cy.get('#save-button').click()
 
     // check notification
     cy.get('.alert.alert-success.alert-dismissible')
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
+    cy.screenshot()
 
     // check the survey
     cy.visit('survey/index&sid=571743&newtest=Y&lang=en')
