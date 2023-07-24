@@ -76,6 +76,8 @@ describe('Survey settings - Privacy policy', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
 
+    cy.wait(1000)
+
     // check the survey
     cy.visit('survey/index&sid=571743&newtest=Y&lang=en')
     cy.get('[value="movenext"]').click()
@@ -85,9 +87,12 @@ describe('Survey settings - Privacy policy', () => {
 
     // it should not be changed for croatian
     cy.visit('survey/index&sid=571743&newtest=Y&lang=hr')
-    cy.get('#datasecurity_error').should(
-      'contain',
-      'Maecenas eros mauris, dictum sit amet dictum quis, interdum a nisi.'
-    )
+    cy.get('[value="movenext"]').click()
+    cy.get('#datasecurity_error')
+      .should('be.visible')
+      .and(
+        'contain',
+        'Maecenas eros mauris, dictum sit amet dictum quis, interdum a nisi.'
+      )
   })
 })
