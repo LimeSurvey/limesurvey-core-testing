@@ -66,18 +66,16 @@ describe('Survey settings - Privacy policy', () => {
       'surveyAdministration/rendersidemenulink&subaction=datasecurity&surveyid=571743'
     )
 
-    cy.wait(1000)
+    cy.wait(500)
     getIframeBody('iframe[title="Editor, datasecerror_en"]').type(
       'privacy policy error test'
     )
-    cy.screenshot({capture: 'runner'})
     cy.get('#save-button').click()
 
     // check notification
     cy.get('.alert.alert-success.alert-dismissible')
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
-    cy.screenshot({capture: 'runner'})
 
     // check the survey
     cy.visit('survey/index&sid=571743&newtest=Y&lang=en')

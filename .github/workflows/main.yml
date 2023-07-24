@@ -161,13 +161,13 @@ jobs:
           path: run-times-${{ matrix.group }}.zip
           retention-days: 3
 
-      - name: Upload Screenshots
-        uses: actions/upload-artifact@v3
-        if: steps.cypress.outcome != 'success'
-        with:
-          name: screenshots
-          path: limesurvey-core-testing/cypress/screenshots/
-          retention-days: 5
+      # - name: Upload Screenshots
+      #   uses: actions/upload-artifact@v3
+      #   if: steps.cypress.outcome != 'success'
+      #   with:
+      #     name: screenshots
+      #     path: limesurvey-core-testing/cypress/screenshots/
+      #     retention-days: 5
 
       # - name: Upload Videos
       #   uses: actions/upload-artifact@v3
