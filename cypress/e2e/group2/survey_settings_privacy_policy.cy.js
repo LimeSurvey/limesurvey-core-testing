@@ -33,7 +33,8 @@ describe('Survey settings - Privacy policy', () => {
       this.auth['admin'].password,
       'surveyAdministration/rendersidemenulink&subaction=datasecurity&surveyid=571743'
     )
-
+    
+    cy.wait(500)
     getIframeBody('iframe[title="Editor, datasec_en"]').type(
       'privacy policy message test'
     )
