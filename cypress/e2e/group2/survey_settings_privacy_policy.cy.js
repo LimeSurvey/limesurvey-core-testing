@@ -34,7 +34,7 @@ describe('Survey settings - Privacy policy', () => {
       'surveyAdministration/rendersidemenulink&subaction=datasecurity&surveyid=571743'
     )
 
-    cy.wait(500)
+    cy.wait(1000)
     getIframeBody('iframe[title="Editor, datasec_en"]').type(
       'privacy policy message test'
     )
@@ -67,7 +67,7 @@ describe('Survey settings - Privacy policy', () => {
       'surveyAdministration/rendersidemenulink&subaction=datasecurity&surveyid=571743'
     )
 
-    cy.wait(500)
+    cy.wait(1000)
     getIframeBody('iframe[title="Editor, datasecerror_en"]').type(
       'privacy policy error test'
     )
