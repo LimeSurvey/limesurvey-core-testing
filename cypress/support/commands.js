@@ -48,13 +48,12 @@ Cypress.Commands.add('checkImportSummary', (table_selector, json) => {
 Cypress.Commands.add(
   'reorder',
   (subjectSelector, targetSelector, position = 0, r = 5) => {
-    cy.get('[href="#reorder"]').click()
-    cy.get('#loader-sidemenuLoaderWidget').should('not.exist')
-    cy.recursionLoop(() => {
-      if (!Cypress.$('.ui-sortable li').eq(position).is(subjectSelector)) {
-        cy.get(`${targetSelector} > div`)
-          .then(($el) => $el[0].getBoundingClientRect())
-          .then((rect) => {
+    cy.get(`${targetSelector} > div`)
+      .then(($el) => $el[0].getBoundingClientRect())
+      .then((rect) => {
+        cy.recursionLoop(() => {
+          if (!Cypress.$('.ui-sortable li').eq(position).is(subjectSelector)) {
+            cy.log(`Output: ${rect.left} ${rect.top} ${rect.top - r}`)
             cy.get(`${subjectSelector} > div`) // eslint-disable-line cypress/unsafe-to-chain-command
               .trigger('mousedown', { which: 1 })
               .trigger('mousemove', {
@@ -63,15 +62,15 @@ Cypress.Commands.add(
                 pageY: rect.top - r,
               })
               .trigger('mouseup', { which: 1, force: true })
-          })
-          .then(() => {
-            r = r - 5
-            cy.wait(300)
-          })
-        return Cypress.$('.ui-sortable li').eq(position).is(subjectSelector)
-      }
-    })
-    cy.wait(300)
+              .then(() => {
+                r = r - 5
+                cy.wait(300)
+              })
+            return Cypress.$('.ui-sortable li').eq(position).is(subjectSelector)
+          }
+        })
+        cy.wait(300)
+      })
   }
 )
 

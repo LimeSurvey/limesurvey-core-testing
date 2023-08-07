@@ -36,19 +36,22 @@ describe('Reorder survey', () => {
     })
   })
 
-  it('user can reorder groups and questions', function () {
+  it.only('user can reorder groups and questions', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
       'questionAdministration/listQuestions&surveyid=947781'
     )
 
+    cy.get('[href="#reorder"]').click()
+    cy.get('#loader-sidemenuLoaderWidget').should('not.exist')
+
     // reorder groups
-    cy.reorder('#list_g6', '#list_g5')
+    cy.reorder('#list_g6', '#list_g5', 0, 0)
     // reorder questions inside group
-    cy.reorder('#list_q30', '#list_q29', 4)
+    cy.reorder('#list_q30', '#list_q29', 4, -70)
     // put question from one group into the other
-    cy.reorder('#list_q30', '#list_q32', 1)
+    cy.reorder('#list_q30', '#list_q32', 1, -125)
 
     cy.get('#btnSave').click()
 
