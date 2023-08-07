@@ -91,3 +91,13 @@ Cypress.Commands.add(
     })
   }
 )
+
+Cypress.Commands.add('dragAndDrop', (subjectSelector, targetSelector) => {
+  cy.get(subjectSelector).trigger('dragstart')
+
+  cy.get(targetSelector) // eslint-disable-line cypress/unsafe-to-chain-command
+    .trigger('dragenter')
+    .trigger('dragover')
+    .trigger('drop')
+  cy.get(subjectSelector).trigger('dragend')
+})
