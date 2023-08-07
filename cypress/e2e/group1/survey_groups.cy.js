@@ -65,7 +65,7 @@ describe('Survey question groups', () => {
       .should('contain', 'Third group')
   })
 
-  it.only('user can reorder question groups of inactive survey', function () {
+  it('user can reorder question groups of inactive survey', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
