@@ -53,7 +53,7 @@ describe('Activate/deactivate survey', () => {
     // check that you can run the survey
     cy.visit('survey/index&sid=232684&newtest=Y&lang=en')
     cy.get('#token').type('123')
-    cy.get('button[type=submit]').click()
+    cy.get('button[value="continue"]').click()
     cy.get('.survey-name')
       .contains('Activate closed access survey')
       .should('be.visible')

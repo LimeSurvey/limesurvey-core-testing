@@ -241,7 +241,7 @@ describe('Survey settings - Overview', () => {
             cy.get('.card-label')
               .should('contain', 'Theme:')
               .next()
-              .should('contain', 'Fruity Theme ( fruity )')
+              .should('contain', 'Fruity TwentyThree ( fruity_twentythree )')
             cy.get('a[title="Edit theme options"]')
               .should('have.attr', 'href')
               .and(

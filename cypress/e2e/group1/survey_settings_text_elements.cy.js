@@ -18,11 +18,17 @@ describe('Survey settings - Text elements', () => {
       .and('contain', 'Survey settings were successfully saved.')
     // check the survey
     cy.visit('survey/index&sid=691384&newtest=Y&lang=hr')
-    cy.get('h1.survey-name').should('contain', 'Anketa: textualni elementi')
+    cy.get('.survey-name.large-heading').should(
+      'contain',
+      'Anketa: textualni elementi'
+    )
 
     // is it changed for english?
     cy.visit('survey/index&sid=691384&newtest=Y&lang=en')
-    cy.get('h1.survey-name').should('contain', 'Survey Text Elements')
+    cy.get('.survey-name.large-heading').should(
+      'contain',
+      'Survey Text Elements'
+    )
   })
 
   it('user can change date format for individual language', function () {

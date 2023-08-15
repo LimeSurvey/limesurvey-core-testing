@@ -21,7 +21,7 @@ describe('Survey question groups', () => {
         doc.addEventListener('click', () => {
           setTimeout(function () {
             doc.location.reload()
-          }, 1000)
+          }, 1500)
         })
         cy.get('a[href$="admin/export/sa/group/surveyid/219315/gid/24"]')
           .should('be.visible')
