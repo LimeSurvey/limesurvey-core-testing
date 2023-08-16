@@ -74,4 +74,88 @@ describe('Survey questions', () => {
       .find('li.list-group-item')
       .should('have.length', 1)
   })
+
+  it('user can set question as mandatory', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      'surveyAdministration/view&iSurveyID=348447'
+    )
+
+    cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
+    cy.get('.questiongroup-list-group').click()
+    cy.get('.questiongroup-list-group .question-question-list-item')
+      .eq(1)
+      .click()
+    cy.get('#questionEditorButton').click()
+    cy.get('label[for="question[mandatory]_Y"]').click()
+    cy.get('#save-button-create-question').click()
+    // check notification
+    cy.get('.alert.alert-success.alert-dismissible').should('be.visible')
+    cy.get('label[for="question[mandatory]_Y"]')
+      .parent()
+      .find('input')
+      .should('be.checked')
+    cy.get('.questiongroup-list-group .question-question-list-item')
+      .eq(1)
+      .click()
+    // check question summary
+    cy.get('#question-overview').within(() => {
+      cy.get('.row').eq(5).should('contain', 'Mandatory').and('contain', 'Yes')
+    })
+  })
+
+  it('user can edit offered answers', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      'surveyAdministration/view&iSurveyID=348447'
+    )
+
+    const newAnswer = 'Parrot'
+
+    cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
+    cy.get('.questiongroup-list-group').click()
+    cy.get('.questiongroup-list-group .question-question-list-item')
+      .eq(2)
+      .click()
+    cy.get('#questionEditorButton').click()
+    cy.get('.answeroption-text input').eq(2).clear().type(newAnswer)
+    cy.get('#save-button-create-question').click()
+    // check notification
+    cy.get('.alert.alert-success.alert-dismissible').should('be.visible')
+    cy.get('.answeroption-text input').eq(2).should('have.value', newAnswer)
+  })
+
+  it('user can choose to show -Other- option to multiple choice question and set custom label', function () {
+    cy.loginByCSRF(
+      this.auth['admin'].username,
+      this.auth['admin'].password,
+      'surveyAdministration/view&iSurveyID=348447'
+    )
+
+    const customLabel = 'Years worked'
+
+    cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
+    cy.get('.questiongroup-list-group').click()
+    cy.get('.questiongroup-list-group .question-question-list-item')
+      .eq(3)
+      .click()
+    cy.get('#questionEditorButton').click()
+    cy.get('label[for="question[other]_Y"]').click()
+    // expand display
+    cy.get('#button-collapse-Display').click()
+    cy.get('#advancedSettings_display_other_replace_text_en').type(customLabel)
+    cy.get('#save-button-create-question').click()
+    // check notification
+    cy.get('.alert.alert-success.alert-dismissible').should('be.visible')
+    cy.get('label[for="question[other]_Y"]')
+      .parent()
+      .find('input')
+      .should('be.checked')
+    cy.get('#advancedSettings_display_other_replace_text_en').should(
+      'have.value',
+      customLabel
+    )
+  })
 })
