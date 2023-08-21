@@ -69,13 +69,18 @@ describe('Activate/deactivate survey', () => {
     cy.get('[name="stop-survey"]').click()
     // check that both options are available
     cy.get('[value="Expire survey"]').should('be.visible')
-    cy.get('.card-primary').eq(1).find('b').eq(2)
+    cy.get('.card-primary')
+      .eq(1)
+      .find('b')
+      .eq(2)
       .invoke('text')
       .then((text) => {
         let textArray = text.trim().split('_')
         cy.get('[value="Deactivate survey"]').click()
         // check the feedback and table name
-        cy.contains('Your survey (124686) was deactivated.').should('be.visible')
+        cy.contains('Your survey (124686) was deactivated.').should(
+          'be.visible'
+        )
         cy.contains(textArray.slice(0, textArray.length - 1).join('_')).should(
           'be.visible'
         )
@@ -92,13 +97,18 @@ describe('Activate/deactivate survey', () => {
     )
 
     cy.get('[name="stop-survey"]').click()
-    cy.get('.card-primary').eq(1).find('b').eq(2)
+    cy.get('.card-primary')
+      .eq(1)
+      .find('b')
+      .eq(2)
       .invoke('text')
       .then((text) => {
         let textArray = text.trim().split('_')
         cy.get('[value="Deactivate survey"]').click()
         // check the feedback and table name
-        cy.contains('Your survey (841736) was deactivated.').should('be.visible')
+        cy.contains('Your survey (841736) was deactivated.').should(
+          'be.visible'
+        )
         cy.contains(textArray.slice(0, textArray.length - 1).join('_')).should(
           'be.visible'
         )
