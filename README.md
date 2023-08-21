@@ -39,3 +39,10 @@ Run the seed script (zsh):
 
 * ```yarn cypress:e2e:run --browser chrome``` - run e2e tests in headless chrome browser
 * ```yarn cypress:e2e:run --spec cypress/e2e/create_survey.cy.js``` - run tests from specific file
+
+## Parallel runs
+
+* after a successful run, you get run_times.json files for each run
+* merge the contents to run_times.json and put this file in the root directory fo this project
+* run the script split_tests_into_groups.js and it will distribute the tests into 2 groups (group1,group2) so that their run time is nearly equal
+* this will ensure the optimal run time of the whole test suite
