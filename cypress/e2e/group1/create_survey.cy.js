@@ -180,7 +180,7 @@ describe('Survey creation', function () {
       quotas: 0,
       quota_members: 0,
       quota_language_settings: 0,
-      themes: 1,
+      themes: 2,
     })
 
     cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
