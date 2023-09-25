@@ -2,7 +2,7 @@ const { getIframeBody } = require('../../support/utils/common')
 
 describe('Survey questions', () => {
   it('user can add a question to a specific group', function () {
-    cy.intercept({resourceType: 'xhr'}).as('xhrRequests')
+    cy.intercept({ resourceType: 'xhr' }).as('xhrRequests')
 
     cy.loginByCSRF(
       this.auth['admin'].username,
@@ -58,7 +58,7 @@ describe('Survey questions', () => {
   })
 
   it('user can delete a question', function () {
-    cy.intercept({resourceType: 'xhr'}).as('xhrRequests')
+    cy.intercept({ resourceType: 'xhr' }).as('xhrRequests')
 
     cy.loginByCSRF(
       this.auth['admin'].username,
@@ -102,7 +102,7 @@ describe('Survey questions', () => {
   })
 
   it('user can set question as mandatory', function () {
-    cy.intercept({resourceType: 'xhr'}).as('xhrRequests')
+    cy.intercept({ resourceType: 'xhr' }).as('xhrRequests')
 
     cy.loginByCSRF(
       this.auth['admin'].username,
@@ -150,7 +150,7 @@ describe('Survey questions', () => {
   })
 
   it('user can edit offered answers', function () {
-    cy.intercept({resourceType: 'xhr'}).as('xhrRequests')
+    cy.intercept({ resourceType: 'xhr' }).as('xhrRequests')
 
     cy.loginByCSRF(
       this.auth['admin'].username,
@@ -185,7 +185,7 @@ describe('Survey questions', () => {
   })
 
   it('user can choose to show -Other- option to multiple choice question and set custom label', function () {
-    cy.intercept({resourceType: 'xhr'}).as('xhrRequests')
+    cy.intercept({ resourceType: 'xhr' }).as('xhrRequests')
 
     cy.loginByCSRF(
       this.auth['admin'].username,

@@ -2,7 +2,7 @@ const { getIframeBody } = require('../../support/utils/common')
 
 describe('Survey question groups', () => {
   it('user can export question group', function () {
-    cy.intercept({resourceType: 'xhr'}).as('xhrRequests')
+    cy.intercept({ resourceType: 'xhr' }).as('xhrRequests')
 
     cy.loginByCSRF(
       this.auth['admin'].username,
@@ -13,9 +13,7 @@ describe('Survey question groups', () => {
     cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
     cy.wait('@xhrRequests')
 
-    cy.get('.questiongroup-list-group > li')
-      .eq(2)
-      .click()
+    cy.get('.questiongroup-list-group > li').eq(2).click()
     cy.wait('@xhrRequests')
 
     cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
@@ -41,7 +39,7 @@ describe('Survey question groups', () => {
   })
 
   it('user can import question group', function () {
-    cy.intercept({resourceType: 'xhr'}).as('xhrRequests')
+    cy.intercept({ resourceType: 'xhr' }).as('xhrRequests')
 
     cy.loginByCSRF(
       this.auth['admin'].username,
@@ -82,7 +80,7 @@ describe('Survey question groups', () => {
   })
 
   it('user can reorder question groups of inactive survey', function () {
-    cy.intercept({resourceType: 'xhr'}).as('xhrRequests')
+    cy.intercept({ resourceType: 'xhr' }).as('xhrRequests')
 
     cy.loginByCSRF(
       this.auth['admin'].username,
@@ -137,7 +135,7 @@ describe('Survey question groups', () => {
   })
 
   it('user can edit question group fields', function () {
-    cy.intercept({resourceType: 'xhr'}).as('xhrRequests')
+    cy.intercept({ resourceType: 'xhr' }).as('xhrRequests')
 
     cy.loginByCSRF(
       this.auth['admin'].username,
@@ -147,6 +145,7 @@ describe('Survey question groups', () => {
 
     // edit english question group fields
     cy.get('#edit-button').click()
+    cy.wait(3000)
 
     getIframeBody('iframe[title="Editor, description_en"]').type(
       'english description'
