@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: ls-dev-mysql:3306
--- Generation Time: Aug 15, 2023 at 03:08 PM
+-- Generation Time: Sep 25, 2023 at 02:29 PM
 -- Server version: 5.7.39
 -- PHP Version: 8.1.17
 
@@ -138,7 +138,8 @@ INSERT INTO `lime_groups` (`gid`, `sid`, `group_order`, `randomization_group`, `
 (32, 951785, 1, '', '1'),
 (33, 348447, 1, '', '1'),
 (34, 857644, 1, '', '1'),
-(35, 951785, 2, '', '');
+(35, 951785, 2, '', ''),
+(36, 954472, 1, '', '1');
 
 --
 -- Dumping data for table `lime_group_l10ns`
@@ -196,7 +197,8 @@ INSERT INTO `lime_group_l10ns` (`id`, `gid`, `group_name`, `description`, `langu
 (50, 32, 'My first question group', NULL, 'en'),
 (51, 33, 'My first question group', NULL, 'en'),
 (52, 34, 'My first question group', NULL, 'en'),
-(53, 35, 'Second group', '', 'en');
+(53, 35, 'Second group', '', 'en'),
+(54, 36, 'My first question group', NULL, 'en');
 
 --
 -- Dumping data for table `lime_notifications`
@@ -554,7 +556,19 @@ INSERT INTO `lime_permissions` (`id`, `entity`, `entity_id`, `uid`, `permission`
 (287, 'survey', 857644, 1, 'surveysecurity', 1, 1, 1, 1, 0, 0),
 (288, 'survey', 857644, 1, 'surveysettings', 0, 1, 1, 0, 0, 0),
 (289, 'survey', 857644, 1, 'tokens', 1, 1, 1, 1, 1, 1),
-(290, 'survey', 857644, 1, 'translations', 0, 1, 1, 0, 0, 0);
+(290, 'survey', 857644, 1, 'translations', 0, 1, 1, 0, 0, 0),
+(291, 'survey', 954472, 1, 'assessments', 1, 1, 1, 1, 0, 0),
+(292, 'survey', 954472, 1, 'quotas', 1, 1, 1, 1, 0, 0),
+(293, 'survey', 954472, 1, 'responses', 1, 1, 1, 1, 1, 1),
+(294, 'survey', 954472, 1, 'statistics', 0, 1, 0, 0, 0, 0),
+(295, 'survey', 954472, 1, 'survey', 0, 1, 0, 1, 0, 0),
+(296, 'survey', 954472, 1, 'surveyactivation', 0, 0, 1, 0, 0, 0),
+(297, 'survey', 954472, 1, 'surveycontent', 1, 1, 1, 1, 1, 1),
+(298, 'survey', 954472, 1, 'surveylocale', 0, 1, 1, 0, 0, 0),
+(299, 'survey', 954472, 1, 'surveysecurity', 1, 1, 1, 1, 0, 0),
+(300, 'survey', 954472, 1, 'surveysettings', 0, 1, 1, 0, 0, 0),
+(301, 'survey', 954472, 1, 'tokens', 1, 1, 1, 1, 1, 1),
+(302, 'survey', 954472, 1, 'translations', 0, 1, 1, 0, 0, 0);
 
 --
 -- Dumping data for table `lime_plugins`
@@ -661,7 +675,16 @@ INSERT INTO `lime_questions` (`qid`, `parent_qid`, `sid`, `gid`, `type`, `title`
 (83, 82, 348447, 33, 'T', 'SQ001', NULL, 'N', NULL, 'N', 0, 0, 0, '1', 'longfreetext', NULL, 0),
 (84, 82, 348447, 33, 'T', 'SQ002', NULL, 'N', NULL, 'N', 1, 0, 0, '1', 'longfreetext', NULL, 0),
 (85, 82, 348447, 33, 'T', 'SQ003', NULL, 'N', NULL, 'N', 2, 0, 0, '1', 'longfreetext', NULL, 0),
-(86, 0, 951785, 35, 'T', 'G02Q02', '', 'N', 'N', 'N', 1, 0, 0, '1', 'longfreetext', '', 0);
+(86, 0, 951785, 35, 'T', 'G02Q02', '', 'N', 'N', 'N', 1, 0, 0, '1', 'longfreetext', '', 0),
+(87, 0, 954472, 36, ';', 'Q00', '', 'N', 'N', 'N', 1, 0, 0, '1', 'arrays/texts', NULL, 0),
+(88, 87, 954472, 36, 'T', 'Y01', NULL, 'N', NULL, 'N', 0, 0, 0, '1', 'longfreetext', NULL, 0),
+(89, 87, 954472, 36, 'T', 'X01', NULL, 'N', NULL, 'N', 1, 1, 0, '', 'longfreetext', NULL, 0),
+(90, 87, 954472, 36, 'T', 'Y02', NULL, 'N', NULL, 'N', 2, 0, 0, '1', 'longfreetext', NULL, 0),
+(91, 87, 954472, 36, 'T', 'Y03', NULL, 'N', NULL, 'N', 3, 0, 0, '1', 'longfreetext', NULL, 0),
+(92, 87, 954472, 36, 'T', 'Y04', NULL, 'N', NULL, 'N', 4, 0, 0, '1', 'longfreetext', NULL, 0),
+(93, 87, 954472, 36, 'T', 'X02', NULL, 'N', NULL, 'N', 5, 1, 0, '', 'longfreetext', NULL, 0),
+(94, 87, 954472, 36, 'T', 'X03', NULL, 'N', NULL, 'N', 6, 1, 0, '', 'longfreetext', NULL, 0),
+(95, 87, 954472, 36, 'T', 'X04', NULL, 'N', NULL, 'N', 7, 1, 0, '', 'longfreetext', NULL, 0);
 
 --
 -- Dumping data for table `lime_question_attributes`
@@ -1905,7 +1928,34 @@ INSERT INTO `lime_question_attributes` (`qaid`, `qid`, `attribute`, `value`, `la
 (1237, 86, 'time_limit_warning_2_style', '', ''),
 (1238, 86, 'statistics_showgraph', '1', ''),
 (1239, 86, 'statistics_graphtype', '0', ''),
-(1240, 86, 'save_as_default', 'N', '');
+(1240, 86, 'save_as_default', 'N', ''),
+(1241, 87, 'min_answers', '', ''),
+(1242, 87, 'max_answers', '', ''),
+(1243, 87, 'array_filter_exclude', '', ''),
+(1244, 87, 'array_filter_style', '0', ''),
+(1245, 87, 'array_filter', '', ''),
+(1246, 87, 'random_group', '', ''),
+(1247, 87, 'em_validation_q', '', ''),
+(1248, 87, 'em_validation_q_tip', '', 'en'),
+(1249, 87, 'em_validation_sq', '', '');
+INSERT INTO `lime_question_attributes` (`qaid`, `qid`, `attribute`, `value`, `language`) VALUES
+(1250, 87, 'em_validation_sq_tip', '', 'en'),
+(1251, 87, 'answer_width', '', ''),
+(1252, 87, 'repeat_headings', '', ''),
+(1253, 87, 'placeholder', '', 'en'),
+(1254, 87, 'input_size', '', ''),
+(1255, 87, 'hide_tip', '0', ''),
+(1256, 87, 'random_order', '0', ''),
+(1257, 87, 'hidden', '0', ''),
+(1258, 87, 'cssclass', '', ''),
+(1259, 87, 'maximum_chars', '', ''),
+(1260, 87, 'page_break', '0', ''),
+(1261, 87, 'numbers_only', '0', ''),
+(1262, 87, 'show_totals', 'X', ''),
+(1263, 87, 'show_grand_total', '0', ''),
+(1264, 87, 'statistics_showgraph', '1', ''),
+(1265, 87, 'statistics_graphtype', '0', ''),
+(1266, 87, 'save_as_default', 'N', '');
 
 --
 -- Dumping data for table `lime_question_l10ns`
@@ -2012,7 +2062,16 @@ INSERT INTO `lime_question_l10ns` (`id`, `qid`, `question`, `help`, `script`, `l
 (113, 83, '0-5 years', NULL, NULL, 'en'),
 (114, 84, '5-15 years', NULL, NULL, 'en'),
 (115, 85, '15-25 years', NULL, NULL, 'en'),
-(116, 86, 'Some text', '', '', 'en');
+(116, 86, 'Some text', '', '', 'en'),
+(117, 87, 'Array question', 'This is a question help text.', '', 'en'),
+(118, 88, 'one', NULL, NULL, 'en'),
+(119, 89, 'one', NULL, NULL, 'en'),
+(120, 90, 'two', NULL, NULL, 'en'),
+(121, 91, 'three', NULL, NULL, 'en'),
+(122, 92, 'four', NULL, NULL, 'en'),
+(123, 93, 'two', NULL, NULL, 'en'),
+(124, 94, 'three', NULL, NULL, 'en'),
+(125, 95, 'four', NULL, NULL, 'en');
 
 --
 -- Dumping data for table `lime_question_themes`
@@ -2169,7 +2228,8 @@ INSERT INTO `lime_surveys` (`sid`, `owner_id`, `gsid`, `admin`, `active`, `expir
 (422915, 1, 1, 'inherit', 'N', '2033-06-21 14:08:00', '2023-06-21 14:08:00', 'inherit', 'N', 'I', 'I', 'inherit', 'en', 'hr', 'I', 'I', 'I', 'I', 0, 'I', 'I', 'I', 'I', 'I', 'I', '2023-08-02 13:24:02', 0, 'I', 'I', 'Y', 'I', 'I', 'I', 'I', 'E', 'N', 'inherit', NULL, 'notify.me.detail@test.ing', 'notify.me@test.ing', -1, 'I', 'I', 'I', 'I', NULL, 'N', NULL, NULL, NULL, NULL, NULL, 'I', 'I', -1, -1, 'I', 'I', '0', '', ''),
 (951785, 1, 1, 'inherit', 'N', NULL, NULL, 'inherit', 'N', 'I', 'I', 'inherit', 'en', '', 'I', 'I', 'I', 'I', 0, 'I', 'I', 'I', 'I', 'I', 'I', '2023-08-15 14:54:03', 0, 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'E', 'N', 'inherit', NULL, 'inherit', 'inherit', -1, 'I', 'I', 'I', 'I', NULL, 'N', NULL, NULL, NULL, NULL, NULL, 'I', 'I', -1, -1, 'I', 'I', NULL, NULL, ''),
 (348447, 1, 1, 'inherit', 'N', NULL, NULL, 'inherit', 'N', 'I', 'I', 'inherit', 'en', '', 'I', 'I', 'I', 'I', 0, 'I', 'I', 'I', 'I', 'I', 'I', '2023-08-15 14:54:27', 0, 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'E', 'N', 'inherit', NULL, 'inherit', 'inherit', -1, 'I', 'I', 'I', 'I', NULL, 'N', NULL, NULL, NULL, NULL, NULL, 'I', 'I', -1, -1, 'I', 'I', NULL, NULL, ''),
-(857644, 1, 1, 'inherit', 'N', NULL, NULL, 'inherit', 'N', 'I', 'I', 'inherit', 'en', '', 'I', 'I', 'I', 'I', 0, 'I', 'I', 'I', 'I', 'I', 'I', '2023-08-15 14:54:44', 0, 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'E', 'N', 'inherit', NULL, 'inherit', 'inherit', -1, 'I', 'I', 'I', 'I', NULL, 'N', NULL, NULL, NULL, NULL, NULL, 'I', 'I', -1, -1, 'I', 'I', NULL, NULL, '');
+(857644, 1, 1, 'inherit', 'N', NULL, NULL, 'inherit', 'N', 'I', 'I', 'inherit', 'en', '', 'I', 'I', 'I', 'I', 0, 'I', 'I', 'I', 'I', 'I', 'I', '2023-08-15 14:54:44', 0, 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'E', 'N', 'inherit', NULL, 'inherit', 'inherit', -1, 'I', 'I', 'I', 'I', NULL, 'N', NULL, NULL, NULL, NULL, NULL, 'I', 'I', -1, -1, 'I', 'I', NULL, NULL, ''),
+(954472, 1, 1, 'inherit', 'N', NULL, NULL, 'inherit', 'N', 'I', 'I', 'inherit', 'en', '', 'I', 'I', 'I', 'I', 0, 'I', 'I', 'I', 'I', 'I', 'I', '2023-09-25 14:26:12', 0, 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'E', 'N', 'inherit', NULL, 'inherit', 'inherit', -1, 'I', 'I', 'I', 'I', NULL, 'N', NULL, NULL, NULL, NULL, NULL, 'I', 'I', -1, -1, 'I', 'I', NULL, NULL, '');
 
 --
 -- Dumping data for table `lime_surveys_groups`
@@ -2222,7 +2282,8 @@ INSERT INTO `lime_surveys_languagesettings` (`surveyls_survey_id`, `surveyls_lan
 INSERT INTO `lime_surveys_languagesettings` (`surveyls_survey_id`, `surveyls_language`, `surveyls_title`, `surveyls_description`, `surveyls_welcometext`, `surveyls_endtext`, `surveyls_policy_notice`, `surveyls_policy_error`, `surveyls_policy_notice_label`, `surveyls_url`, `surveyls_urldescription`, `surveyls_email_invite_subj`, `surveyls_email_invite`, `surveyls_email_remind_subj`, `surveyls_email_remind`, `surveyls_email_register_subj`, `surveyls_email_register`, `surveyls_email_confirm_subj`, `surveyls_email_confirm`, `surveyls_dateformat`, `surveyls_attributecaptions`, `surveyls_alias`, `email_admin_notification_subj`, `email_admin_notification`, `email_admin_responses_subj`, `email_admin_responses`, `surveyls_numberformat`, `attachments`) VALUES
 (951785, 'en', 'Survey question add', '', '', '', '', NULL, '', '', '', 'Invitation to participate in a survey', 'Dear {FIRSTNAME},<br />\n<br />\nYou have been invited to participate in a survey.<br />\n<br />\nThe survey is titled:<br />\n\"{SURVEYNAME}\"<br />\n<br />\n\"{SURVEYDESCRIPTION}\"<br />\n<br />\nTo participate, please click on the link below.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME} ({ADMINEMAIL})<br />\n<br />\n----------------------------------------------<br />\nClick here to do the survey:<br />\n{SURVEYURL}<br />\n<br />\nIf you do not want to participate in this survey and don\'t want to receive any more invitations please click the following link:<br />\n{OPTOUTURL}<br />\n<br />\nIf you are blacklisted but want to participate in this survey and want to receive invitations please click the following link:<br />\n{OPTINURL}', 'Reminder to participate in a survey', 'Dear {FIRSTNAME},<br />\n<br />\nRecently we invited you to participate in a survey.<br />\n<br />\nWe note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.<br />\n<br />\nThe survey is titled:<br />\n\"{SURVEYNAME}\"<br />\n<br />\n\"{SURVEYDESCRIPTION}\"<br />\n<br />\nTo participate, please click on the link below.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME} ({ADMINEMAIL})<br />\n<br />\n----------------------------------------------<br />\nClick here to do the survey:<br />\n{SURVEYURL}<br />\n<br />\nIf you do not want to participate in this survey and don\'t want to receive any more invitations please click the following link:<br />\n{OPTOUTURL}', 'Survey registration confirmation', 'Dear {FIRSTNAME},<br />\n<br />\nYou, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.<br />\n<br />\nTo complete this survey, click on the following URL:<br />\n<br />\n{SURVEYURL}<br />\n<br />\nIf you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.', 'Confirmation of your participation in our survey', 'Dear {FIRSTNAME},<br />\n<br />\nThis email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.<br />\n<br />\nIf you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME}', 9, NULL, NULL, 'Response submission for survey {SURVEYNAME}', 'Hello,<br />\n<br />\nA new response was submitted for your survey \'{SURVEYNAME}\'.<br />\n<br />\nClick the following link to see the individual response:<br />\n{VIEWRESPONSEURL}<br />\n<br />\nClick the following link to edit the individual response:<br />\n{EDITRESPONSEURL}<br />\n<br />\nView statistics by clicking here:<br />\n{STATISTICSURL}', 'Response submission for survey {SURVEYNAME} with results', 'Hello,<br />\n<br />\nA new response was submitted for your survey \'{SURVEYNAME}\'.<br />\n<br />\nClick the following link to see the individual response:<br />\n{VIEWRESPONSEURL}<br />\n<br />\nClick the following link to edit the individual response:<br />\n{EDITRESPONSEURL}<br />\n<br />\nView statistics by clicking here:<br />\n{STATISTICSURL}<br />\n<br />\n<br />\nThe following answers were given by the participant:<br />\n{ANSWERTABLE}', 0, NULL),
 (348447, 'en', 'Survey question edit', '', '', '', '', NULL, '', '', '', 'Invitation to participate in a survey', 'Dear {FIRSTNAME},<br />\n<br />\nYou have been invited to participate in a survey.<br />\n<br />\nThe survey is titled:<br />\n\"{SURVEYNAME}\"<br />\n<br />\n\"{SURVEYDESCRIPTION}\"<br />\n<br />\nTo participate, please click on the link below.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME} ({ADMINEMAIL})<br />\n<br />\n----------------------------------------------<br />\nClick here to do the survey:<br />\n{SURVEYURL}<br />\n<br />\nIf you do not want to participate in this survey and don\'t want to receive any more invitations please click the following link:<br />\n{OPTOUTURL}<br />\n<br />\nIf you are blacklisted but want to participate in this survey and want to receive invitations please click the following link:<br />\n{OPTINURL}', 'Reminder to participate in a survey', 'Dear {FIRSTNAME},<br />\n<br />\nRecently we invited you to participate in a survey.<br />\n<br />\nWe note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.<br />\n<br />\nThe survey is titled:<br />\n\"{SURVEYNAME}\"<br />\n<br />\n\"{SURVEYDESCRIPTION}\"<br />\n<br />\nTo participate, please click on the link below.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME} ({ADMINEMAIL})<br />\n<br />\n----------------------------------------------<br />\nClick here to do the survey:<br />\n{SURVEYURL}<br />\n<br />\nIf you do not want to participate in this survey and don\'t want to receive any more invitations please click the following link:<br />\n{OPTOUTURL}', 'Survey registration confirmation', 'Dear {FIRSTNAME},<br />\n<br />\nYou, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.<br />\n<br />\nTo complete this survey, click on the following URL:<br />\n<br />\n{SURVEYURL}<br />\n<br />\nIf you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.', 'Confirmation of your participation in our survey', 'Dear {FIRSTNAME},<br />\n<br />\nThis email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.<br />\n<br />\nIf you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME}', 9, NULL, NULL, 'Response submission for survey {SURVEYNAME}', 'Hello,<br />\n<br />\nA new response was submitted for your survey \'{SURVEYNAME}\'.<br />\n<br />\nClick the following link to see the individual response:<br />\n{VIEWRESPONSEURL}<br />\n<br />\nClick the following link to edit the individual response:<br />\n{EDITRESPONSEURL}<br />\n<br />\nView statistics by clicking here:<br />\n{STATISTICSURL}', 'Response submission for survey {SURVEYNAME} with results', 'Hello,<br />\n<br />\nA new response was submitted for your survey \'{SURVEYNAME}\'.<br />\n<br />\nClick the following link to see the individual response:<br />\n{VIEWRESPONSEURL}<br />\n<br />\nClick the following link to edit the individual response:<br />\n{EDITRESPONSEURL}<br />\n<br />\nView statistics by clicking here:<br />\n{STATISTICSURL}<br />\n<br />\n<br />\nThe following answers were given by the participant:<br />\n{ANSWERTABLE}', 0, NULL),
-(857644, 'en', 'Survey question delete', '', '', '', '', NULL, '', '', '', 'Invitation to participate in a survey', 'Dear {FIRSTNAME},<br />\n<br />\nYou have been invited to participate in a survey.<br />\n<br />\nThe survey is titled:<br />\n\"{SURVEYNAME}\"<br />\n<br />\n\"{SURVEYDESCRIPTION}\"<br />\n<br />\nTo participate, please click on the link below.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME} ({ADMINEMAIL})<br />\n<br />\n----------------------------------------------<br />\nClick here to do the survey:<br />\n{SURVEYURL}<br />\n<br />\nIf you do not want to participate in this survey and don\'t want to receive any more invitations please click the following link:<br />\n{OPTOUTURL}<br />\n<br />\nIf you are blacklisted but want to participate in this survey and want to receive invitations please click the following link:<br />\n{OPTINURL}', 'Reminder to participate in a survey', 'Dear {FIRSTNAME},<br />\n<br />\nRecently we invited you to participate in a survey.<br />\n<br />\nWe note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.<br />\n<br />\nThe survey is titled:<br />\n\"{SURVEYNAME}\"<br />\n<br />\n\"{SURVEYDESCRIPTION}\"<br />\n<br />\nTo participate, please click on the link below.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME} ({ADMINEMAIL})<br />\n<br />\n----------------------------------------------<br />\nClick here to do the survey:<br />\n{SURVEYURL}<br />\n<br />\nIf you do not want to participate in this survey and don\'t want to receive any more invitations please click the following link:<br />\n{OPTOUTURL}', 'Survey registration confirmation', 'Dear {FIRSTNAME},<br />\n<br />\nYou, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.<br />\n<br />\nTo complete this survey, click on the following URL:<br />\n<br />\n{SURVEYURL}<br />\n<br />\nIf you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.', 'Confirmation of your participation in our survey', 'Dear {FIRSTNAME},<br />\n<br />\nThis email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.<br />\n<br />\nIf you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME}', 9, NULL, NULL, 'Response submission for survey {SURVEYNAME}', 'Hello,<br />\n<br />\nA new response was submitted for your survey \'{SURVEYNAME}\'.<br />\n<br />\nClick the following link to see the individual response:<br />\n{VIEWRESPONSEURL}<br />\n<br />\nClick the following link to edit the individual response:<br />\n{EDITRESPONSEURL}<br />\n<br />\nView statistics by clicking here:<br />\n{STATISTICSURL}', 'Response submission for survey {SURVEYNAME} with results', 'Hello,<br />\n<br />\nA new response was submitted for your survey \'{SURVEYNAME}\'.<br />\n<br />\nClick the following link to see the individual response:<br />\n{VIEWRESPONSEURL}<br />\n<br />\nClick the following link to edit the individual response:<br />\n{EDITRESPONSEURL}<br />\n<br />\nView statistics by clicking here:<br />\n{STATISTICSURL}<br />\n<br />\n<br />\nThe following answers were given by the participant:<br />\n{ANSWERTABLE}', 0, NULL);
+(857644, 'en', 'Survey question delete', '', '', '', '', NULL, '', '', '', 'Invitation to participate in a survey', 'Dear {FIRSTNAME},<br />\n<br />\nYou have been invited to participate in a survey.<br />\n<br />\nThe survey is titled:<br />\n\"{SURVEYNAME}\"<br />\n<br />\n\"{SURVEYDESCRIPTION}\"<br />\n<br />\nTo participate, please click on the link below.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME} ({ADMINEMAIL})<br />\n<br />\n----------------------------------------------<br />\nClick here to do the survey:<br />\n{SURVEYURL}<br />\n<br />\nIf you do not want to participate in this survey and don\'t want to receive any more invitations please click the following link:<br />\n{OPTOUTURL}<br />\n<br />\nIf you are blacklisted but want to participate in this survey and want to receive invitations please click the following link:<br />\n{OPTINURL}', 'Reminder to participate in a survey', 'Dear {FIRSTNAME},<br />\n<br />\nRecently we invited you to participate in a survey.<br />\n<br />\nWe note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.<br />\n<br />\nThe survey is titled:<br />\n\"{SURVEYNAME}\"<br />\n<br />\n\"{SURVEYDESCRIPTION}\"<br />\n<br />\nTo participate, please click on the link below.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME} ({ADMINEMAIL})<br />\n<br />\n----------------------------------------------<br />\nClick here to do the survey:<br />\n{SURVEYURL}<br />\n<br />\nIf you do not want to participate in this survey and don\'t want to receive any more invitations please click the following link:<br />\n{OPTOUTURL}', 'Survey registration confirmation', 'Dear {FIRSTNAME},<br />\n<br />\nYou, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.<br />\n<br />\nTo complete this survey, click on the following URL:<br />\n<br />\n{SURVEYURL}<br />\n<br />\nIf you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.', 'Confirmation of your participation in our survey', 'Dear {FIRSTNAME},<br />\n<br />\nThis email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.<br />\n<br />\nIf you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME}', 9, NULL, NULL, 'Response submission for survey {SURVEYNAME}', 'Hello,<br />\n<br />\nA new response was submitted for your survey \'{SURVEYNAME}\'.<br />\n<br />\nClick the following link to see the individual response:<br />\n{VIEWRESPONSEURL}<br />\n<br />\nClick the following link to edit the individual response:<br />\n{EDITRESPONSEURL}<br />\n<br />\nView statistics by clicking here:<br />\n{STATISTICSURL}', 'Response submission for survey {SURVEYNAME} with results', 'Hello,<br />\n<br />\nA new response was submitted for your survey \'{SURVEYNAME}\'.<br />\n<br />\nClick the following link to see the individual response:<br />\n{VIEWRESPONSEURL}<br />\n<br />\nClick the following link to edit the individual response:<br />\n{EDITRESPONSEURL}<br />\n<br />\nView statistics by clicking here:<br />\n{STATISTICSURL}<br />\n<br />\n<br />\nThe following answers were given by the participant:<br />\n{ANSWERTABLE}', 0, NULL),
+(954472, 'en', 'Subquestion codes', '', '', '', '', NULL, '', '', '', 'Invitation to participate in a survey', 'Dear {FIRSTNAME},<br />\n<br />\nYou have been invited to participate in a survey.<br />\n<br />\nThe survey is titled:<br />\n\"{SURVEYNAME}\"<br />\n<br />\n\"{SURVEYDESCRIPTION}\"<br />\n<br />\nTo participate, please click on the link below.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME} ({ADMINEMAIL})<br />\n<br />\n----------------------------------------------<br />\nClick here to do the survey:<br />\n{SURVEYURL}<br />\n<br />\nIf you do not want to participate in this survey and don\'t want to receive any more invitations please click the following link:<br />\n{OPTOUTURL}<br />\n<br />\nIf you are blacklisted but want to participate in this survey and want to receive invitations please click the following link:<br />\n{OPTINURL}', 'Reminder to participate in a survey', 'Dear {FIRSTNAME},<br />\n<br />\nRecently we invited you to participate in a survey.<br />\n<br />\nWe note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.<br />\n<br />\nThe survey is titled:<br />\n\"{SURVEYNAME}\"<br />\n<br />\n\"{SURVEYDESCRIPTION}\"<br />\n<br />\nTo participate, please click on the link below.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME} ({ADMINEMAIL})<br />\n<br />\n----------------------------------------------<br />\nClick here to do the survey:<br />\n{SURVEYURL}<br />\n<br />\nIf you do not want to participate in this survey and don\'t want to receive any more invitations please click the following link:<br />\n{OPTOUTURL}', 'Survey registration confirmation', 'Dear {FIRSTNAME},<br />\n<br />\nYou, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.<br />\n<br />\nTo complete this survey, click on the following URL:<br />\n<br />\n{SURVEYURL}<br />\n<br />\nIf you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.', 'Confirmation of your participation in our survey', 'Dear {FIRSTNAME},<br />\n<br />\nThis email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.<br />\n<br />\nIf you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.<br />\n<br />\nSincerely,<br />\n<br />\n{ADMINNAME}', 9, NULL, NULL, 'Response submission for survey {SURVEYNAME}', 'Hello,<br />\n<br />\nA new response was submitted for your survey \'{SURVEYNAME}\'.<br />\n<br />\nClick the following link to see the individual response:<br />\n{VIEWRESPONSEURL}<br />\n<br />\nClick the following link to edit the individual response:<br />\n{EDITRESPONSEURL}<br />\n<br />\nView statistics by clicking here:<br />\n{STATISTICSURL}', 'Response submission for survey {SURVEYNAME} with results', 'Hello,<br />\n<br />\nA new response was submitted for your survey \'{SURVEYNAME}\'.<br />\n<br />\nClick the following link to see the individual response:<br />\n{VIEWRESPONSEURL}<br />\n<br />\nClick the following link to edit the individual response:<br />\n{EDITRESPONSEURL}<br />\n<br />\nView statistics by clicking here:<br />\n{STATISTICSURL}<br />\n<br />\n<br />\nThe following answers were given by the participant:<br />\n{ANSWERTABLE}', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -2356,7 +2417,8 @@ INSERT INTO `lime_template_configuration` (`id`, `template_name`, `sid`, `gsid`,
 (32, 'fruity_twentythree', 951785, NULL, NULL, 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', NULL, NULL),
 (33, 'fruity_twentythree', NULL, 1, NULL, 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', NULL, NULL),
 (34, 'fruity_twentythree', 348447, NULL, NULL, 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', NULL, NULL),
-(35, 'fruity_twentythree', 857644, NULL, NULL, 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', NULL, NULL);
+(35, 'fruity_twentythree', 857644, NULL, NULL, 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', NULL, NULL),
+(36, 'fruity_twentythree', 954472, NULL, NULL, 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', 'inherit', NULL, NULL);
 
 -- --------------------------------------------------------
 
