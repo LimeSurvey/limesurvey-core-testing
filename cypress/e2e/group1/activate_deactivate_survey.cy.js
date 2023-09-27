@@ -72,7 +72,7 @@ describe('Activate/deactivate survey', () => {
     cy.get('.card-primary')
       .eq(1)
       .find('b')
-      .eq(2)
+      .eq(1)
       .invoke('text')
       .then((text) => {
         let textArray = text.trim().split('_')
@@ -100,7 +100,7 @@ describe('Activate/deactivate survey', () => {
     cy.get('.card-primary')
       .eq(1)
       .find('b')
-      .eq(2)
+      .eq(1)
       .invoke('text')
       .then((text) => {
         let textArray = text.trim().split('_')
