@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        group: [ 'group1', 'group2' ]
+        group: [ 'group1', 'group2', 'api' ]
     runs-on: ubuntu-20.04
     env:
       DBENGINE: INNODB
@@ -107,7 +107,10 @@ jobs:
           # NB: EmCache is always disabled when debug => 2
           # NB: There can be a difference in assets used when debug = 0 or 2 (minified version or not)
           # sed -i '60s/.*/        "debug"=>2,/' application/config/config.php
-          # cat application/config/config.php
+
+          sed -i '46s/.*/        'urlFormat' => 'path',/' application/config/config.php
+          sed -i '64s/.*/        'RPCInterface' => 'json',/'rpc_publish_api'=>1,/' application/config/config.php
+          cat application/config/config.php
 
       - name: Test the server
         run: |
@@ -138,14 +141,29 @@ jobs:
       - name: Cypress run
         id: cypress
         uses: cypress-io/github-action@v3
+        if: ${{ contains(matrix.group, 'group') }}
         continue-on-error: true
         env:
-          CYPRESS_BASE_URL: 'http://localhost/index.php?r='
+          CYPRESS_BASE_URL: 'http://localhost/index.php/'
           CYPRESS_DB_HOST: 127.0.0.1
           CYPRESS_DB_DATABASE: limesurvey
         with:
           working-directory: limesurvey-core-testing
           command: yarn cypress:run --browser chrome --spec cypress/e2e/${{ matrix.group }}/*.js --parallel y
+          wait-on: 'http://localhost'
+
+      - name: Cypress run
+        id: cypress
+        uses: cypress-io/github-action@v3
+        if: ${{ contains(matrix.group, 'api') }}
+        continue-on-error: true
+        env:
+          CYPRESS_BASE_URL: 'http://localhost/index.php/'
+          CYPRESS_DB_HOST: 127.0.0.1
+          CYPRESS_DB_DATABASE: limesurvey
+        with:
+          working-directory: limesurvey-core-testing
+          command: yarn cypress:api:run
           wait-on: 'http://localhost'
 
       - name: Compress run_times.json
