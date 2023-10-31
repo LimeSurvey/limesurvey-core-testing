@@ -153,7 +153,7 @@ jobs:
           wait-on: 'http://localhost'
 
       - name: Cypress run
-        id: cypress
+        id: api-tests
         uses: cypress-io/github-action@v3
         if: ${{ contains(matrix.group, 'api') }}
         continue-on-error: true
@@ -209,5 +209,5 @@ jobs:
           retention-days: 3
 
       - name: Fail workflow if tests fail
-        if: steps.cypress.outcome != 'success'
+        if: steps.cypress.outcome != 'success' || steps.api-tests.outcome != 'success'
         run: exit 1
