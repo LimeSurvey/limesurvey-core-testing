@@ -108,8 +108,8 @@ jobs:
           # NB: There can be a difference in assets used when debug = 0 or 2 (minified version or not)
           # sed -i '60s/.*/        "debug"=>2,/' application/config/config.php
 
-          sed -i '46s/.*/        'urlFormat' => 'path',/' application/config/config.php
-          sed -i '64s/.*/        'RPCInterface' => 'json',/'rpc_publish_api'=>1,/' application/config/config.php
+          sed -i '46s/.*/        "urlFormat" => "path",/' application/config/config.php
+          sed -i '64s/.*/        "RPCInterface" => "json",\n        "rpc_publish_api"=>1,/' application/config/config.php
           cat application/config/config.php
 
       - name: Test the server
