@@ -109,7 +109,7 @@ jobs:
           # sed -i '60s/.*/        "debug"=>2,/' application/config/config.php
 
           sed -i '46s/.*/        "urlFormat" => "path",/' application/config/config.php
-          sed -i '64s/.*/        "RPCInterface" => "json",\n        "rpc_publish_api"=>1,/' application/config/config.php
+          sed -i '64s/.*/        "RPCInterface" => "json",\n        "rpc_publish_api"=>1,\n        "add_access_control_header"=>1,/' application/config/config.php
           cat application/config/config.php
 
       - name: Test the server
