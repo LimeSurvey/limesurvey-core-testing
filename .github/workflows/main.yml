@@ -217,5 +217,5 @@ jobs:
           retention-days: 3
 
       - name: Fail workflow if tests fail
-        if: steps.cypress.outcome != 'success' || steps.api-tests.outcome != 'success'
+        if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) || (steps.api-tests.outcome != 'success' && contains(matrix.group, 'api')) }}
         run: exit 1
