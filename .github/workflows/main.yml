@@ -170,9 +170,9 @@ jobs:
           wait-on: 'http://localhost'
 
       # for debugging
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
-        if: ${{ contains(matrix.group, 'api') }}
+      # - name: Setup upterm session
+      #   uses: lhotari/action-upterm@v1
+      #   if: ${{ contains(matrix.group, 'api') }}
 
       - name: Compress run_times.json
         id: run-times-dir

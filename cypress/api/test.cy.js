@@ -18,7 +18,7 @@ describe('api tests', () => {
         method: 'GET',
         url: `${Cypress.config('baseUrl')}rest/v1/survey`,
         headers: {
-          'Authorization': `Bearer ${e.admin}`,
+          Authorization: `Bearer ${e.admin}`,
           accept: 'application/json',
         },
       }).then((response) => {
