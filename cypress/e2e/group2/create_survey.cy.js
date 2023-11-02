@@ -34,7 +34,7 @@ describe('Survey creation', function () {
       'be.visible'
     )
     // check that the survey was really created
-    cy.get('[href="/index.php/surveyAdministration/listsurveys"]')
+    cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
       .contains('Surveys')
       .click()
     cy.get('@surveyId').then((id) => {
@@ -86,7 +86,7 @@ describe('Survey creation', function () {
           // cy.url().should('include',`questionAdministration/view&surveyid=${survey_id}`)
 
           // check that the survey was really created
-          cy.get('[href="/index.php/surveyAdministration/listsurveys"]')
+          cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
             .contains('Surveys')
             .click()
           cy.contains(survey_id).closest('tr').should('contain', survey_title)
@@ -136,7 +136,7 @@ describe('Survey creation', function () {
       themes: 1,
     })
 
-    cy.get('[href="/index.php/surveyAdministration/listsurveys"]')
+    cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
       .contains('Surveys')
       .click()
     cy.contains(survey_id).closest('tr').should('contain', survey_title)
@@ -183,7 +183,7 @@ describe('Survey creation', function () {
       themes: 1,
     })
 
-    cy.get('[href="/index.php/surveyAdministration/listsurveys"]')
+    cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
       .contains('Surveys')
       .click()
     cy.contains(survey_id).closest('tr').should('contain', survey_title)

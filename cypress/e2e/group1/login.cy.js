@@ -3,7 +3,7 @@ describe('Login', () => {
     cy.visit('admin')
     cy.login(this.auth['admin'].username, this.auth['admin'].password)
     cy.get(
-      'a.dropdown-item[href="/index.php/admin/authentication/sa/logout"]'
+      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
     ).should('exist')
   })
 
@@ -13,7 +13,7 @@ describe('Login', () => {
     cy.login(this.auth['admin'].username, 'wrongpass')
     // check that logout is not available
     cy.get(
-      'a.dropdown-item[href="/index.php/admin/authentication/sa/logout"]'
+      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
     ).should('not.exist')
     // user gets feedback
     cy.get('#notif-container > .alert.alert-danger')
@@ -30,7 +30,7 @@ describe('Login', () => {
 
     cy.get('a').contains('admin').click()
     cy.get(
-      'a.dropdown-item[href="/index.php/admin/authentication/sa/logout"]'
+      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
     ).click()
     cy.get('input#user').should('be.visible')
   })

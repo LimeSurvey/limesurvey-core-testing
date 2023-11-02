@@ -65,7 +65,7 @@ describe('Survey settings - Overview', () => {
           .should('have.attr', 'href')
           .and(
             'contain',
-            '/index.php/surveyAdministration/rendersidemenulink&subaction=surveytexts&surveyid=942815'
+            '/index.php?r=surveyAdministration/rendersidemenulink&subaction=surveytexts&surveyid=942815'
           )
 
         cy.get('ul.list-group li')
@@ -171,7 +171,7 @@ describe('Survey settings - Overview', () => {
           .should('have.attr', 'href')
           .and(
             'contain',
-            '/index.php/surveyAdministration/rendersidemenulink&subaction=publication&surveyid=942815'
+            '/index.php?r=surveyAdministration/rendersidemenulink&subaction=publication&surveyid=942815'
           )
 
         cy.get('ul.list-group li')
@@ -216,7 +216,7 @@ describe('Survey settings - Overview', () => {
           .should('have.attr', 'href')
           .and(
             'contain',
-            '/index.php/surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=942815'
+            '/index.php?r=surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=942815'
           )
 
         cy.get('ul.list-group li')
@@ -246,13 +246,13 @@ describe('Survey settings - Overview', () => {
               .should('have.attr', 'href')
               .and(
                 'contain',
-                '/index.php/themeOptions/updateSurvey&surveyid=942815'
+                '/index.php?r=themeOptions/updateSurvey&surveyid=942815'
               )
             cy.get('a[title="Open theme editor in new window"]')
               .should('have.attr', 'href')
               .and(
                 'contain',
-                '/index.php/admin/themes/sa/view&templatename=fruity'
+                '/index.php?r=admin/themes/sa/view&templatename=fruity'
               )
           })
       })

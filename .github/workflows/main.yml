@@ -17,6 +17,10 @@ jobs:
 
     name: Install app and run tests
     steps:
+      # for debugging
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
+
       - name: Checkout current repo
         uses: actions/checkout@v3
         with:
@@ -147,7 +151,7 @@ jobs:
         if: ${{ contains(matrix.group, 'group') }}
         continue-on-error: true
         env:
-          CYPRESS_BASE_URL: 'http://localhost/index.php/'
+          CYPRESS_BASE_URL: 'http://localhost/index.php?r='
           CYPRESS_DB_HOST: 127.0.0.1
           CYPRESS_DB_DATABASE: limesurvey
         with:
