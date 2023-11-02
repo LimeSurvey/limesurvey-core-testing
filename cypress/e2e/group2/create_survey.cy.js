@@ -83,7 +83,7 @@ describe('Survey creation', function () {
 
           // TODO: Add this back in once https://github.com/cypress-io/cypress/issues/23772 is resolved
           // cy.get('input').contains('Go to survey').click()
-          // cy.url().should('include',`questionAdministration/view?iSurveyID=${survey_id}`)
+          // cy.url().should('include',`questionAdministration/view&surveyid=${survey_id}`)
 
           // check that the survey was really created
           cy.get('[href="/index.php/surveyAdministration/listsurveys"]')

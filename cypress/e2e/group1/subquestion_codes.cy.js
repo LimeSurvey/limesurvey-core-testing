@@ -3,7 +3,7 @@ describe('Subquestion codes', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'questionAdministration/view?iSurveyID=954472&gid=36&qid=87'
+      'questionAdministration/view&surveyid=954472&gid=36&qid=87'
     )
 
     cy.get('#questionEditorButton').click()

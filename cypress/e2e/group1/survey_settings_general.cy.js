@@ -16,7 +16,7 @@ describe('Survey settings - General settings', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
     //check overview page
-    cy.visit('surveyAdministration/view?iSurveyID=148569')
+    cy.visit('surveyAdministration/view&surveyid=148569')
     cy.get('.card-title')
       .contains('Share survey')
       .parents('.card.card-primary')

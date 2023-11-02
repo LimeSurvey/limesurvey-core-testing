@@ -16,7 +16,7 @@ describe('Survey questions', () => {
     cy.wait('@xhrRequests')
 
     cy.get(
-      'a[href$="questionGroupsAdministration/view?iSurveyID=951785&gid=35"]'
+      'a[href$="questionGroupsAdministration/view&surveyid=951785&gid=35"]'
     ).click()
     cy.wait('@xhrRequests')
 

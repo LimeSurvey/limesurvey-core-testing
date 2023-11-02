@@ -3,7 +3,7 @@ describe('Activate/deactivate survey', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=127873'
+      'surveyAdministration/view&surveyid=127873'
     )
 
     cy.get('#ls-activate-survey').click()
@@ -35,7 +35,7 @@ describe('Activate/deactivate survey', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=232684'
+      'surveyAdministration/view&surveyid=232684'
     )
 
     cy.get('#ls-activate-survey').click()
@@ -63,7 +63,7 @@ describe('Activate/deactivate survey', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=124686'
+      'surveyAdministration/view&surveyid=124686'
     )
 
     cy.get('[name="stop-survey"]').click()
@@ -93,7 +93,7 @@ describe('Activate/deactivate survey', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=841736'
+      'surveyAdministration/view&surveyid=841736'
     )
 
     cy.get('[name="stop-survey"]').click()
@@ -127,7 +127,7 @@ describe('Activate/deactivate survey', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=177311'
+      'surveyAdministration/view&surveyid=177311'
     )
 
     cy.get('#ls-activate-survey').click()

@@ -7,7 +7,7 @@ describe('Survey question groups', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=219315'
+      'surveyAdministration/view&surveyid=219315'
     )
 
     cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
@@ -44,7 +44,7 @@ describe('Survey question groups', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=582481'
+      'surveyAdministration/view&surveyid=582481'
     )
 
     cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
@@ -85,7 +85,7 @@ describe('Survey question groups', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=278371'
+      'surveyAdministration/view&surveyid=278371'
     )
 
     cy.intercept(
@@ -140,7 +140,7 @@ describe('Survey question groups', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'questionGroupsAdministration/view?iSurveyID=422915&gid=30'
+      'questionGroupsAdministration/view&surveyid=422915&gid=30'
     )
 
     // edit english question group fields

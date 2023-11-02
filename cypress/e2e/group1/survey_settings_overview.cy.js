@@ -3,7 +3,7 @@ describe('Survey settings - Overview', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=942815'
+      'surveyAdministration/view&surveyid=942815'
     )
 
     cy.get('.card-title')
@@ -54,7 +54,7 @@ describe('Survey settings - Overview', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=942815'
+      'surveyAdministration/view&surveyid=942815'
     )
 
     cy.get('.card-title')
@@ -158,7 +158,7 @@ describe('Survey settings - Overview', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=942815'
+      'surveyAdministration/view&surveyid=942815'
     )
 
     cy.get('.card-title')
@@ -205,7 +205,7 @@ describe('Survey settings - Overview', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=942815'
+      'surveyAdministration/view&surveyid=942815'
     )
 
     cy.get('.card-title')
@@ -262,7 +262,7 @@ describe('Survey settings - Overview', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view?iSurveyID=942815'
+      'surveyAdministration/view&surveyid=942815'
     )
 
     cy.get('.card-title')
