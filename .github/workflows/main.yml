@@ -17,10 +17,6 @@ jobs:
 
     name: Install app and run tests
     steps:
-      # for debugging
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
-
       - name: Checkout current repo
         uses: actions/checkout@v3
         with:
@@ -172,6 +168,11 @@ jobs:
           working-directory: limesurvey-core-testing
           command: yarn cypress:api:run
           wait-on: 'http://localhost'
+
+      # for debugging
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
+        if: ${{ contains(matrix.group, 'api') }}
 
       - name: Compress run_times.json
         id: run-times-dir
