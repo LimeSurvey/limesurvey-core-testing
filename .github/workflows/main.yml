@@ -109,7 +109,6 @@ jobs:
           # sed -i '60s/.*/        "debug"=>2,/' application/config/config.php
 
           sed -i '46s/.*/        "urlFormat" => "path",/' application/config/config.php
-          sed -i '64s/.*/        "RPCInterface" => "json",\n        "rpc_publish_api"=>1,\n        "add_access_control_header"=>1,/' application/config/config.php
           cat application/config/config.php
 
       - name: Test the server
@@ -158,7 +157,7 @@ jobs:
         if: ${{ contains(matrix.group, 'api') }}
         continue-on-error: true
         env:
-          CYPRESS_BASE_URL: 'http://localhost/'
+          CYPRESS_BASE_URL: 'http://localhost/index.php/'
           CYPRESS_DB_HOST: 127.0.0.1
           CYPRESS_DB_DATABASE: limesurvey
         with:
