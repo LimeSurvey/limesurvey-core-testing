@@ -30,7 +30,7 @@ describe('api tests', () => {
     })
   })
 
-  it('generate new authentication token with invalid credentials', function () {
+  it('can not generate new authentication token with invalid credentials', function () {
     cy.fixture('responses.json')
       .its('r001')
       .then((json) => {

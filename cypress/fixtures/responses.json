@@ -1357,5 +1357,149 @@
                 }
             ]
         }
+    },
+	"r004": {
+        "survey": {
+            "sid": 857644,
+            "gsid": 1,
+            "active": false,
+            "language": "en",
+            "expires": null,
+            "startDate": null,
+            "anonymized": false,
+            "saveTimings": null,
+            "additionalLanguages": "",
+            "datestamp": null,
+            "useCookie": null,
+            "allowRegister": null,
+            "allowSave": null,
+            "autoNumberStart": 0,
+            "autoRedirect": null,
+            "allowPrev": null,
+            "printAnswers": null,
+            "ipAddr": null,
+            "ipAnonymize": null,
+            "refUrl": null,
+            "dateCreated": "2023-08-15T14:54:44.000Z",
+            "publicStatistics": null,
+            "publicGraphs": null,
+            "listPublic": null,
+            "sendConfirmation": null,
+            "tokenAnswersPersistence": null,
+            "assessments": null,
+            "useCaptcha": null,
+            "useTokens": false,
+            "bounceEmail": "inherit",
+            "attributeDescriptions": null,
+            "emailResponseTo": "inherit",
+            "emailNotificationTo": "inherit",
+            "tokenLength": -1,
+            "showXQuestions": null,
+            "showGroupInfo": "I",
+            "showNoAnswer": null,
+            "showQNumCode": "I",
+            "bounceTime": 0,
+            "bounceProcessing": false,
+            "bounceAccountType": null,
+            "bounceAccountHost": null,
+            "bounceAccountPass": null,
+            "bounceAccountEncryption": null,
+            "bounceAccountUser": null,
+            "showWelcome": null,
+            "showProgress": null,
+            "questionIndex": -1,
+            "navigationDelay": -1,
+            "noKeyboard": null,
+            "allowedItAfterCompletion": null,
+            "googleAnalyticsStyle": 0,
+            "googleAnalyticsApiKey": null,
+            "showSurveyPolicyNotice": 0,
+            "defaultLanguage": {
+                "sid": 857644,
+                "language": "en",
+                "title": "Survey question delete",
+                "description": "",
+                "welcomeText": "",
+                "endText": "",
+                "policyNotice": "",
+                "policyError": null,
+                "policyNoticeLabel": "",
+                "url": "",
+                "urlDescription": "",
+                "dateFormat": 9,
+                "numberFormat": 0
+            },
+            "languageSettings": {
+                "en": {
+                    "sid": 857644,
+                    "language": "en",
+                    "title": "Survey question delete",
+                    "description": "",
+                    "welcomeText": "",
+                    "endText": "",
+                    "policyNotice": "",
+                    "policyError": null,
+                    "policyNoticeLabel": "",
+                    "url": "",
+                    "urlDescription": "",
+                    "dateFormat": 9,
+                    "numberFormat": 0
+                }
+            },
+            "languages": [
+                "en"
+            ],
+            "questionGroups": [
+                {
+                    "gid": 34,
+                    "sid": 857644,
+                    "groupOrder": 1,
+                    "randomizationGroup": "",
+                    "gRelevance": "1",
+                    "l10ns": {
+                        "en": {
+                            "id": 52,
+                            "gid": 34,
+                            "groupName": "My first question group",
+                            "description": null,
+                            "language": "en"
+                        }
+                    },
+                    "questions": [
+                        {
+                            "qid": 72,
+                            "parentQid": 0,
+                            "sid": 857644,
+                            "type": "T",
+                            "title": "Q00",
+                            "preg": null,
+                            "other": false,
+                            "mandatory": false,
+                            "encrypted": false,
+                            "questionOrder": 1,
+                            "scaleId": 0,
+                            "sameDefault": null,
+                            "questionThemeName": "longfreetext",
+                            "moduleName": null,
+                            "gid": 34,
+                            "relevance": "1",
+                            "sameScript": null,
+                            "l10ns": {
+                                "en": {
+                                    "id": 102,
+                                    "qid": 72,
+                                    "question": "A first example question. Please answer this question:",
+                                    "help": "This is a question help text.",
+                                    "script": null,
+                                    "language": "en"
+                                }
+                            },
+                            "attributes": [],
+                            "answers": []
+                        }
+                    ]
+                }
+            ]
+        }
     }
 }
