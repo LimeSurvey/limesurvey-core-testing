@@ -290,7 +290,7 @@ describe('Survey tests', () => {
             id: '98', // qid
             props: {
               0: {
-                tempId: '0',
+                aid: '47',
                 code: 'AO01',
                 sortOrder: 0,
                 assessmentValue: 0,
@@ -307,7 +307,7 @@ describe('Survey tests', () => {
                 },
               },
               1: {
-                tempId: '1',
+                aid: '48',
                 code: 'AO02',
                 sortOrder: 1,
                 assessmentValue: 0,
@@ -331,24 +331,75 @@ describe('Survey tests', () => {
       expect(response.status).to.eq(200)
       expect(response.body).to.deep.equal({
         operationsApplied: 1,
-        answersMap: [
-          {
-            tempId: '0',
-            id: aid + 5,
-            field: 'aid',
-          },
-          {
-            tempId: '1',
-            id: aid + 6,
-            field: 'aid',
-          },
-        ],
       })
     })
 
     // check survey
     cy.fixture('responses.json')
       .its('r007')
+      .then((json) => {
+        cy.request({
+          method: 'GET',
+          url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+          headers: {
+            Authorization: `Bearer ${token}`,
+            accept: 'application/json',
+          },
+        }).then((response) => {
+          expect(response.status).to.eq(200)
+          expect(response.body).to.deep.equal(json)
+        })
+      })
+  })
+
+  it('update answer deletes not specified answers', function () {
+    const sid = 145252
+
+    cy.request({
+      method: 'PATCH',
+      url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        accept: 'application/json',
+      },
+      body: {
+        patch: [
+          {
+            entity: 'answer',
+            op: 'update',
+            id: '99', // qid
+            props: {
+              0: {
+                aid: '49',
+                code: 'AO01',
+                sortOrder: 0,
+                assessmentValue: 0,
+                scaleId: 0,
+                l10ns: {
+                  de: {
+                    answer: 'vogel',
+                    language: 'de',
+                  },
+                  en: {
+                    answer: 'bird',
+                    language: 'en',
+                  },
+                },
+              },
+            },
+          },
+        ],
+      },
+    }).then((response) => {
+      expect(response.status).to.eq(200)
+      expect(response.body).to.deep.equal({
+        operationsApplied: 1,
+      })
+    })
+
+    // check survey
+    cy.fixture('responses.json')
+      .its('r008')
       .then((json) => {
         cy.request({
           method: 'GET',

@@ -3054,7 +3054,7 @@
 							},
 							"answers": [
 								{
-									"aid": 55,
+									"aid": 47,
 									"qid": 98,
 									"code": "AO01",
 									"sortOrder": 0,
@@ -3062,21 +3062,21 @@
 									"scaleId": 0,
 									"l10ns": {
 										"de": {
-											"id": 73,
-											"aid": 55,
+											"id": 57,
+											"aid": 47,
 											"answer": "vogel",
 											"language": "de"
 										},
 										"en": {
-											"id": 74,
-											"aid": 55,
+											"id": 58,
+											"aid": 47,
 											"answer": "bird",
 											"language": "en"
 										}
 									}
 								},
 								{
-									"aid": 56,
+									"aid": 48,
 									"qid": 98,
 									"code": "AO02",
 									"sortOrder": 1,
@@ -3084,15 +3084,522 @@
 									"scaleId": 0,
 									"l10ns": {
 										"de": {
-											"id": 75,
-											"aid": 56,
+											"id": 59,
+											"aid": 48,
 											"answer": "hund",
 											"language": "de"
 										},
 										"en": {
-											"id": 76,
-											"aid": 56,
+											"id": 60,
+											"aid": 48,
 											"answer": "dog",
+											"language": "en"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	},
+	"r008": {
+		"survey": {
+			"sid": 145252,
+			"gsid": 1,
+			"active": false,
+			"language": "en",
+			"expires": null,
+			"startDate": null,
+			"anonymized": false,
+			"saveTimings": null,
+			"additionalLanguages": "de",
+			"datestamp": null,
+			"useCookie": null,
+			"allowRegister": null,
+			"allowSave": null,
+			"autoNumberStart": 0,
+			"autoRedirect": null,
+			"allowPrev": null,
+			"printAnswers": null,
+			"ipAddr": null,
+			"ipAnonymize": null,
+			"refUrl": null,
+			"dateCreated": "2023-11-21T14:02:15.000Z",
+			"publicStatistics": null,
+			"publicGraphs": null,
+			"listPublic": null,
+			"sendConfirmation": null,
+			"tokenAnswersPersistence": null,
+			"assessments": null,
+			"useCaptcha": null,
+			"useTokens": false,
+			"bounceEmail": "inherit",
+			"attributeDescriptions": null,
+			"emailResponseTo": "inherit",
+			"emailNotificationTo": "inherit",
+			"tokenLength": -1,
+			"showXQuestions": null,
+			"showGroupInfo": "I",
+			"showNoAnswer": null,
+			"showQNumCode": "I",
+			"bounceTime": 0,
+			"bounceProcessing": false,
+			"bounceAccountType": null,
+			"bounceAccountHost": null,
+			"bounceAccountPass": null,
+			"bounceAccountEncryption": null,
+			"bounceAccountUser": null,
+			"showWelcome": null,
+			"showProgress": null,
+			"questionIndex": -1,
+			"navigationDelay": -1,
+			"noKeyboard": null,
+			"allowedItAfterCompletion": null,
+			"googleAnalyticsStyle": 0,
+			"googleAnalyticsApiKey": null,
+			"showSurveyPolicyNotice": 0,
+			"defaultLanguage": {
+				"sid": 145252,
+				"language": "en",
+				"title": "Updateanswer2",
+				"description": "",
+				"welcomeText": "",
+				"endText": "",
+				"policyNotice": "",
+				"policyError": null,
+				"policyNoticeLabel": "",
+				"url": "",
+				"urlDescription": "",
+				"dateFormat": 9,
+				"numberFormat": 0
+			},
+			"languageSettings": {
+				"de": {
+					"sid": 145252,
+					"language": "de",
+					"title": "Updateanswer2",
+					"description": null,
+					"welcomeText": null,
+					"endText": null,
+					"policyNotice": null,
+					"policyError": null,
+					"policyNoticeLabel": null,
+					"url": null,
+					"urlDescription": null,
+					"dateFormat": 1,
+					"numberFormat": 0
+				},
+				"en": {
+					"sid": 145252,
+					"language": "en",
+					"title": "Updateanswer2",
+					"description": "",
+					"welcomeText": "",
+					"endText": "",
+					"policyNotice": "",
+					"policyError": null,
+					"policyNoticeLabel": "",
+					"url": "",
+					"urlDescription": "",
+					"dateFormat": 9,
+					"numberFormat": 0
+				}
+			},
+			"languages": [
+				"en",
+				"de"
+			],
+			"questionGroups": [
+				{
+					"gid": 40,
+					"sid": 145252,
+					"groupOrder": 1,
+					"randomizationGroup": "",
+					"gRelevance": "1",
+					"l10ns": {
+						"de": {
+							"id": 61,
+							"gid": 40,
+							"groupName": "My first question group",
+							"description": null,
+							"language": "de"
+						},
+						"en": {
+							"id": 62,
+							"gid": 40,
+							"groupName": "My first question group",
+							"description": null,
+							"language": "en"
+						}
+					},
+					"questions": [
+						{
+							"qid": 99,
+							"parentQid": 0,
+							"sid": 145252,
+							"type": "L",
+							"title": "Q00",
+							"preg": null,
+							"other": false,
+							"mandatory": false,
+							"encrypted": false,
+							"questionOrder": 1,
+							"scaleId": 0,
+							"sameDefault": null,
+							"questionThemeName": "listradio",
+							"moduleName": null,
+							"gid": 40,
+							"relevance": "1",
+							"sameScript": null,
+							"l10ns": {
+								"de": {
+									"id": 132,
+									"qid": 99,
+									"question": "A first example question. Please answer this question:",
+									"help": "This is a question help text.",
+									"script": "",
+									"language": "de"
+								},
+								"en": {
+									"id": 133,
+									"qid": 99,
+									"question": "A first example question. Please answer this question:",
+									"help": "This is a question help text.",
+									"script": "",
+									"language": "en"
+								}
+							},
+							"attributes": {
+								"answer_order": {
+									"qid": 99,
+									"": {
+										"qaid": 1408,
+										"value": "normal"
+									}
+								},
+								"array_filter": {
+									"qid": 99,
+									"": {
+										"qaid": 1409,
+										"value": ""
+									}
+								},
+								"array_filter_exclude": {
+									"qid": 99,
+									"": {
+										"qaid": 1410,
+										"value": ""
+									}
+								},
+								"array_filter_style": {
+									"qid": 99,
+									"": {
+										"qaid": 1411,
+										"value": "0"
+									}
+								},
+								"cssclass": {
+									"qid": 99,
+									"": {
+										"qaid": 1412,
+										"value": ""
+									}
+								},
+								"display_columns": {
+									"qid": 99,
+									"": {
+										"qaid": 1413,
+										"value": ""
+									}
+								},
+								"em_validation_q": {
+									"qid": 99,
+									"": {
+										"qaid": 1414,
+										"value": ""
+									}
+								},
+								"em_validation_q_tip": {
+									"qid": 99,
+									"de": {
+										"qaid": 1415,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1416,
+										"value": ""
+									}
+								},
+								"hidden": {
+									"qid": 99,
+									"": {
+										"qaid": 1417,
+										"value": "0"
+									}
+								},
+								"hide_tip": {
+									"qid": 99,
+									"": {
+										"qaid": 1418,
+										"value": "0"
+									}
+								},
+								"other_comment_mandatory": {
+									"qid": 99,
+									"": {
+										"qaid": 1419,
+										"value": "0"
+									}
+								},
+								"other_numbers_only": {
+									"qid": 99,
+									"": {
+										"qaid": 1420,
+										"value": "0"
+									}
+								},
+								"other_position": {
+									"qid": 99,
+									"": {
+										"qaid": 1421,
+										"value": "default"
+									}
+								},
+								"other_position_code": {
+									"qid": 99,
+									"": {
+										"qaid": 1422,
+										"value": ""
+									}
+								},
+								"other_replace_text": {
+									"qid": 99,
+									"de": {
+										"qaid": 1423,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1424,
+										"value": ""
+									}
+								},
+								"page_break": {
+									"qid": 99,
+									"": {
+										"qaid": 1425,
+										"value": "0"
+									}
+								},
+								"printable_help": {
+									"qid": 99,
+									"de": {
+										"qaid": 1426,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1427,
+										"value": ""
+									}
+								},
+								"public_statistics": {
+									"qid": 99,
+									"": {
+										"qaid": 1428,
+										"value": "0"
+									}
+								},
+								"random_group": {
+									"qid": 99,
+									"": {
+										"qaid": 1429,
+										"value": ""
+									}
+								},
+								"save_as_default": {
+									"qid": 99,
+									"": {
+										"qaid": 1430,
+										"value": "N"
+									}
+								},
+								"scale_export": {
+									"qid": 99,
+									"": {
+										"qaid": 1431,
+										"value": "0"
+									}
+								},
+								"statistics_graphtype": {
+									"qid": 99,
+									"": {
+										"qaid": 1432,
+										"value": "0"
+									}
+								},
+								"statistics_showgraph": {
+									"qid": 99,
+									"": {
+										"qaid": 1433,
+										"value": "1"
+									}
+								},
+								"time_limit": {
+									"qid": 99,
+									"": {
+										"qaid": 1434,
+										"value": ""
+									}
+								},
+								"time_limit_action": {
+									"qid": 99,
+									"": {
+										"qaid": 1435,
+										"value": "1"
+									}
+								},
+								"time_limit_countdown_message": {
+									"qid": 99,
+									"de": {
+										"qaid": 1436,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1437,
+										"value": ""
+									}
+								},
+								"time_limit_disable_next": {
+									"qid": 99,
+									"": {
+										"qaid": 1438,
+										"value": "0"
+									}
+								},
+								"time_limit_disable_prev": {
+									"qid": 99,
+									"": {
+										"qaid": 1439,
+										"value": "0"
+									}
+								},
+								"time_limit_message": {
+									"qid": 99,
+									"de": {
+										"qaid": 1440,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1441,
+										"value": ""
+									}
+								},
+								"time_limit_message_delay": {
+									"qid": 99,
+									"": {
+										"qaid": 1442,
+										"value": ""
+									}
+								},
+								"time_limit_message_style": {
+									"qid": 99,
+									"": {
+										"qaid": 1443,
+										"value": ""
+									}
+								},
+								"time_limit_timer_style": {
+									"qid": 99,
+									"": {
+										"qaid": 1444,
+										"value": ""
+									}
+								},
+								"time_limit_warning": {
+									"qid": 99,
+									"": {
+										"qaid": 1445,
+										"value": ""
+									}
+								},
+								"time_limit_warning_2": {
+									"qid": 99,
+									"": {
+										"qaid": 1446,
+										"value": ""
+									}
+								},
+								"time_limit_warning_2_display_time": {
+									"qid": 99,
+									"": {
+										"qaid": 1447,
+										"value": ""
+									}
+								},
+								"time_limit_warning_2_message": {
+									"qid": 99,
+									"de": {
+										"qaid": 1448,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1449,
+										"value": ""
+									}
+								},
+								"time_limit_warning_2_style": {
+									"qid": 99,
+									"": {
+										"qaid": 1450,
+										"value": ""
+									}
+								},
+								"time_limit_warning_display_time": {
+									"qid": 99,
+									"": {
+										"qaid": 1451,
+										"value": ""
+									}
+								},
+								"time_limit_warning_message": {
+									"qid": 99,
+									"de": {
+										"qaid": 1452,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1453,
+										"value": ""
+									}
+								},
+								"time_limit_warning_style": {
+									"qid": 99,
+									"": {
+										"qaid": 1454,
+										"value": ""
+									}
+								}
+							},
+							"answers": [
+								{
+									"aid": 49,
+									"qid": 99,
+									"code": "AO01",
+									"sortOrder": 0,
+									"assessmentValue": 0,
+									"scaleId": 0,
+									"l10ns": {
+										"de": {
+											"id": 61,
+											"aid": 49,
+											"answer": "vogel",
+											"language": "de"
+										},
+										"en": {
+											"id": 62,
+											"aid": 49,
+											"answer": "bird",
 											"language": "en"
 										}
 									}

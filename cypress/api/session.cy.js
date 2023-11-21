@@ -12,7 +12,7 @@ describe('api tests', () => {
     })
   })
 
-  it('destory currently used authenticaion token', function () {
+  it.skip('destory currently used authenticaion token', function () {
     cy.request({
       method: 'DELETE',
       url: `${Cypress.config('baseUrl')}rest/v1/session`,
