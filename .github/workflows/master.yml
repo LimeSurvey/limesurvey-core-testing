@@ -1,4 +1,4 @@
-name: LimeSurvey - E2E testing
+name: LS - E2E testing - master
 
 on:
   schedule:
