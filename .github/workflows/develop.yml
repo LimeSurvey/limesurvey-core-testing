@@ -1,0 +1,226 @@
+name: LimeSurvey - E2E testing
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'App branch'
+        default: 'develop'
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [ 'group1', 'group2' ]
+    runs-on: ubuntu-20.04
+    env:
+      DBENGINE: INNODB
+
+    name: Install app and run tests
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v3
+        with:
+          path: limesurvey-core-testing
+
+      - name: Checkout app
+        uses: actions/checkout@v3
+        with:
+          path: limesurvey
+          repository: LimeSurvey/LimeSurvey
+          ref: ${{ github.event.inputs.branch || 'develop' }}
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+
+      - name: Start the MySQL service
+        run: |
+          sudo systemctl start mysql.service
+          echo -e '[mysql]\nuser="root"\npassword="root"\nhost="localhost"' > "$HOME/.my.cnf"
+
+      - name: Initilize and check all dependencies
+        working-directory: limesurvey
+        run: |
+          # Before running composer install, check that the autoloader is up-to-date and all classes can be loaded.
+          php tests/check_autoloader.php
+
+          # Test
+          echo $archive_url
+          php -r 'var_dump(PHP_INT_SIZE);'
+          # Install LimeSurvey.
+          php -m  # Spit out all loaded PHP modules
+          mysql --version
+          touch enabletests
+          # NB: PHPUnit 6.5.* is installed with composer.
+          composer install -vvv
+          ./vendor/bin/phpunit --version
+
+      - name: Set up Apache+PHP
+        working-directory: limesurvey
+        run: |
+          # Set up the Apache and PHP
+          sudo apt-get update > /dev/null
+          sudo apt --fix-broken install php php-mysql php8.0-mysql php7.2-mysql libapache2-mod-php8.0 -y
+
+          sudo cp -f ./tests/CI-pipeline/github-actions-apache /etc/apache2/sites-available/000-default.conf
+          sudo sed -e "s?%CI_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/000-default.conf
+          sudo service apache2 restart
+
+          # Give permision to access files for Apache
+          setfacl -dR -m u:www-data:rwX -m u:$(whoami):rwx ./tmp
+          setfacl -dR -m u:www-data:rwX -m u:$(whoami):rwx ./upload
+          setfacl -dR -m u:www-data:rwX -m u:$(whoami):rwx ./themes
+          setfacl -dR -m u:www-data:rwX -m u:$(whoami):rwx ./tests/tmp
+          setfacl -dR -m u:www-data:rwX -m u:$(whoami):rwx ./application/config
+
+          chmod -R 777 ./tmp
+          sudo chown -R www-data:docker ./tmp
+          chmod -R 777 ./upload
+          chmod -R 777 ./themes  # Need 777 so both console and web server can cd into the folder.
+          chmod -R 777 ./tests/tmp
+          chmod -R 777 ./application/config
+          chmod +x ./tests/bin/lint-*
+
+      - name: Check MySQL service
+        run: |
+          # InnoDB needs large_file_prefix & Barracuda file format
+          # https://discuss.gogs.io/t/solved-mysql-error-1064-while-running-first-install/1604
+          # InnoDB variables ARE already set to desired values in Github runner (ubuntu-18.04)
+
+          sudo systemctl start mysql
+          sudo service mysql status
+          mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';" || true
+          mysql -e "Show  variables like '%large%';"
+          mysql -e "Show  variables like '%innodb_file%';"
+          mysql -e "Show  variables like '%innodb_default%';"
+          mysql -e "CREATE DATABASE limesurvey;"
+
+      - name: Load custom console and start the Application
+        working-directory: limesurvey
+        run: |
+          cp application/config/config-sample-mysql.php application/config/config.php
+          php application/commands/console.php install admin password Administrator your-email@example.net verbose
+
+          # Enable debug=2 in config file. OBS: This assumes debug is on line 61.
+          # TODO: Disable, a lines was added to config file and some tests started to fail.
+          # NB: EmCache is always disabled when debug => 2
+          # NB: There can be a difference in assets used when debug = 0 or 2 (minified version or not)
+          # sed -i '60s/.*/        "debug"=>2,/' application/config/config.php
+          # cat application/config/config.php
+
+      - name: Change config for api tests
+        working-directory: limesurvey
+        if: ${{ contains(matrix.group, 'api') }}
+        run: |
+          sed -i '46s/.*/        "urlFormat" => "path",/' application/config/config.php
+
+      - name: Test the server
+        run: |
+          # Test server.
+          wget -O - localhost
+          #sudo tail -n 500 /var/log/apache2/error.log || true
+          #sudo tail -n 500 /var/log/nginx/error.log || true
+          #sudo tail -n 500 /var/log/php7.4-fpm.log || true
+          #sudo tail -n 500 /var/log/php7.2-fpm.log || true
+          #sudo tail -n 500 /var/log/php8.0-fpm.log || true
+          # NOTE: php --version might not be the same as setup in apache. Use fwrite(STDERR, phpversion()); in index.php to be sure.
+          #which php
+          #php --version
+          #php -r 'phpinfo();' | grep log
+          #php --info | grep log
+          #find /var/log
+
+      - name: Seed data
+        working-directory: limesurvey-core-testing
+        run: |
+          # truncate all tables except lime_settings_global to prevent need for upgrading database
+          mysql -Nse 'show tables' limesurvey | while read table; do if [ $table != "lime_settings_global" ]; then mysql -e "truncate table $table" limesurvey; fi; done
+          # seed data (shouldn't contain lime_settings_global)
+          mysql limesurvey < cypress/data/ls-ce.sql
+          # copy upload directory
+          cp -RT cypress/data/upload ../limesurvey/upload
+
+      - name: Cypress run
+        id: cypress
+        uses: cypress-io/github-action@v3
+        if: ${{ contains(matrix.group, 'group') }}
+        continue-on-error: true
+        env:
+          CYPRESS_BASE_URL: 'http://localhost/index.php?r='
+          CYPRESS_DB_HOST: 127.0.0.1
+          CYPRESS_DB_DATABASE: limesurvey
+        with:
+          working-directory: limesurvey-core-testing
+          command: yarn cypress:run --browser chrome --spec cypress/e2e/${{ matrix.group }}/*.js --parallel y
+          wait-on: 'http://localhost'
+
+      # - name: Cypress run
+      #   id: api-tests
+      #   uses: cypress-io/github-action@v3
+      #   if: ${{ contains(matrix.group, 'api') }}
+      #   continue-on-error: true
+      #   env:
+      #     CYPRESS_BASE_URL: 'http://localhost/index.php/'
+      #     CYPRESS_DB_HOST: 127.0.0.1
+      #     CYPRESS_DB_DATABASE: limesurvey
+      #   with:
+      #     working-directory: limesurvey-core-testing
+      #     command: yarn cypress:api:run
+      #     wait-on: 'http://localhost'
+
+      # for debugging
+      # - name: Setup upterm session
+      #   uses: lhotari/action-upterm@v1
+      #   if: ${{ contains(matrix.group, 'api') }}
+
+      - name: Compress run_times.json
+        id: run-times-dir
+        if: steps.cypress.outcome == 'success'
+        run: zip -qq -r run-times-${{ matrix.group }}.zip limesurvey-core-testing/run_times.json
+
+      - name: Upload run-times.zip
+        uses: actions/upload-artifact@v3
+        if: steps.cypress.outcome == 'success'
+        with:
+          name: run-times-${{ matrix.group }}
+          path: run-times-${{ matrix.group }}.zip
+          retention-days: 3
+
+      # - name: Upload Screenshots
+      #   uses: actions/upload-artifact@v3
+      #   if: steps.cypress.outcome != 'success'
+      #   with:
+      #     name: screenshots
+      #     path: limesurvey-core-testing/cypress/screenshots/
+      #     retention-days: 5
+
+      # - name: Upload Videos
+      #   uses: actions/upload-artifact@v3
+      #   if: steps.cypress.outcome != 'success'
+      #   with:
+      #     name: videos
+      #     path: limesurvey-core-testing/cypress/videos/
+      #     retention-days: 3
+
+      - name: Compress html report
+        id: html-report-dir
+        if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) }}
+        run: zip -qq -r html-report-${{ matrix.group }}.zip limesurvey-core-testing/templates/test-result.html
+
+      - name: Upload html report
+        uses: actions/upload-artifact@v3
+        if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) }}
+        with:
+          name: html-report-${{ matrix.group }}
+          path: html-report-${{ matrix.group }}.zip
+          retention-days: 3
+
+      - name: Fail workflow if tests fail
+        if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) || (steps.api-tests.outcome != 'success' && contains(matrix.group, 'api')) }}
+        run: exit 1
