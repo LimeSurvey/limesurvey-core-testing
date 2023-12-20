@@ -34,6 +34,13 @@ Cypress.Commands.add('loginByCSRF', (user, password, path, lang = 'en') => {
     })
 })
 
+Cypress.Commands.add('generateAuthToken', (username, password) => {
+  cy.request('POST', `${Cypress.config('baseUrl')}rest/v1/session`, {
+    username,
+    password,
+  })
+})
+
 Cypress.Commands.add('checkImportSummary', (table_selector, json) => {
   cy.get(table_selector).within(() => {
     for (let a in json) {

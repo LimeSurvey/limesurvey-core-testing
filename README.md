@@ -46,3 +46,7 @@ Run the seed script (zsh):
 * merge the contents to run_times.json and put this file in the root directory fo this project
 * run the script split_tests_into_groups.js and it will distribute the tests into 2 groups (group1,group2) so that their run time is nearly equal
 * this will ensure the optimal run time of the whole test suite
+
+## Api tests
+
+* ```CYPRESS_BASE_URL=http://ls-ce/ yarn cypress:api:run``` - replace ls-ce with your local dev env
