@@ -63,6 +63,13 @@
 				"googleAnalyticsStyle": 0,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
+				"template": "inherit",
+				"format": "I",
+				"showQuestionCode": false,
+				"cookieConsent": false,
+				"footerBranding": false,
+				"showDataPolicyButton": false,
+				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 145252,
 					"language": "en",
@@ -166,6 +173,13 @@
 				"googleAnalyticsStyle": 0,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
+				"template": "inherit",
+				"format": "I",
+				"showQuestionCode": false,
+				"cookieConsent": false,
+				"footerBranding": false,
+				"showDataPolicyButton": false,
+				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 229791,
 					"language": "en",
@@ -269,6 +283,13 @@
 				"googleAnalyticsStyle": 0,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
+				"template": "inherit",
+				"format": "I",
+				"showQuestionCode": false,
+				"cookieConsent": false,
+				"footerBranding": false,
+				"showDataPolicyButton": false,
+				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 158868,
 					"language": "en",
@@ -372,6 +393,13 @@
 				"googleAnalyticsStyle": 0,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
+				"template": "inherit",
+				"format": "I",
+				"showQuestionCode": false,
+				"cookieConsent": false,
+				"footerBranding": false,
+				"showDataPolicyButton": false,
+				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 241194,
 					"language": "en",
@@ -475,6 +503,13 @@
 				"googleAnalyticsStyle": 0,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
+				"template": "inherit",
+				"format": "I",
+				"showQuestionCode": false,
+				"cookieConsent": false,
+				"footerBranding": false,
+				"showDataPolicyButton": false,
+				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 954472,
 					"language": "en",
@@ -563,6 +598,13 @@
 				"googleAnalyticsStyle": 0,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
+				"template": "inherit",
+				"format": "I",
+				"showQuestionCode": false,
+				"cookieConsent": false,
+				"footerBranding": false,
+				"showDataPolicyButton": false,
+				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 857644,
 					"language": "en",
@@ -651,6 +693,13 @@
 				"googleAnalyticsStyle": 0,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
+				"template": "inherit",
+				"format": "I",
+				"showQuestionCode": false,
+				"cookieConsent": false,
+				"footerBranding": false,
+				"showDataPolicyButton": false,
+				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 348447,
 					"language": "en",
@@ -739,6 +788,13 @@
 				"googleAnalyticsStyle": 0,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
+				"template": "inherit",
+				"format": "I",
+				"showQuestionCode": false,
+				"cookieConsent": false,
+				"footerBranding": false,
+				"showDataPolicyButton": false,
+				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 951785,
 					"language": "en",
@@ -777,8 +833,8 @@
 				"gsid": 1,
 				"active": false,
 				"language": "en",
-				"expires": "2033-06-21T14:08:00.000Z",
-				"startDate": "2023-06-21T14:08:00.000Z",
+				"expires": "2033-06-21 14:08:00",
+				"startDate": "2023-06-21 14:08:00",
 				"anonymized": false,
 				"saveTimings": null,
 				"additionalLanguages": "hr",
@@ -827,6 +883,13 @@
 				"googleAnalyticsStyle": 0,
 				"googleAnalyticsApiKey": "",
 				"showSurveyPolicyNotice": 0,
+				"template": "inherit",
+				"format": "I",
+				"showQuestionCode": false,
+				"cookieConsent": false,
+				"footerBranding": false,
+				"showDataPolicyButton": false,
+				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 422915,
 					"language": "en",
@@ -880,8 +943,8 @@
 				"gsid": 1,
 				"active": false,
 				"language": "en",
-				"expires": "2033-06-21T14:08:00.000Z",
-				"startDate": "2023-06-21T14:08:00.000Z",
+				"expires": "2033-06-21 14:08:00",
+				"startDate": "2023-06-21 14:08:00",
 				"anonymized": false,
 				"saveTimings": null,
 				"additionalLanguages": "hr",
@@ -930,6 +993,13 @@
 				"googleAnalyticsStyle": 0,
 				"googleAnalyticsApiKey": "",
 				"showSurveyPolicyNotice": 0,
+				"template": "inherit",
+				"format": "I",
+				"showQuestionCode": false,
+				"cookieConsent": false,
+				"footerBranding": false,
+				"showDataPolicyButton": false,
+				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 278371,
 					"language": "en",
@@ -1036,6 +1106,13 @@
 			"googleAnalyticsStyle": 0,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
+			"template": "inherit",
+			"format": "I",
+			"showQuestionCode": false,
+			"cookieConsent": false,
+			"footerBranding": false,
+			"showDataPolicyButton": false,
+			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 857644,
 				"language": "en",
@@ -1068,6 +1145,8 @@
 					"numberFormat": 0
 				}
 			},
+			"templateInherited": "fruity_twentythree",
+			"formatInherited": "G",
 			"languages": [
 				"en"
 			],
@@ -1429,6 +1508,13 @@
 			"googleAnalyticsStyle": 0,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
+			"template": "inherit",
+			"format": "I",
+			"showQuestionCode": false,
+			"cookieConsent": false,
+			"footerBranding": false,
+			"showDataPolicyButton": false,
+			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 857644,
 				"language": "en",
@@ -1461,6 +1547,8 @@
 					"numberFormat": 0
 				}
 			},
+			"templateInherited": "fruity_twentythree",
+			"formatInherited": "G",
 			"languages": [
 				"en"
 			],
@@ -1573,6 +1661,13 @@
 			"googleAnalyticsStyle": 0,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
+			"template": "inherit",
+			"format": "I",
+			"showQuestionCode": false,
+			"cookieConsent": false,
+			"footerBranding": false,
+			"showDataPolicyButton": false,
+			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 241194,
 				"language": "en",
@@ -1620,6 +1715,8 @@
 					"numberFormat": 0
 				}
 			},
+			"templateInherited": "fruity_twentythree",
+			"formatInherited": "G",
 			"languages": [
 				"en",
 				"de"
@@ -2124,6 +2221,13 @@
 			"googleAnalyticsStyle": 0,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
+			"template": "inherit",
+			"format": "I",
+			"showQuestionCode": false,
+			"cookieConsent": false,
+			"footerBranding": false,
+			"showDataPolicyButton": false,
+			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 158868,
 				"language": "en",
@@ -2171,6 +2275,8 @@
 					"numberFormat": 0
 				}
 			},
+			"templateInherited": "fruity_twentythree",
+			"formatInherited": "G",
 			"languages": [
 				"en",
 				"de"
@@ -2631,6 +2737,13 @@
 			"googleAnalyticsStyle": 0,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
+			"template": "inherit",
+			"format": "I",
+			"showQuestionCode": false,
+			"cookieConsent": false,
+			"footerBranding": false,
+			"showDataPolicyButton": false,
+			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 229791,
 				"language": "en",
@@ -2678,6 +2791,8 @@
 					"numberFormat": 0
 				}
 			},
+			"templateInherited": "fruity_twentythree",
+			"formatInherited": "G",
 			"languages": [
 				"en",
 				"de"
@@ -3160,6 +3275,13 @@
 			"googleAnalyticsStyle": 0,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
+			"template": "inherit",
+			"format": "I",
+			"showQuestionCode": false,
+			"cookieConsent": false,
+			"footerBranding": false,
+			"showDataPolicyButton": false,
+			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 145252,
 				"language": "en",
@@ -3207,6 +3329,8 @@
 					"numberFormat": 0
 				}
 			},
+			"templateInherited": "fruity_twentythree",
+			"formatInherited": "G",
 			"languages": [
 				"en",
 				"de"

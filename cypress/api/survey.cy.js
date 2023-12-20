@@ -71,7 +71,10 @@ describe('Survey tests', () => {
       },
     }).then((response) => {
       expect(response.status).to.eq(200)
-      expect(response.body).to.deep.equal({ operationsApplied: 1 })
+      expect(response.body).to.deep.equal({
+        operationsApplied: 1,
+        erronousOperations: [],
+      })
     })
 
     // check survey
@@ -183,6 +186,7 @@ describe('Survey tests', () => {
             field: 'aid',
           },
         ],
+        erronousOperations: [],
       })
     })
 
@@ -251,6 +255,7 @@ describe('Survey tests', () => {
             field: 'aid',
           },
         ],
+        erronousOperations: [],
       })
     })
 
@@ -331,6 +336,7 @@ describe('Survey tests', () => {
       expect(response.status).to.eq(200)
       expect(response.body).to.deep.equal({
         operationsApplied: 1,
+        erronousOperations: [],
       })
     })
 
@@ -394,6 +400,7 @@ describe('Survey tests', () => {
       expect(response.status).to.eq(200)
       expect(response.body).to.deep.equal({
         operationsApplied: 1,
+        erronousOperations: [],
       })
     })
 
