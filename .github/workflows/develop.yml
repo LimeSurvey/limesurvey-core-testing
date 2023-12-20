@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        group: [ 'group1', 'group2' ]
+        group: [ 'group1', 'group2', 'api' ]
     runs-on: ubuntu-20.04
     env:
       DBENGINE: INNODB
@@ -160,19 +160,19 @@ jobs:
           command: yarn cypress:run --browser chrome --spec cypress/e2e/${{ matrix.group }}/*.js --parallel y
           wait-on: 'http://localhost'
 
-      # - name: Cypress run
-      #   id: api-tests
-      #   uses: cypress-io/github-action@v3
-      #   if: ${{ contains(matrix.group, 'api') }}
-      #   continue-on-error: true
-      #   env:
-      #     CYPRESS_BASE_URL: 'http://localhost/index.php/'
-      #     CYPRESS_DB_HOST: 127.0.0.1
-      #     CYPRESS_DB_DATABASE: limesurvey
-      #   with:
-      #     working-directory: limesurvey-core-testing
-      #     command: yarn cypress:api:run
-      #     wait-on: 'http://localhost'
+      - name: Cypress run
+        id: api-tests
+        uses: cypress-io/github-action@v3
+        if: ${{ contains(matrix.group, 'api') }}
+        continue-on-error: true
+        env:
+          CYPRESS_BASE_URL: 'http://localhost/index.php/'
+          CYPRESS_DB_HOST: 127.0.0.1
+          CYPRESS_DB_DATABASE: limesurvey
+        with:
+          working-directory: limesurvey-core-testing
+          command: yarn cypress:api:run
+          wait-on: 'http://localhost'
 
       # for debugging
       # - name: Setup upterm session
