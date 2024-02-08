@@ -17,6 +17,7 @@ describe('Subquestion codes', () => {
       )
     cy.get('#subquestions\\[92\\]\\[0\\]\\[code\\]').clear().type('Y01')
     cy.get('#save-button-create-question').click()
+    cy.wait(500)
     cy.get('.alert.alert-success.alert-dismissible')
       .should('be.visible')
       .and('contain', 'Question saved')

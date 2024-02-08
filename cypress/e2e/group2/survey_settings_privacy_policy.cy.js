@@ -11,6 +11,7 @@ describe('Survey settings - Privacy policy', () => {
     cy.get('#dataseclabel_en').type('CustomPP-Eng')
     cy.get('#save-button').click()
     // check notification
+    cy.wait(500)
     cy.get('.alert.alert-success.alert-dismissible')
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
