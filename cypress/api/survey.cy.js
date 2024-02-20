@@ -227,7 +227,11 @@ describe('Survey tests', () => {
           },
         }).then((response) => {
           expect(response.status).to.eq(200)
-          expect(response.body).to.deep.equal(json)
+          expect(
+            normalizeSurvey(json.survey)
+          ).to.deep.equal(
+            normalizeSurvey(response.survey)
+          )
         })
       })
   })

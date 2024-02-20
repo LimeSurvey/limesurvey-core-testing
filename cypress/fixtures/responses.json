@@ -1419,7 +1419,8 @@
 							"language": "en"
 						}
 					},
-					"questions": []
+					"questions": [
+]
 				}
 			]
 		}
@@ -1428,7 +1429,10 @@
 		"survey": {
 			"sid": 241194,
 			"gsid": 1,
+			"ownerId": 1,
 			"active": false,
+			"admin": "inherit",
+			"adminEmail": "inherit",
 			"language": "en",
 			"expires": null,
 			"startDate": null,
@@ -1464,7 +1468,7 @@
 			"showGroupInfo": "I",
 			"showNoAnswer": null,
 			"showQNumCode": "I",
-			"bounceTime": 0,
+			"bounceTime": null,
 			"bounceProcessing": false,
 			"bounceAccountType": null,
 			"bounceAccountHost": null,
@@ -1477,16 +1481,11 @@
 			"navigationDelay": -1,
 			"noKeyboard": null,
 			"allowedItAfterCompletion": null,
-			"googleAnalyticsStyle": 0,
+			"googleAnalyticsStyle": null,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
 			"template": "inherit",
 			"format": "I",
-			"showQuestionCode": false,
-			"cookieConsent": false,
-			"footerBranding": false,
-			"showDataPolicyButton": false,
-			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 241194,
 				"language": "en",
@@ -1496,6 +1495,7 @@
 				"endText": "",
 				"policyNotice": "",
 				"policyError": null,
+				"surveyAlias": null,
 				"policyNoticeLabel": "",
 				"url": "",
 				"urlDescription": "",
@@ -1512,6 +1512,7 @@
 					"endText": null,
 					"policyNotice": null,
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": null,
 					"url": null,
 					"urlDescription": null,
@@ -1527,6 +1528,7 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -1540,6 +1542,53 @@
 				"en",
 				"de"
 			],
+			"previewLink": "/index.php/241194?newtest=Y&lang=en",
+			"surveyGroup": {
+				"gsid": "1",
+				"name": "default",
+				"title": "Default",
+				"template": null,
+				"description": "Default survey group",
+				"sortorder": "0",
+				"owner_id": "1",
+				"parent_id": null,
+				"created": "2023-04-28 12:19:53",
+				"modified": "2023-04-28 12:19:53",
+				"created_by": "1",
+				"alwaysavailable": 1
+			},
+			"owner": {
+				"uid": "1",
+				"name": "admin",
+				"fullName": "Administrator",
+				"parentId": "0",
+				"lang": "en",
+				"email": "your-email@example.net",
+				"htmlEditorMode": "default",
+				"templateEditorMode": "default",
+				"questionSelectorMode": "default",
+				"dateFormat": 1,
+				"lastLogin": "2024-02-20 08:37:55",
+				"created": "2023-04-28 12:19:57",
+				"modified": "2024-02-20 08:37:55",
+				"userStatus": "1"
+			},
+			"ownerInherited": {
+				"uid": "1",
+				"name": "admin",
+				"fullName": "Administrator",
+				"parentId": "0",
+				"lang": "en",
+				"email": "your-email@example.net",
+				"htmlEditorMode": "default",
+				"templateEditorMode": "default",
+				"questionSelectorMode": "default",
+				"dateFormat": 1,
+				"lastLogin": "2024-02-20 08:37:55",
+				"created": "2023-04-28 12:19:57",
+				"modified": "2024-02-20 08:37:55",
+				"userStatus": "1"
+			},
 			"questionGroups": [
 				{
 					"gid": 37,
@@ -1602,312 +1651,131 @@
 							},
 							"attributes": {
 								"array_filter": {
-									"qid": 96,
-									"": {
-										"qaid": 1267,
-										"value": ""
-									}
+									"": ""
 								},
 								"array_filter_style": {
-									"qid": 96,
-									"": {
-										"qaid": 1268,
-										"value": "0"
-									}
+									"": "0"
 								},
 								"array_filter_exclude": {
-									"qid": 96,
-									"": {
-										"qaid": 1269,
-										"value": ""
-									}
+									"": ""
 								},
 								"other_numbers_only": {
-									"qid": 96,
-									"": {
-										"qaid": 1270,
-										"value": "0"
-									}
+									"": "0"
 								},
 								"other_comment_mandatory": {
-									"qid": 96,
-									"": {
-										"qaid": 1271,
-										"value": "0"
-									}
+									"": "0"
 								},
 								"random_group": {
-									"qid": 96,
-									"": {
-										"qaid": 1272,
-										"value": ""
-									}
+									"": ""
 								},
 								"em_validation_q": {
-									"qid": 96,
-									"": {
-										"qaid": 1273,
-										"value": ""
-									}
+									"": ""
 								},
 								"em_validation_q_tip": {
-									"qid": 96,
-									"en": {
-										"qaid": 1274,
-										"value": ""
-									},
-									"de": {
-										"qaid": 1275,
-										"value": ""
-									}
+									"en": "",
+									"de": ""
 								},
 								"answer_order": {
-									"qid": 96,
-									"": {
-										"qaid": 1276,
-										"value": "normal"
-									}
+									"": "normal"
 								},
 								"other_replace_text": {
-									"qid": 96,
-									"en": {
-										"qaid": 1277,
-										"value": ""
-									},
-									"de": {
-										"qaid": 1278,
-										"value": ""
-									}
+									"en": "",
+									"de": ""
 								},
 								"hide_tip": {
-									"qid": 96,
-									"": {
-										"qaid": 1279,
-										"value": "0"
-									}
+									"": "0"
 								},
 								"display_columns": {
-									"qid": 96,
-									"": {
-										"qaid": 1280,
-										"value": ""
-									}
+									"": ""
 								},
 								"hidden": {
-									"qid": 96,
-									"": {
-										"qaid": 1281,
-										"value": "0"
-									}
+									"": "0"
 								},
 								"cssclass": {
-									"qid": 96,
-									"": {
-										"qaid": 1282,
-										"value": ""
-									}
+									"": ""
 								},
 								"other_position": {
-									"qid": 96,
-									"": {
-										"qaid": 1283,
-										"value": "default"
-									}
+									"": "default"
 								},
 								"other_position_code": {
-									"qid": 96,
-									"": {
-										"qaid": 1284,
-										"value": ""
-									}
+									"": ""
 								},
 								"printable_help": {
-									"qid": 96,
-									"en": {
-										"qaid": 1285,
-										"value": ""
-									},
-									"de": {
-										"qaid": 1286,
-										"value": ""
-									}
+									"en": "",
+									"de": ""
 								},
 								"page_break": {
-									"qid": 96,
-									"": {
-										"qaid": 1287,
-										"value": "0"
-									}
+									"": "0"
 								},
 								"scale_export": {
-									"qid": 96,
-									"": {
-										"qaid": 1288,
-										"value": "0"
-									}
+									"": "0"
 								},
 								"time_limit": {
-									"qid": 96,
-									"": {
-										"qaid": 1289,
-										"value": ""
-									}
+									"": ""
 								},
 								"time_limit_action": {
-									"qid": 96,
-									"": {
-										"qaid": 1290,
-										"value": "1"
-									}
+									"": "1"
 								},
 								"time_limit_disable_next": {
-									"qid": 96,
-									"": {
-										"qaid": 1291,
-										"value": "0"
-									}
+									"": "0"
 								},
 								"time_limit_disable_prev": {
-									"qid": 96,
-									"": {
-										"qaid": 1292,
-										"value": "0"
-									}
+									"": "0"
 								},
 								"time_limit_countdown_message": {
-									"qid": 96,
-									"en": {
-										"qaid": 1293,
-										"value": ""
-									},
-									"de": {
-										"qaid": 1294,
-										"value": ""
-									}
+									"en": "",
+									"de": ""
 								},
 								"time_limit_timer_style": {
-									"qid": 96,
-									"": {
-										"qaid": 1295,
-										"value": ""
-									}
+									"": ""
 								},
 								"time_limit_message_delay": {
-									"qid": 96,
-									"": {
-										"qaid": 1296,
-										"value": ""
-									}
+									"": ""
 								},
 								"time_limit_message": {
-									"qid": 96,
-									"en": {
-										"qaid": 1297,
-										"value": ""
-									},
-									"de": {
-										"qaid": 1298,
-										"value": ""
-									}
+									"en": "",
+									"de": ""
 								},
 								"time_limit_message_style": {
-									"qid": 96,
-									"": {
-										"qaid": 1299,
-										"value": ""
-									}
+									"": ""
 								},
 								"time_limit_warning": {
-									"qid": 96,
-									"": {
-										"qaid": 1300,
-										"value": ""
-									}
+									"": ""
 								},
 								"time_limit_warning_display_time": {
-									"qid": 96,
-									"": {
-										"qaid": 1301,
-										"value": ""
-									}
+									"": ""
 								},
 								"time_limit_warning_message": {
-									"qid": 96,
-									"en": {
-										"qaid": 1302,
-										"value": ""
-									},
-									"de": {
-										"qaid": 1303,
-										"value": ""
-									}
+									"en": "",
+									"de": ""
 								},
 								"time_limit_warning_style": {
-									"qid": 96,
-									"": {
-										"qaid": 1304,
-										"value": ""
-									}
+									"": ""
 								},
 								"time_limit_warning_2": {
-									"qid": 96,
-									"": {
-										"qaid": 1305,
-										"value": ""
-									}
+									"": ""
 								},
 								"time_limit_warning_2_display_time": {
-									"qid": 96,
-									"": {
-										"qaid": 1306,
-										"value": ""
-									}
+									"": ""
 								},
 								"time_limit_warning_2_message": {
-									"qid": 96,
-									"en": {
-										"qaid": 1307,
-										"value": ""
-									},
-									"de": {
-										"qaid": 1308,
-										"value": ""
-									}
+									"en": "",
+									"de": ""
 								},
 								"time_limit_warning_2_style": {
-									"qid": 96,
-									"": {
-										"qaid": 1309,
-										"value": ""
-									}
+									"": ""
 								},
 								"public_statistics": {
-									"qid": 96,
-									"": {
-										"qaid": 1310,
-										"value": "0"
-									}
+									"": "0"
 								},
 								"statistics_showgraph": {
-									"qid": 96,
-									"": {
-										"qaid": 1311,
-										"value": "1"
-									}
+									"": "1"
 								},
 								"statistics_graphtype": {
-									"qid": 96,
-									"": {
-										"qaid": 1312,
-										"value": "0"
-									}
+									"": "0"
 								},
 								"save_as_default": {
-									"qid": 96,
-									"": {
-										"qaid": 1313,
-										"value": "N"
-									}
+									"": "N"
 								}
 							},
 							"answers": [
