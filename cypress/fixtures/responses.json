@@ -11,7 +11,10 @@
 			{
 				"sid": 145252,
 				"gsid": 1,
+				"ownerId": 1,
 				"active": false,
+				"admin": "inherit",
+				"adminEmail": "inherit",
 				"language": "en",
 				"expires": null,
 				"startDate": null,
@@ -47,7 +50,7 @@
 				"showGroupInfo": "I",
 				"showNoAnswer": null,
 				"showQNumCode": "I",
-				"bounceTime": 0,
+				"bounceTime": null,
 				"bounceProcessing": false,
 				"bounceAccountType": null,
 				"bounceAccountHost": null,
@@ -60,16 +63,11 @@
 				"navigationDelay": -1,
 				"noKeyboard": null,
 				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": 0,
+				"googleAnalyticsStyle": null,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
 				"template": "inherit",
 				"format": "I",
-				"showQuestionCode": false,
-				"cookieConsent": false,
-				"footerBranding": false,
-				"showDataPolicyButton": false,
-				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 145252,
 					"language": "en",
@@ -79,6 +77,7 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -95,6 +94,7 @@
 						"endText": null,
 						"policyNotice": null,
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": null,
 						"url": null,
 						"urlDescription": null,
@@ -110,6 +110,7 @@
 						"endText": "",
 						"policyNotice": "",
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": "",
 						"url": "",
 						"urlDescription": "",
@@ -121,7 +122,10 @@
 			{
 				"sid": 229791,
 				"gsid": 1,
+				"ownerId": 1,
 				"active": false,
+				"admin": "inherit",
+				"adminEmail": "inherit",
 				"language": "en",
 				"expires": null,
 				"startDate": null,
@@ -157,7 +161,7 @@
 				"showGroupInfo": "I",
 				"showNoAnswer": null,
 				"showQNumCode": "I",
-				"bounceTime": 0,
+				"bounceTime": null,
 				"bounceProcessing": false,
 				"bounceAccountType": null,
 				"bounceAccountHost": null,
@@ -170,16 +174,11 @@
 				"navigationDelay": -1,
 				"noKeyboard": null,
 				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": 0,
+				"googleAnalyticsStyle": null,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
 				"template": "inherit",
 				"format": "I",
-				"showQuestionCode": false,
-				"cookieConsent": false,
-				"footerBranding": false,
-				"showDataPolicyButton": false,
-				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 229791,
 					"language": "en",
@@ -189,6 +188,7 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -205,6 +205,7 @@
 						"endText": null,
 						"policyNotice": null,
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": null,
 						"url": null,
 						"urlDescription": null,
@@ -220,6 +221,7 @@
 						"endText": "",
 						"policyNotice": "",
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": "",
 						"url": "",
 						"urlDescription": "",
@@ -231,7 +233,10 @@
 			{
 				"sid": 158868,
 				"gsid": 1,
+				"ownerId": 1,
 				"active": false,
+				"admin": "inherit",
+				"adminEmail": "inherit",
 				"language": "en",
 				"expires": null,
 				"startDate": null,
@@ -267,7 +272,7 @@
 				"showGroupInfo": "I",
 				"showNoAnswer": null,
 				"showQNumCode": "I",
-				"bounceTime": 0,
+				"bounceTime": null,
 				"bounceProcessing": false,
 				"bounceAccountType": null,
 				"bounceAccountHost": null,
@@ -280,16 +285,11 @@
 				"navigationDelay": -1,
 				"noKeyboard": null,
 				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": 0,
+				"googleAnalyticsStyle": null,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
 				"template": "inherit",
 				"format": "I",
-				"showQuestionCode": false,
-				"cookieConsent": false,
-				"footerBranding": false,
-				"showDataPolicyButton": false,
-				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 158868,
 					"language": "en",
@@ -299,6 +299,7 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -315,6 +316,7 @@
 						"endText": null,
 						"policyNotice": null,
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": null,
 						"url": null,
 						"urlDescription": null,
@@ -330,6 +332,7 @@
 						"endText": "",
 						"policyNotice": "",
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": "",
 						"url": "",
 						"urlDescription": "",
@@ -341,7 +344,10 @@
 			{
 				"sid": 241194,
 				"gsid": 1,
+				"ownerId": 1,
 				"active": false,
+				"admin": "inherit",
+				"adminEmail": "inherit",
 				"language": "en",
 				"expires": null,
 				"startDate": null,
@@ -377,7 +383,7 @@
 				"showGroupInfo": "I",
 				"showNoAnswer": null,
 				"showQNumCode": "I",
-				"bounceTime": 0,
+				"bounceTime": null,
 				"bounceProcessing": false,
 				"bounceAccountType": null,
 				"bounceAccountHost": null,
@@ -390,16 +396,11 @@
 				"navigationDelay": -1,
 				"noKeyboard": null,
 				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": 0,
+				"googleAnalyticsStyle": null,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
 				"template": "inherit",
 				"format": "I",
-				"showQuestionCode": false,
-				"cookieConsent": false,
-				"footerBranding": false,
-				"showDataPolicyButton": false,
-				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 241194,
 					"language": "en",
@@ -409,6 +410,7 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -425,6 +427,7 @@
 						"endText": null,
 						"policyNotice": null,
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": null,
 						"url": null,
 						"urlDescription": null,
@@ -440,6 +443,7 @@
 						"endText": "",
 						"policyNotice": "",
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": "",
 						"url": "",
 						"urlDescription": "",
@@ -451,7 +455,10 @@
 			{
 				"sid": 954472,
 				"gsid": 1,
+				"ownerId": 1,
 				"active": false,
+				"admin": "inherit",
+				"adminEmail": "inherit",
 				"language": "en",
 				"expires": null,
 				"startDate": null,
@@ -487,7 +494,7 @@
 				"showGroupInfo": "I",
 				"showNoAnswer": null,
 				"showQNumCode": "I",
-				"bounceTime": 0,
+				"bounceTime": null,
 				"bounceProcessing": false,
 				"bounceAccountType": null,
 				"bounceAccountHost": null,
@@ -500,16 +507,11 @@
 				"navigationDelay": -1,
 				"noKeyboard": null,
 				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": 0,
+				"googleAnalyticsStyle": null,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
 				"template": "inherit",
 				"format": "I",
-				"showQuestionCode": false,
-				"cookieConsent": false,
-				"footerBranding": false,
-				"showDataPolicyButton": false,
-				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 954472,
 					"language": "en",
@@ -519,6 +521,7 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -535,6 +538,7 @@
 						"endText": "",
 						"policyNotice": "",
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": "",
 						"url": "",
 						"urlDescription": "",
@@ -546,7 +550,10 @@
 			{
 				"sid": 857644,
 				"gsid": 1,
+				"ownerId": 1,
 				"active": false,
+				"admin": "inherit",
+				"adminEmail": "inherit",
 				"language": "en",
 				"expires": null,
 				"startDate": null,
@@ -582,7 +589,7 @@
 				"showGroupInfo": "I",
 				"showNoAnswer": null,
 				"showQNumCode": "I",
-				"bounceTime": 0,
+				"bounceTime": null,
 				"bounceProcessing": false,
 				"bounceAccountType": null,
 				"bounceAccountHost": null,
@@ -595,16 +602,11 @@
 				"navigationDelay": -1,
 				"noKeyboard": null,
 				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": 0,
+				"googleAnalyticsStyle": null,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
 				"template": "inherit",
 				"format": "I",
-				"showQuestionCode": false,
-				"cookieConsent": false,
-				"footerBranding": false,
-				"showDataPolicyButton": false,
-				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 857644,
 					"language": "en",
@@ -614,6 +616,7 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -630,6 +633,7 @@
 						"endText": "",
 						"policyNotice": "",
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": "",
 						"url": "",
 						"urlDescription": "",
@@ -641,7 +645,10 @@
 			{
 				"sid": 348447,
 				"gsid": 1,
+				"ownerId": 1,
 				"active": false,
+				"admin": "inherit",
+				"adminEmail": "inherit",
 				"language": "en",
 				"expires": null,
 				"startDate": null,
@@ -677,7 +684,7 @@
 				"showGroupInfo": "I",
 				"showNoAnswer": null,
 				"showQNumCode": "I",
-				"bounceTime": 0,
+				"bounceTime": null,
 				"bounceProcessing": false,
 				"bounceAccountType": null,
 				"bounceAccountHost": null,
@@ -690,16 +697,11 @@
 				"navigationDelay": -1,
 				"noKeyboard": null,
 				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": 0,
+				"googleAnalyticsStyle": null,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
 				"template": "inherit",
 				"format": "I",
-				"showQuestionCode": false,
-				"cookieConsent": false,
-				"footerBranding": false,
-				"showDataPolicyButton": false,
-				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 348447,
 					"language": "en",
@@ -709,6 +711,7 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -725,6 +728,7 @@
 						"endText": "",
 						"policyNotice": "",
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": "",
 						"url": "",
 						"urlDescription": "",
@@ -736,7 +740,10 @@
 			{
 				"sid": 951785,
 				"gsid": 1,
+				"ownerId": 1,
 				"active": false,
+				"admin": "inherit",
+				"adminEmail": "inherit",
 				"language": "en",
 				"expires": null,
 				"startDate": null,
@@ -772,7 +779,7 @@
 				"showGroupInfo": "I",
 				"showNoAnswer": null,
 				"showQNumCode": "I",
-				"bounceTime": 0,
+				"bounceTime": null,
 				"bounceProcessing": false,
 				"bounceAccountType": null,
 				"bounceAccountHost": null,
@@ -785,16 +792,11 @@
 				"navigationDelay": -1,
 				"noKeyboard": null,
 				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": 0,
+				"googleAnalyticsStyle": null,
 				"googleAnalyticsApiKey": null,
 				"showSurveyPolicyNotice": 0,
 				"template": "inherit",
 				"format": "I",
-				"showQuestionCode": false,
-				"cookieConsent": false,
-				"footerBranding": false,
-				"showDataPolicyButton": false,
-				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 951785,
 					"language": "en",
@@ -804,6 +806,7 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -820,6 +823,7 @@
 						"endText": "",
 						"policyNotice": "",
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": "",
 						"url": "",
 						"urlDescription": "",
@@ -831,7 +835,10 @@
 			{
 				"sid": 422915,
 				"gsid": 1,
+				"ownerId": 1,
 				"active": false,
+				"admin": "inherit",
+				"adminEmail": "inherit",
 				"language": "en",
 				"expires": "2033-06-21 14:08:00",
 				"startDate": "2023-06-21 14:08:00",
@@ -867,7 +874,7 @@
 				"showGroupInfo": "I",
 				"showNoAnswer": null,
 				"showQNumCode": "I",
-				"bounceTime": 0,
+				"bounceTime": null,
 				"bounceProcessing": false,
 				"bounceAccountType": null,
 				"bounceAccountHost": null,
@@ -885,11 +892,6 @@
 				"showSurveyPolicyNotice": 0,
 				"template": "inherit",
 				"format": "I",
-				"showQuestionCode": false,
-				"cookieConsent": false,
-				"footerBranding": false,
-				"showDataPolicyButton": false,
-				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 422915,
 					"language": "en",
@@ -899,8 +901,9 @@
 					"endText": "Aliquam luctus, tellus non ullamcorper aliquet, felis metus eleifend nunc, et sollicitudin libero mi at lectus. Donec interdum lacinia nunc, eget hendrerit risus condimentum vitae. Etiam efficitur dictum sapien, ac ornare lacus porta sit amet.",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": "",
 					"policyNoticeLabel": "",
-					"url": "http://www.limesurvey.org",
+					"url": "http:\/\/www.limesurvey.org",
 					"urlDescription": "",
 					"dateFormat": 9,
 					"numberFormat": 0
@@ -915,8 +918,9 @@
 						"endText": "Aliquam luctus, tellus non ullamcorper aliquet, felis metus eleifend nunc, et sollicitudin libero mi at lectus. Donec interdum lacinia nunc, eget hendrerit risus condimentum vitae. Etiam efficitur dictum sapien, ac ornare lacus porta sit amet.",
 						"policyNotice": "",
 						"policyError": null,
+						"surveyAlias": "",
 						"policyNoticeLabel": "",
-						"url": "http://www.limesurvey.org",
+						"url": "http:\/\/www.limesurvey.org",
 						"urlDescription": "",
 						"dateFormat": 9,
 						"numberFormat": 0
@@ -930,6 +934,7 @@
 						"endText": null,
 						"policyNotice": null,
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": null,
 						"url": null,
 						"urlDescription": null,
@@ -941,7 +946,10 @@
 			{
 				"sid": 278371,
 				"gsid": 1,
+				"ownerId": 1,
 				"active": false,
+				"admin": "inherit",
+				"adminEmail": "inherit",
 				"language": "en",
 				"expires": "2033-06-21 14:08:00",
 				"startDate": "2023-06-21 14:08:00",
@@ -977,7 +985,7 @@
 				"showGroupInfo": "I",
 				"showNoAnswer": null,
 				"showQNumCode": "I",
-				"bounceTime": 0,
+				"bounceTime": null,
 				"bounceProcessing": false,
 				"bounceAccountType": null,
 				"bounceAccountHost": null,
@@ -995,11 +1003,6 @@
 				"showSurveyPolicyNotice": 0,
 				"template": "inherit",
 				"format": "I",
-				"showQuestionCode": false,
-				"cookieConsent": false,
-				"footerBranding": false,
-				"showDataPolicyButton": false,
-				"showLegalNoticeButton": false,
 				"defaultLanguage": {
 					"sid": 278371,
 					"language": "en",
@@ -1009,8 +1012,9 @@
 					"endText": "Aliquam luctus, tellus non ullamcorper aliquet, felis metus eleifend nunc, et sollicitudin libero mi at lectus. Donec interdum lacinia nunc, eget hendrerit risus condimentum vitae. Etiam efficitur dictum sapien, ac ornare lacus porta sit amet.",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": "",
 					"policyNoticeLabel": "",
-					"url": "http://www.limesurvey.org",
+					"url": "http:\/\/www.limesurvey.org",
 					"urlDescription": "",
 					"dateFormat": 9,
 					"numberFormat": 0
@@ -1025,8 +1029,9 @@
 						"endText": "Aliquam luctus, tellus non ullamcorper aliquet, felis metus eleifend nunc, et sollicitudin libero mi at lectus. Donec interdum lacinia nunc, eget hendrerit risus condimentum vitae. Etiam efficitur dictum sapien, ac ornare lacus porta sit amet.",
 						"policyNotice": "",
 						"policyError": null,
+						"surveyAlias": "",
 						"policyNoticeLabel": "",
-						"url": "http://www.limesurvey.org",
+						"url": "http:\/\/www.limesurvey.org",
 						"urlDescription": "",
 						"dateFormat": 9,
 						"numberFormat": 0
@@ -1040,6 +1045,7 @@
 						"endText": null,
 						"policyNotice": null,
 						"policyError": null,
+						"surveyAlias": null,
 						"policyNoticeLabel": null,
 						"url": null,
 						"urlDescription": null,
@@ -1054,7 +1060,10 @@
 		"survey": {
 			"sid": 857644,
 			"gsid": 1,
+			"ownerId": 1,
 			"active": false,
+			"admin": "inherit",
+			"adminEmail": "inherit",
 			"language": "en",
 			"expires": null,
 			"startDate": null,
@@ -1090,7 +1099,7 @@
 			"showGroupInfo": "I",
 			"showNoAnswer": null,
 			"showQNumCode": "I",
-			"bounceTime": 0,
+			"bounceTime": null,
 			"bounceProcessing": false,
 			"bounceAccountType": null,
 			"bounceAccountHost": null,
@@ -1103,16 +1112,11 @@
 			"navigationDelay": -1,
 			"noKeyboard": null,
 			"allowedItAfterCompletion": null,
-			"googleAnalyticsStyle": 0,
+			"googleAnalyticsStyle": null,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
 			"template": "inherit",
 			"format": "I",
-			"showQuestionCode": false,
-			"cookieConsent": false,
-			"footerBranding": false,
-			"showDataPolicyButton": false,
-			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 857644,
 				"language": "en",
@@ -1122,6 +1126,7 @@
 				"endText": "",
 				"policyNotice": "",
 				"policyError": null,
+				"surveyAlias": null,
 				"policyNoticeLabel": "",
 				"url": "",
 				"urlDescription": "",
@@ -1138,6 +1143,7 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -1150,6 +1156,53 @@
 			"languages": [
 				"en"
 			],
+			"previewLink": "\/index.php\/857644?newtest=Y&lang=en",
+			"surveyGroup": {
+				"gsid": "1",
+				"name": "default",
+				"title": "Default",
+				"template": null,
+				"description": "Default survey group",
+				"sortorder": "0",
+				"owner_id": "1",
+				"parent_id": null,
+				"created": "2023-04-28 12:19:53",
+				"modified": "2023-04-28 12:19:53",
+				"created_by": "1",
+				"alwaysavailable": 1
+			},
+			"owner": {
+				"uid": "1",
+				"name": "admin",
+				"fullName": "Administrator",
+				"parentId": "0",
+				"lang": "en",
+				"email": "your-email@example.net",
+				"htmlEditorMode": "default",
+				"templateEditorMode": "default",
+				"questionSelectorMode": "default",
+				"dateFormat": 1,
+				"lastLogin": "2024-02-20 07:37:30",
+				"created": "2023-04-28 12:19:57",
+				"modified": "2024-02-20 07:37:30",
+				"userStatus": "1"
+			},
+			"ownerInherited": {
+				"uid": "1",
+				"name": "admin",
+				"fullName": "Administrator",
+				"parentId": "0",
+				"lang": "en",
+				"email": "your-email@example.net",
+				"htmlEditorMode": "default",
+				"templateEditorMode": "default",
+				"questionSelectorMode": "default",
+				"dateFormat": 1,
+				"lastLogin": "2024-02-20 07:37:30",
+				"created": "2023-04-28 12:19:57",
+				"modified": "2024-02-20 07:37:30",
+				"userStatus": "1"
+			},
 			"questionGroups": [
 				{
 					"gid": 34,
@@ -1196,255 +1249,6 @@
 								}
 							},
 							"attributes": [],
-							"answers": []
-						},
-						{
-							"qid": 73,
-							"parentQid": 0,
-							"sid": 857644,
-							"type": "T",
-							"title": "G01Q02",
-							"preg": "",
-							"other": false,
-							"mandatory": false,
-							"encrypted": false,
-							"questionOrder": 2,
-							"scaleId": 0,
-							"sameDefault": null,
-							"questionThemeName": "longfreetext",
-							"moduleName": "",
-							"gid": 34,
-							"relevance": "1",
-							"sameScript": null,
-							"l10ns": {
-								"en": {
-									"id": 103,
-									"qid": 73,
-									"question": "This question will soon be deleted",
-									"help": "",
-									"script": "",
-									"language": "en"
-								}
-							},
-							"attributes": {
-								"random_group": {
-									"qid": 73,
-									"": {
-										"qaid": 1090,
-										"value": ""
-									}
-								},
-								"em_validation_q": {
-									"qid": 73,
-									"": {
-										"qaid": 1091,
-										"value": ""
-									}
-								},
-								"em_validation_q_tip": {
-									"qid": 73,
-									"en": {
-										"qaid": 1092,
-										"value": ""
-									}
-								},
-								"hide_tip": {
-									"qid": 73,
-									"": {
-										"qaid": 1093,
-										"value": "0"
-									}
-								},
-								"text_input_width": {
-									"qid": 73,
-									"": {
-										"qaid": 1094,
-										"value": ""
-									}
-								},
-								"input_size": {
-									"qid": 73,
-									"": {
-										"qaid": 1095,
-										"value": ""
-									}
-								},
-								"display_rows": {
-									"qid": 73,
-									"": {
-										"qaid": 1096,
-										"value": ""
-									}
-								},
-								"hidden": {
-									"qid": 73,
-									"": {
-										"qaid": 1097,
-										"value": "0"
-									}
-								},
-								"cssclass": {
-									"qid": 73,
-									"": {
-										"qaid": 1098,
-										"value": ""
-									}
-								},
-								"maximum_chars": {
-									"qid": 73,
-									"": {
-										"qaid": 1099,
-										"value": ""
-									}
-								},
-								"page_break": {
-									"qid": 73,
-									"": {
-										"qaid": 1100,
-										"value": "0"
-									}
-								},
-								"time_limit": {
-									"qid": 73,
-									"": {
-										"qaid": 1101,
-										"value": ""
-									}
-								},
-								"time_limit_action": {
-									"qid": 73,
-									"": {
-										"qaid": 1102,
-										"value": "1"
-									}
-								},
-								"time_limit_disable_next": {
-									"qid": 73,
-									"": {
-										"qaid": 1103,
-										"value": "0"
-									}
-								},
-								"time_limit_disable_prev": {
-									"qid": 73,
-									"": {
-										"qaid": 1104,
-										"value": "0"
-									}
-								},
-								"time_limit_countdown_message": {
-									"qid": 73,
-									"en": {
-										"qaid": 1105,
-										"value": ""
-									}
-								},
-								"time_limit_timer_style": {
-									"qid": 73,
-									"": {
-										"qaid": 1106,
-										"value": ""
-									}
-								},
-								"time_limit_message_delay": {
-									"qid": 73,
-									"": {
-										"qaid": 1107,
-										"value": ""
-									}
-								},
-								"time_limit_message": {
-									"qid": 73,
-									"en": {
-										"qaid": 1108,
-										"value": ""
-									}
-								},
-								"time_limit_message_style": {
-									"qid": 73,
-									"": {
-										"qaid": 1109,
-										"value": ""
-									}
-								},
-								"time_limit_warning": {
-									"qid": 73,
-									"": {
-										"qaid": 1110,
-										"value": ""
-									}
-								},
-								"time_limit_warning_display_time": {
-									"qid": 73,
-									"": {
-										"qaid": 1111,
-										"value": ""
-									}
-								},
-								"time_limit_warning_message": {
-									"qid": 73,
-									"en": {
-										"qaid": 1112,
-										"value": ""
-									}
-								},
-								"time_limit_warning_style": {
-									"qid": 73,
-									"": {
-										"qaid": 1113,
-										"value": ""
-									}
-								},
-								"time_limit_warning_2": {
-									"qid": 73,
-									"": {
-										"qaid": 1114,
-										"value": ""
-									}
-								},
-								"time_limit_warning_2_display_time": {
-									"qid": 73,
-									"": {
-										"qaid": 1115,
-										"value": ""
-									}
-								},
-								"time_limit_warning_2_message": {
-									"qid": 73,
-									"en": {
-										"qaid": 1116,
-										"value": ""
-									}
-								},
-								"time_limit_warning_2_style": {
-									"qid": 73,
-									"": {
-										"qaid": 1117,
-										"value": ""
-									}
-								},
-								"statistics_showgraph": {
-									"qid": 73,
-									"": {
-										"qaid": 1118,
-										"value": "1"
-									}
-								},
-								"statistics_graphtype": {
-									"qid": 73,
-									"": {
-										"qaid": 1119,
-										"value": "0"
-									}
-								},
-								"save_as_default": {
-									"qid": 73,
-									"": {
-										"qaid": 1120,
-										"value": "N"
-									}
-								}
-							},
 							"answers": []
 						}
 					]
@@ -1456,7 +1260,10 @@
 		"survey": {
 			"sid": 857644,
 			"gsid": 1,
+			"ownerId": 1,
 			"active": false,
+			"admin": "inherit",
+			"adminEmail": "inherit",
 			"language": "en",
 			"expires": null,
 			"startDate": null,
@@ -1492,7 +1299,7 @@
 			"showGroupInfo": "I",
 			"showNoAnswer": null,
 			"showQNumCode": "I",
-			"bounceTime": 0,
+			"bounceTime": null,
 			"bounceProcessing": false,
 			"bounceAccountType": null,
 			"bounceAccountHost": null,
@@ -1505,16 +1312,11 @@
 			"navigationDelay": -1,
 			"noKeyboard": null,
 			"allowedItAfterCompletion": null,
-			"googleAnalyticsStyle": 0,
+			"googleAnalyticsStyle": null,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
 			"template": "inherit",
 			"format": "I",
-			"showQuestionCode": false,
-			"cookieConsent": false,
-			"footerBranding": false,
-			"showDataPolicyButton": false,
-			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 857644,
 				"language": "en",
@@ -1524,6 +1326,7 @@
 				"endText": "",
 				"policyNotice": "",
 				"policyError": null,
+				"surveyAlias": null,
 				"policyNoticeLabel": "",
 				"url": "",
 				"urlDescription": "",
@@ -1540,6 +1343,7 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
+					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -1552,6 +1356,53 @@
 			"languages": [
 				"en"
 			],
+			"previewLink": "\/index.php\/857644?newtest=Y&lang=en",
+			"surveyGroup": {
+				"gsid": "1",
+				"name": "default",
+				"title": "Default",
+				"template": null,
+				"description": "Default survey group",
+				"sortorder": "0",
+				"owner_id": "1",
+				"parent_id": null,
+				"created": "2023-04-28 12:19:53",
+				"modified": "2023-04-28 12:19:53",
+				"created_by": "1",
+				"alwaysavailable": 1
+			},
+			"owner": {
+				"uid": "1",
+				"name": "admin",
+				"fullName": "Administrator",
+				"parentId": "0",
+				"lang": "en",
+				"email": "your-email@example.net",
+				"htmlEditorMode": "default",
+				"templateEditorMode": "default",
+				"questionSelectorMode": "default",
+				"dateFormat": 1,
+				"lastLogin": "2024-02-20 07:37:30",
+				"created": "2023-04-28 12:19:57",
+				"modified": "2024-02-20 07:37:30",
+				"userStatus": "1"
+			},
+			"ownerInherited": {
+				"uid": "1",
+				"name": "admin",
+				"fullName": "Administrator",
+				"parentId": "0",
+				"lang": "en",
+				"email": "your-email@example.net",
+				"htmlEditorMode": "default",
+				"templateEditorMode": "default",
+				"questionSelectorMode": "default",
+				"dateFormat": 1,
+				"lastLogin": "2024-02-20 07:37:30",
+				"created": "2023-04-28 12:19:57",
+				"modified": "2024-02-20 07:37:30",
+				"userStatus": "1"
+			},
 			"questionGroups": [
 				{
 					"gid": 34,
@@ -1568,39 +1419,7 @@
 							"language": "en"
 						}
 					},
-					"questions": [
-						{
-							"qid": 72,
-							"parentQid": 0,
-							"sid": 857644,
-							"type": "T",
-							"title": "Q00",
-							"preg": null,
-							"other": false,
-							"mandatory": false,
-							"encrypted": false,
-							"questionOrder": 1,
-							"scaleId": 0,
-							"sameDefault": null,
-							"questionThemeName": "longfreetext",
-							"moduleName": null,
-							"gid": 34,
-							"relevance": "1",
-							"sameScript": null,
-							"l10ns": {
-								"en": {
-									"id": 102,
-									"qid": 72,
-									"question": "A first example question. Please answer this question:",
-									"help": "This is a question help text.",
-									"script": null,
-									"language": "en"
-								}
-							},
-							"attributes": [],
-							"answers": []
-						}
-					]
+					"questions": []
 				}
 			]
 		}

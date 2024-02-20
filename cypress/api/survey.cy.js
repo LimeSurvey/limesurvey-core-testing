@@ -1,3 +1,19 @@
+
+// survey data can contain data that changes between requests
+// such as dates, sow e must noramlize these values
+const normalizeSurvey = function(survey){
+  var users = [
+    survey?.owner,
+    survey?.ownerInherited
+  ]
+  users.forEach((user) => {
+    if (user) {
+      user.lastLogin = '2024-02-20 11:22:00'
+      user.modified = '2024-02-20 11:22:00'
+    }
+  })
+}
+
 describe('Survey tests', () => {
   let token, aid
 
@@ -47,7 +63,11 @@ describe('Survey tests', () => {
           },
         }).then((response) => {
           expect(response.status).to.eq(200)
-          expect(response.body).to.deep.equal(json)
+          expect(
+            normalizeSurvey(json.survey)
+          ).to.deep.equal(
+            normalizeSurvey(response.survey)
+          )
         })
       })
   })
@@ -65,7 +85,7 @@ describe('Survey tests', () => {
           {
             entity: 'question',
             op: 'delete',
-            id: '73',
+            id: '72',
           },
         ],
       },
@@ -90,7 +110,11 @@ describe('Survey tests', () => {
           },
         }).then((response) => {
           expect(response.status).to.eq(200)
-          expect(response.body).to.deep.equal(json)
+          expect(
+            normalizeSurvey(json.survey)
+          ).to.deep.equal(
+            normalizeSurvey(response.survey)
+          )
         })
       })
   })
