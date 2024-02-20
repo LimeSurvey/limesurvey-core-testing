@@ -6,1064 +6,13 @@
 			"data": []
 		}
 	},
-	"r002": {
-		"surveys": [
-			{
-				"sid": 145252,
-				"gsid": 1,
-				"ownerId": 1,
-				"active": false,
-				"admin": "inherit",
-				"adminEmail": "inherit",
-				"language": "en",
-				"expires": null,
-				"startDate": null,
-				"anonymized": false,
-				"saveTimings": null,
-				"additionalLanguages": "de",
-				"datestamp": null,
-				"useCookie": null,
-				"allowRegister": null,
-				"allowSave": null,
-				"autoNumberStart": 0,
-				"autoRedirect": null,
-				"allowPrev": null,
-				"printAnswers": null,
-				"ipAddr": null,
-				"ipAnonymize": null,
-				"refUrl": null,
-				"dateCreated": "2023-11-21T14:02:15.000Z",
-				"publicStatistics": null,
-				"publicGraphs": null,
-				"listPublic": null,
-				"sendConfirmation": null,
-				"tokenAnswersPersistence": null,
-				"assessments": null,
-				"useCaptcha": null,
-				"useTokens": false,
-				"bounceEmail": "inherit",
-				"attributeDescriptions": null,
-				"emailResponseTo": "inherit",
-				"emailNotificationTo": "inherit",
-				"tokenLength": -1,
-				"showXQuestions": null,
-				"showGroupInfo": "I",
-				"showNoAnswer": null,
-				"showQNumCode": "I",
-				"bounceTime": null,
-				"bounceProcessing": false,
-				"bounceAccountType": null,
-				"bounceAccountHost": null,
-				"bounceAccountPass": null,
-				"bounceAccountEncryption": null,
-				"bounceAccountUser": null,
-				"showWelcome": null,
-				"showProgress": null,
-				"questionIndex": -1,
-				"navigationDelay": -1,
-				"noKeyboard": null,
-				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": null,
-				"googleAnalyticsApiKey": null,
-				"showSurveyPolicyNotice": 0,
-				"template": "inherit",
-				"format": "I",
-				"defaultLanguage": {
-					"sid": 145252,
-					"language": "en",
-					"title": "Updateanswer2",
-					"description": "",
-					"welcomeText": "",
-					"endText": "",
-					"policyNotice": "",
-					"policyError": null,
-					"surveyAlias": null,
-					"policyNoticeLabel": "",
-					"url": "",
-					"urlDescription": "",
-					"dateFormat": 9,
-					"numberFormat": 0
-				},
-				"languageSettings": {
-					"de": {
-						"sid": 145252,
-						"language": "de",
-						"title": "Updateanswer2",
-						"description": null,
-						"welcomeText": null,
-						"endText": null,
-						"policyNotice": null,
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": null,
-						"url": null,
-						"urlDescription": null,
-						"dateFormat": 1,
-						"numberFormat": 0
-					},
-					"en": {
-						"sid": 145252,
-						"language": "en",
-						"title": "Updateanswer2",
-						"description": "",
-						"welcomeText": "",
-						"endText": "",
-						"policyNotice": "",
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": "",
-						"url": "",
-						"urlDescription": "",
-						"dateFormat": 9,
-						"numberFormat": 0
-					}
-				}
-			},
-			{
-				"sid": 229791,
-				"gsid": 1,
-				"ownerId": 1,
-				"active": false,
-				"admin": "inherit",
-				"adminEmail": "inherit",
-				"language": "en",
-				"expires": null,
-				"startDate": null,
-				"anonymized": false,
-				"saveTimings": null,
-				"additionalLanguages": "de",
-				"datestamp": null,
-				"useCookie": null,
-				"allowRegister": null,
-				"allowSave": null,
-				"autoNumberStart": 0,
-				"autoRedirect": null,
-				"allowPrev": null,
-				"printAnswers": null,
-				"ipAddr": null,
-				"ipAnonymize": null,
-				"refUrl": null,
-				"dateCreated": "2023-11-21T14:01:39.000Z",
-				"publicStatistics": null,
-				"publicGraphs": null,
-				"listPublic": null,
-				"sendConfirmation": null,
-				"tokenAnswersPersistence": null,
-				"assessments": null,
-				"useCaptcha": null,
-				"useTokens": false,
-				"bounceEmail": "inherit",
-				"attributeDescriptions": null,
-				"emailResponseTo": "inherit",
-				"emailNotificationTo": "inherit",
-				"tokenLength": -1,
-				"showXQuestions": null,
-				"showGroupInfo": "I",
-				"showNoAnswer": null,
-				"showQNumCode": "I",
-				"bounceTime": null,
-				"bounceProcessing": false,
-				"bounceAccountType": null,
-				"bounceAccountHost": null,
-				"bounceAccountPass": null,
-				"bounceAccountEncryption": null,
-				"bounceAccountUser": null,
-				"showWelcome": null,
-				"showProgress": null,
-				"questionIndex": -1,
-				"navigationDelay": -1,
-				"noKeyboard": null,
-				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": null,
-				"googleAnalyticsApiKey": null,
-				"showSurveyPolicyNotice": 0,
-				"template": "inherit",
-				"format": "I",
-				"defaultLanguage": {
-					"sid": 229791,
-					"language": "en",
-					"title": "Updateanswer1",
-					"description": "",
-					"welcomeText": "",
-					"endText": "",
-					"policyNotice": "",
-					"policyError": null,
-					"surveyAlias": null,
-					"policyNoticeLabel": "",
-					"url": "",
-					"urlDescription": "",
-					"dateFormat": 9,
-					"numberFormat": 0
-				},
-				"languageSettings": {
-					"de": {
-						"sid": 229791,
-						"language": "de",
-						"title": "Updateanswer1",
-						"description": null,
-						"welcomeText": null,
-						"endText": null,
-						"policyNotice": null,
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": null,
-						"url": null,
-						"urlDescription": null,
-						"dateFormat": 1,
-						"numberFormat": 0
-					},
-					"en": {
-						"sid": 229791,
-						"language": "en",
-						"title": "Updateanswer1",
-						"description": "",
-						"welcomeText": "",
-						"endText": "",
-						"policyNotice": "",
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": "",
-						"url": "",
-						"urlDescription": "",
-						"dateFormat": 9,
-						"numberFormat": 0
-					}
-				}
-			},
-			{
-				"sid": 158868,
-				"gsid": 1,
-				"ownerId": 1,
-				"active": false,
-				"admin": "inherit",
-				"adminEmail": "inherit",
-				"language": "en",
-				"expires": null,
-				"startDate": null,
-				"anonymized": false,
-				"saveTimings": null,
-				"additionalLanguages": "de",
-				"datestamp": null,
-				"useCookie": null,
-				"allowRegister": null,
-				"allowSave": null,
-				"autoNumberStart": 0,
-				"autoRedirect": null,
-				"allowPrev": null,
-				"printAnswers": null,
-				"ipAddr": null,
-				"ipAnonymize": null,
-				"refUrl": null,
-				"dateCreated": "2023-11-16T13:37:01.000Z",
-				"publicStatistics": null,
-				"publicGraphs": null,
-				"listPublic": null,
-				"sendConfirmation": null,
-				"tokenAnswersPersistence": null,
-				"assessments": null,
-				"useCaptcha": null,
-				"useTokens": false,
-				"bounceEmail": "inherit",
-				"attributeDescriptions": null,
-				"emailResponseTo": "inherit",
-				"emailNotificationTo": "inherit",
-				"tokenLength": -1,
-				"showXQuestions": null,
-				"showGroupInfo": "I",
-				"showNoAnswer": null,
-				"showQNumCode": "I",
-				"bounceTime": null,
-				"bounceProcessing": false,
-				"bounceAccountType": null,
-				"bounceAccountHost": null,
-				"bounceAccountPass": null,
-				"bounceAccountEncryption": null,
-				"bounceAccountUser": null,
-				"showWelcome": null,
-				"showProgress": null,
-				"questionIndex": -1,
-				"navigationDelay": -1,
-				"noKeyboard": null,
-				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": null,
-				"googleAnalyticsApiKey": null,
-				"showSurveyPolicyNotice": 0,
-				"template": "inherit",
-				"format": "I",
-				"defaultLanguage": {
-					"sid": 158868,
-					"language": "en",
-					"title": "CreateAnswer2",
-					"description": "",
-					"welcomeText": "",
-					"endText": "",
-					"policyNotice": "",
-					"policyError": null,
-					"surveyAlias": null,
-					"policyNoticeLabel": "",
-					"url": "",
-					"urlDescription": "",
-					"dateFormat": 9,
-					"numberFormat": 0
-				},
-				"languageSettings": {
-					"de": {
-						"sid": 158868,
-						"language": "de",
-						"title": "CreateAnswer2",
-						"description": null,
-						"welcomeText": null,
-						"endText": null,
-						"policyNotice": null,
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": null,
-						"url": null,
-						"urlDescription": null,
-						"dateFormat": 1,
-						"numberFormat": 0
-					},
-					"en": {
-						"sid": 158868,
-						"language": "en",
-						"title": "CreateAnswer2",
-						"description": "",
-						"welcomeText": "",
-						"endText": "",
-						"policyNotice": "",
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": "",
-						"url": "",
-						"urlDescription": "",
-						"dateFormat": 9,
-						"numberFormat": 0
-					}
-				}
-			},
-			{
-				"sid": 241194,
-				"gsid": 1,
-				"ownerId": 1,
-				"active": false,
-				"admin": "inherit",
-				"adminEmail": "inherit",
-				"language": "en",
-				"expires": null,
-				"startDate": null,
-				"anonymized": false,
-				"saveTimings": null,
-				"additionalLanguages": "de",
-				"datestamp": null,
-				"useCookie": null,
-				"allowRegister": null,
-				"allowSave": null,
-				"autoNumberStart": 0,
-				"autoRedirect": null,
-				"allowPrev": null,
-				"printAnswers": null,
-				"ipAddr": null,
-				"ipAnonymize": null,
-				"refUrl": null,
-				"dateCreated": "2023-11-16T13:32:52.000Z",
-				"publicStatistics": null,
-				"publicGraphs": null,
-				"listPublic": null,
-				"sendConfirmation": null,
-				"tokenAnswersPersistence": null,
-				"assessments": null,
-				"useCaptcha": null,
-				"useTokens": false,
-				"bounceEmail": "inherit",
-				"attributeDescriptions": null,
-				"emailResponseTo": "inherit",
-				"emailNotificationTo": "inherit",
-				"tokenLength": -1,
-				"showXQuestions": null,
-				"showGroupInfo": "I",
-				"showNoAnswer": null,
-				"showQNumCode": "I",
-				"bounceTime": null,
-				"bounceProcessing": false,
-				"bounceAccountType": null,
-				"bounceAccountHost": null,
-				"bounceAccountPass": null,
-				"bounceAccountEncryption": null,
-				"bounceAccountUser": null,
-				"showWelcome": null,
-				"showProgress": null,
-				"questionIndex": -1,
-				"navigationDelay": -1,
-				"noKeyboard": null,
-				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": null,
-				"googleAnalyticsApiKey": null,
-				"showSurveyPolicyNotice": 0,
-				"template": "inherit",
-				"format": "I",
-				"defaultLanguage": {
-					"sid": 241194,
-					"language": "en",
-					"title": "CreateAnswer1",
-					"description": "",
-					"welcomeText": "",
-					"endText": "",
-					"policyNotice": "",
-					"policyError": null,
-					"surveyAlias": null,
-					"policyNoticeLabel": "",
-					"url": "",
-					"urlDescription": "",
-					"dateFormat": 9,
-					"numberFormat": 0
-				},
-				"languageSettings": {
-					"de": {
-						"sid": 241194,
-						"language": "de",
-						"title": "",
-						"description": null,
-						"welcomeText": null,
-						"endText": null,
-						"policyNotice": null,
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": null,
-						"url": null,
-						"urlDescription": null,
-						"dateFormat": 1,
-						"numberFormat": 0
-					},
-					"en": {
-						"sid": 241194,
-						"language": "en",
-						"title": "CreateAnswer1",
-						"description": "",
-						"welcomeText": "",
-						"endText": "",
-						"policyNotice": "",
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": "",
-						"url": "",
-						"urlDescription": "",
-						"dateFormat": 9,
-						"numberFormat": 0
-					}
-				}
-			},
-			{
-				"sid": 954472,
-				"gsid": 1,
-				"ownerId": 1,
-				"active": false,
-				"admin": "inherit",
-				"adminEmail": "inherit",
-				"language": "en",
-				"expires": null,
-				"startDate": null,
-				"anonymized": false,
-				"saveTimings": null,
-				"additionalLanguages": "",
-				"datestamp": null,
-				"useCookie": null,
-				"allowRegister": null,
-				"allowSave": null,
-				"autoNumberStart": 0,
-				"autoRedirect": null,
-				"allowPrev": null,
-				"printAnswers": null,
-				"ipAddr": null,
-				"ipAnonymize": null,
-				"refUrl": null,
-				"dateCreated": "2023-09-25T14:26:12.000Z",
-				"publicStatistics": null,
-				"publicGraphs": null,
-				"listPublic": null,
-				"sendConfirmation": null,
-				"tokenAnswersPersistence": null,
-				"assessments": null,
-				"useCaptcha": null,
-				"useTokens": false,
-				"bounceEmail": "inherit",
-				"attributeDescriptions": null,
-				"emailResponseTo": "inherit",
-				"emailNotificationTo": "inherit",
-				"tokenLength": -1,
-				"showXQuestions": null,
-				"showGroupInfo": "I",
-				"showNoAnswer": null,
-				"showQNumCode": "I",
-				"bounceTime": null,
-				"bounceProcessing": false,
-				"bounceAccountType": null,
-				"bounceAccountHost": null,
-				"bounceAccountPass": null,
-				"bounceAccountEncryption": null,
-				"bounceAccountUser": null,
-				"showWelcome": null,
-				"showProgress": null,
-				"questionIndex": -1,
-				"navigationDelay": -1,
-				"noKeyboard": null,
-				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": null,
-				"googleAnalyticsApiKey": null,
-				"showSurveyPolicyNotice": 0,
-				"template": "inherit",
-				"format": "I",
-				"defaultLanguage": {
-					"sid": 954472,
-					"language": "en",
-					"title": "Subquestion codes",
-					"description": "",
-					"welcomeText": "",
-					"endText": "",
-					"policyNotice": "",
-					"policyError": null,
-					"surveyAlias": null,
-					"policyNoticeLabel": "",
-					"url": "",
-					"urlDescription": "",
-					"dateFormat": 9,
-					"numberFormat": 0
-				},
-				"languageSettings": {
-					"en": {
-						"sid": 954472,
-						"language": "en",
-						"title": "Subquestion codes",
-						"description": "",
-						"welcomeText": "",
-						"endText": "",
-						"policyNotice": "",
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": "",
-						"url": "",
-						"urlDescription": "",
-						"dateFormat": 9,
-						"numberFormat": 0
-					}
-				}
-			},
-			{
-				"sid": 857644,
-				"gsid": 1,
-				"ownerId": 1,
-				"active": false,
-				"admin": "inherit",
-				"adminEmail": "inherit",
-				"language": "en",
-				"expires": null,
-				"startDate": null,
-				"anonymized": false,
-				"saveTimings": null,
-				"additionalLanguages": "",
-				"datestamp": null,
-				"useCookie": null,
-				"allowRegister": null,
-				"allowSave": null,
-				"autoNumberStart": 0,
-				"autoRedirect": null,
-				"allowPrev": null,
-				"printAnswers": null,
-				"ipAddr": null,
-				"ipAnonymize": null,
-				"refUrl": null,
-				"dateCreated": "2023-08-15T14:54:44.000Z",
-				"publicStatistics": null,
-				"publicGraphs": null,
-				"listPublic": null,
-				"sendConfirmation": null,
-				"tokenAnswersPersistence": null,
-				"assessments": null,
-				"useCaptcha": null,
-				"useTokens": false,
-				"bounceEmail": "inherit",
-				"attributeDescriptions": null,
-				"emailResponseTo": "inherit",
-				"emailNotificationTo": "inherit",
-				"tokenLength": -1,
-				"showXQuestions": null,
-				"showGroupInfo": "I",
-				"showNoAnswer": null,
-				"showQNumCode": "I",
-				"bounceTime": null,
-				"bounceProcessing": false,
-				"bounceAccountType": null,
-				"bounceAccountHost": null,
-				"bounceAccountPass": null,
-				"bounceAccountEncryption": null,
-				"bounceAccountUser": null,
-				"showWelcome": null,
-				"showProgress": null,
-				"questionIndex": -1,
-				"navigationDelay": -1,
-				"noKeyboard": null,
-				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": null,
-				"googleAnalyticsApiKey": null,
-				"showSurveyPolicyNotice": 0,
-				"template": "inherit",
-				"format": "I",
-				"defaultLanguage": {
-					"sid": 857644,
-					"language": "en",
-					"title": "Survey question delete",
-					"description": "",
-					"welcomeText": "",
-					"endText": "",
-					"policyNotice": "",
-					"policyError": null,
-					"surveyAlias": null,
-					"policyNoticeLabel": "",
-					"url": "",
-					"urlDescription": "",
-					"dateFormat": 9,
-					"numberFormat": 0
-				},
-				"languageSettings": {
-					"en": {
-						"sid": 857644,
-						"language": "en",
-						"title": "Survey question delete",
-						"description": "",
-						"welcomeText": "",
-						"endText": "",
-						"policyNotice": "",
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": "",
-						"url": "",
-						"urlDescription": "",
-						"dateFormat": 9,
-						"numberFormat": 0
-					}
-				}
-			},
-			{
-				"sid": 348447,
-				"gsid": 1,
-				"ownerId": 1,
-				"active": false,
-				"admin": "inherit",
-				"adminEmail": "inherit",
-				"language": "en",
-				"expires": null,
-				"startDate": null,
-				"anonymized": false,
-				"saveTimings": null,
-				"additionalLanguages": "",
-				"datestamp": null,
-				"useCookie": null,
-				"allowRegister": null,
-				"allowSave": null,
-				"autoNumberStart": 0,
-				"autoRedirect": null,
-				"allowPrev": null,
-				"printAnswers": null,
-				"ipAddr": null,
-				"ipAnonymize": null,
-				"refUrl": null,
-				"dateCreated": "2023-08-15T14:54:27.000Z",
-				"publicStatistics": null,
-				"publicGraphs": null,
-				"listPublic": null,
-				"sendConfirmation": null,
-				"tokenAnswersPersistence": null,
-				"assessments": null,
-				"useCaptcha": null,
-				"useTokens": false,
-				"bounceEmail": "inherit",
-				"attributeDescriptions": null,
-				"emailResponseTo": "inherit",
-				"emailNotificationTo": "inherit",
-				"tokenLength": -1,
-				"showXQuestions": null,
-				"showGroupInfo": "I",
-				"showNoAnswer": null,
-				"showQNumCode": "I",
-				"bounceTime": null,
-				"bounceProcessing": false,
-				"bounceAccountType": null,
-				"bounceAccountHost": null,
-				"bounceAccountPass": null,
-				"bounceAccountEncryption": null,
-				"bounceAccountUser": null,
-				"showWelcome": null,
-				"showProgress": null,
-				"questionIndex": -1,
-				"navigationDelay": -1,
-				"noKeyboard": null,
-				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": null,
-				"googleAnalyticsApiKey": null,
-				"showSurveyPolicyNotice": 0,
-				"template": "inherit",
-				"format": "I",
-				"defaultLanguage": {
-					"sid": 348447,
-					"language": "en",
-					"title": "Survey question edit",
-					"description": "",
-					"welcomeText": "",
-					"endText": "",
-					"policyNotice": "",
-					"policyError": null,
-					"surveyAlias": null,
-					"policyNoticeLabel": "",
-					"url": "",
-					"urlDescription": "",
-					"dateFormat": 9,
-					"numberFormat": 0
-				},
-				"languageSettings": {
-					"en": {
-						"sid": 348447,
-						"language": "en",
-						"title": "Survey question edit",
-						"description": "",
-						"welcomeText": "",
-						"endText": "",
-						"policyNotice": "",
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": "",
-						"url": "",
-						"urlDescription": "",
-						"dateFormat": 9,
-						"numberFormat": 0
-					}
-				}
-			},
-			{
-				"sid": 951785,
-				"gsid": 1,
-				"ownerId": 1,
-				"active": false,
-				"admin": "inherit",
-				"adminEmail": "inherit",
-				"language": "en",
-				"expires": null,
-				"startDate": null,
-				"anonymized": false,
-				"saveTimings": null,
-				"additionalLanguages": "",
-				"datestamp": null,
-				"useCookie": null,
-				"allowRegister": null,
-				"allowSave": null,
-				"autoNumberStart": 0,
-				"autoRedirect": null,
-				"allowPrev": null,
-				"printAnswers": null,
-				"ipAddr": null,
-				"ipAnonymize": null,
-				"refUrl": null,
-				"dateCreated": "2023-08-15T14:54:03.000Z",
-				"publicStatistics": null,
-				"publicGraphs": null,
-				"listPublic": null,
-				"sendConfirmation": null,
-				"tokenAnswersPersistence": null,
-				"assessments": null,
-				"useCaptcha": null,
-				"useTokens": false,
-				"bounceEmail": "inherit",
-				"attributeDescriptions": null,
-				"emailResponseTo": "inherit",
-				"emailNotificationTo": "inherit",
-				"tokenLength": -1,
-				"showXQuestions": null,
-				"showGroupInfo": "I",
-				"showNoAnswer": null,
-				"showQNumCode": "I",
-				"bounceTime": null,
-				"bounceProcessing": false,
-				"bounceAccountType": null,
-				"bounceAccountHost": null,
-				"bounceAccountPass": null,
-				"bounceAccountEncryption": null,
-				"bounceAccountUser": null,
-				"showWelcome": null,
-				"showProgress": null,
-				"questionIndex": -1,
-				"navigationDelay": -1,
-				"noKeyboard": null,
-				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": null,
-				"googleAnalyticsApiKey": null,
-				"showSurveyPolicyNotice": 0,
-				"template": "inherit",
-				"format": "I",
-				"defaultLanguage": {
-					"sid": 951785,
-					"language": "en",
-					"title": "Survey question add",
-					"description": "",
-					"welcomeText": "",
-					"endText": "",
-					"policyNotice": "",
-					"policyError": null,
-					"surveyAlias": null,
-					"policyNoticeLabel": "",
-					"url": "",
-					"urlDescription": "",
-					"dateFormat": 9,
-					"numberFormat": 0
-				},
-				"languageSettings": {
-					"en": {
-						"sid": 951785,
-						"language": "en",
-						"title": "Survey question add",
-						"description": "",
-						"welcomeText": "",
-						"endText": "",
-						"policyNotice": "",
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": "",
-						"url": "",
-						"urlDescription": "",
-						"dateFormat": 9,
-						"numberFormat": 0
-					}
-				}
-			},
-			{
-				"sid": 422915,
-				"gsid": 1,
-				"ownerId": 1,
-				"active": false,
-				"admin": "inherit",
-				"adminEmail": "inherit",
-				"language": "en",
-				"expires": "2033-06-21 14:08:00",
-				"startDate": "2023-06-21 14:08:00",
-				"anonymized": false,
-				"saveTimings": null,
-				"additionalLanguages": "hr",
-				"datestamp": null,
-				"useCookie": null,
-				"allowRegister": null,
-				"allowSave": null,
-				"autoNumberStart": 0,
-				"autoRedirect": null,
-				"allowPrev": null,
-				"printAnswers": null,
-				"ipAddr": null,
-				"ipAnonymize": null,
-				"refUrl": null,
-				"dateCreated": "2023-08-02T13:24:02.000Z",
-				"publicStatistics": null,
-				"publicGraphs": null,
-				"listPublic": true,
-				"sendConfirmation": null,
-				"tokenAnswersPersistence": null,
-				"assessments": null,
-				"useCaptcha": null,
-				"useTokens": false,
-				"bounceEmail": "inherit",
-				"attributeDescriptions": null,
-				"emailResponseTo": "notify.me.detail@test.ing",
-				"emailNotificationTo": "notify.me@test.ing",
-				"tokenLength": -1,
-				"showXQuestions": null,
-				"showGroupInfo": "I",
-				"showNoAnswer": null,
-				"showQNumCode": "I",
-				"bounceTime": null,
-				"bounceProcessing": false,
-				"bounceAccountType": null,
-				"bounceAccountHost": null,
-				"bounceAccountPass": null,
-				"bounceAccountEncryption": null,
-				"bounceAccountUser": null,
-				"showWelcome": null,
-				"showProgress": null,
-				"questionIndex": -1,
-				"navigationDelay": -1,
-				"noKeyboard": null,
-				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": 0,
-				"googleAnalyticsApiKey": "",
-				"showSurveyPolicyNotice": 0,
-				"template": "inherit",
-				"format": "I",
-				"defaultLanguage": {
-					"sid": 422915,
-					"language": "en",
-					"title": "Survey group fields",
-					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend risus in felis euismod pellentesque. Nam at pretium nisi. Nunc odio eros, euismod a diam non, interdum cursus sem. Quisque vitae sagittis tellus. Morbi accumsan quis neque eu condimentum.",
-					"welcomeText": "Curabitur non facilisis nulla. Phasellus ac efficitur ipsum. Praesent in consequat risus, eget imperdiet risus. Aliquam erat volutpat. Sed ac turpis ac mi convallis pharetra at ut lacus. Nullam imperdiet, ipsum a pulvinar auctor, lorem odio accumsan erat, non commodo nibh urna quis diam. Proin venenatis convallis tellus in sagittis.",
-					"endText": "Aliquam luctus, tellus non ullamcorper aliquet, felis metus eleifend nunc, et sollicitudin libero mi at lectus. Donec interdum lacinia nunc, eget hendrerit risus condimentum vitae. Etiam efficitur dictum sapien, ac ornare lacus porta sit amet.",
-					"policyNotice": "",
-					"policyError": null,
-					"surveyAlias": "",
-					"policyNoticeLabel": "",
-					"url": "http:\/\/www.limesurvey.org",
-					"urlDescription": "",
-					"dateFormat": 9,
-					"numberFormat": 0
-				},
-				"languageSettings": {
-					"en": {
-						"sid": 422915,
-						"language": "en",
-						"title": "Survey group fields",
-						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend risus in felis euismod pellentesque. Nam at pretium nisi. Nunc odio eros, euismod a diam non, interdum cursus sem. Quisque vitae sagittis tellus. Morbi accumsan quis neque eu condimentum.",
-						"welcomeText": "Curabitur non facilisis nulla. Phasellus ac efficitur ipsum. Praesent in consequat risus, eget imperdiet risus. Aliquam erat volutpat. Sed ac turpis ac mi convallis pharetra at ut lacus. Nullam imperdiet, ipsum a pulvinar auctor, lorem odio accumsan erat, non commodo nibh urna quis diam. Proin venenatis convallis tellus in sagittis.",
-						"endText": "Aliquam luctus, tellus non ullamcorper aliquet, felis metus eleifend nunc, et sollicitudin libero mi at lectus. Donec interdum lacinia nunc, eget hendrerit risus condimentum vitae. Etiam efficitur dictum sapien, ac ornare lacus porta sit amet.",
-						"policyNotice": "",
-						"policyError": null,
-						"surveyAlias": "",
-						"policyNoticeLabel": "",
-						"url": "http:\/\/www.limesurvey.org",
-						"urlDescription": "",
-						"dateFormat": 9,
-						"numberFormat": 0
-					},
-					"hr": {
-						"sid": 422915,
-						"language": "hr",
-						"title": "Survey group fields",
-						"description": null,
-						"welcomeText": null,
-						"endText": null,
-						"policyNotice": null,
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": null,
-						"url": null,
-						"urlDescription": null,
-						"dateFormat": 4,
-						"numberFormat": 0
-					}
-				}
-			},
-			{
-				"sid": 278371,
-				"gsid": 1,
-				"ownerId": 1,
-				"active": false,
-				"admin": "inherit",
-				"adminEmail": "inherit",
-				"language": "en",
-				"expires": "2033-06-21 14:08:00",
-				"startDate": "2023-06-21 14:08:00",
-				"anonymized": false,
-				"saveTimings": null,
-				"additionalLanguages": "hr",
-				"datestamp": null,
-				"useCookie": null,
-				"allowRegister": null,
-				"allowSave": null,
-				"autoNumberStart": 0,
-				"autoRedirect": null,
-				"allowPrev": null,
-				"printAnswers": null,
-				"ipAddr": null,
-				"ipAnonymize": null,
-				"refUrl": null,
-				"dateCreated": "2023-08-02T13:22:40.000Z",
-				"publicStatistics": null,
-				"publicGraphs": null,
-				"listPublic": true,
-				"sendConfirmation": null,
-				"tokenAnswersPersistence": null,
-				"assessments": null,
-				"useCaptcha": null,
-				"useTokens": false,
-				"bounceEmail": "inherit",
-				"attributeDescriptions": null,
-				"emailResponseTo": "notify.me.detail@test.ing",
-				"emailNotificationTo": "notify.me@test.ing",
-				"tokenLength": -1,
-				"showXQuestions": null,
-				"showGroupInfo": "I",
-				"showNoAnswer": null,
-				"showQNumCode": "I",
-				"bounceTime": null,
-				"bounceProcessing": false,
-				"bounceAccountType": null,
-				"bounceAccountHost": null,
-				"bounceAccountPass": null,
-				"bounceAccountEncryption": null,
-				"bounceAccountUser": null,
-				"showWelcome": null,
-				"showProgress": null,
-				"questionIndex": -1,
-				"navigationDelay": -1,
-				"noKeyboard": null,
-				"allowedItAfterCompletion": null,
-				"googleAnalyticsStyle": 0,
-				"googleAnalyticsApiKey": "",
-				"showSurveyPolicyNotice": 0,
-				"template": "inherit",
-				"format": "I",
-				"defaultLanguage": {
-					"sid": 278371,
-					"language": "en",
-					"title": "Survey reorder groups",
-					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend risus in felis euismod pellentesque. Nam at pretium nisi. Nunc odio eros, euismod a diam non, interdum cursus sem. Quisque vitae sagittis tellus. Morbi accumsan quis neque eu condimentum.",
-					"welcomeText": "Curabitur non facilisis nulla. Phasellus ac efficitur ipsum. Praesent in consequat risus, eget imperdiet risus. Aliquam erat volutpat. Sed ac turpis ac mi convallis pharetra at ut lacus. Nullam imperdiet, ipsum a pulvinar auctor, lorem odio accumsan erat, non commodo nibh urna quis diam. Proin venenatis convallis tellus in sagittis.",
-					"endText": "Aliquam luctus, tellus non ullamcorper aliquet, felis metus eleifend nunc, et sollicitudin libero mi at lectus. Donec interdum lacinia nunc, eget hendrerit risus condimentum vitae. Etiam efficitur dictum sapien, ac ornare lacus porta sit amet.",
-					"policyNotice": "",
-					"policyError": null,
-					"surveyAlias": "",
-					"policyNoticeLabel": "",
-					"url": "http:\/\/www.limesurvey.org",
-					"urlDescription": "",
-					"dateFormat": 9,
-					"numberFormat": 0
-				},
-				"languageSettings": {
-					"en": {
-						"sid": 278371,
-						"language": "en",
-						"title": "Survey reorder groups",
-						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend risus in felis euismod pellentesque. Nam at pretium nisi. Nunc odio eros, euismod a diam non, interdum cursus sem. Quisque vitae sagittis tellus. Morbi accumsan quis neque eu condimentum.",
-						"welcomeText": "Curabitur non facilisis nulla. Phasellus ac efficitur ipsum. Praesent in consequat risus, eget imperdiet risus. Aliquam erat volutpat. Sed ac turpis ac mi convallis pharetra at ut lacus. Nullam imperdiet, ipsum a pulvinar auctor, lorem odio accumsan erat, non commodo nibh urna quis diam. Proin venenatis convallis tellus in sagittis.",
-						"endText": "Aliquam luctus, tellus non ullamcorper aliquet, felis metus eleifend nunc, et sollicitudin libero mi at lectus. Donec interdum lacinia nunc, eget hendrerit risus condimentum vitae. Etiam efficitur dictum sapien, ac ornare lacus porta sit amet.",
-						"policyNotice": "",
-						"policyError": null,
-						"surveyAlias": "",
-						"policyNoticeLabel": "",
-						"url": "http:\/\/www.limesurvey.org",
-						"urlDescription": "",
-						"dateFormat": 9,
-						"numberFormat": 0
-					},
-					"hr": {
-						"sid": 278371,
-						"language": "hr",
-						"title": "Survey reorder groups",
-						"description": null,
-						"welcomeText": null,
-						"endText": null,
-						"policyNotice": null,
-						"policyError": null,
-						"surveyAlias": null,
-						"policyNoticeLabel": null,
-						"url": null,
-						"urlDescription": null,
-						"dateFormat": 4,
-						"numberFormat": 0
-					}
-				}
-			}
-		]
-	},
-	"r003": {
+	"r002": null,
+	"r003": null,
+	"r004": {
 		"survey": {
 			"sid": 857644,
 			"gsid": 1,
-			"ownerId": 1,
 			"active": false,
-			"admin": "inherit",
-			"adminEmail": "inherit",
 			"language": "en",
 			"expires": null,
 			"startDate": null,
@@ -1099,7 +48,7 @@
 			"showGroupInfo": "I",
 			"showNoAnswer": null,
 			"showQNumCode": "I",
-			"bounceTime": null,
+			"bounceTime": 0,
 			"bounceProcessing": false,
 			"bounceAccountType": null,
 			"bounceAccountHost": null,
@@ -1112,11 +61,16 @@
 			"navigationDelay": -1,
 			"noKeyboard": null,
 			"allowedItAfterCompletion": null,
-			"googleAnalyticsStyle": null,
+			"googleAnalyticsStyle": 0,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
 			"template": "inherit",
 			"format": "I",
+			"showQuestionCode": false,
+			"cookieConsent": false,
+			"footerBranding": false,
+			"showDataPolicyButton": false,
+			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 857644,
 				"language": "en",
@@ -1126,7 +80,6 @@
 				"endText": "",
 				"policyNotice": "",
 				"policyError": null,
-				"surveyAlias": null,
 				"policyNoticeLabel": "",
 				"url": "",
 				"urlDescription": "",
@@ -1143,7 +96,6 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
-					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -1156,53 +108,6 @@
 			"languages": [
 				"en"
 			],
-			"previewLink": "\/index.php\/857644?newtest=Y&lang=en",
-			"surveyGroup": {
-				"gsid": "1",
-				"name": "default",
-				"title": "Default",
-				"template": null,
-				"description": "Default survey group",
-				"sortorder": "0",
-				"owner_id": "1",
-				"parent_id": null,
-				"created": "2023-04-28 12:19:53",
-				"modified": "2023-04-28 12:19:53",
-				"created_by": "1",
-				"alwaysavailable": 1
-			},
-			"owner": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 07:37:30",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 07:37:30",
-				"userStatus": "1"
-			},
-			"ownerInherited": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 07:37:30",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 07:37:30",
-				"userStatus": "1"
-			},
 			"questionGroups": [
 				{
 					"gid": 34,
@@ -1256,183 +161,11 @@
 			]
 		}
 	},
-	"r004": {
-		"survey": {
-			"sid": 857644,
-			"gsid": 1,
-			"ownerId": 1,
-			"active": false,
-			"admin": "inherit",
-			"adminEmail": "inherit",
-			"language": "en",
-			"expires": null,
-			"startDate": null,
-			"anonymized": false,
-			"saveTimings": null,
-			"additionalLanguages": "",
-			"datestamp": null,
-			"useCookie": null,
-			"allowRegister": null,
-			"allowSave": null,
-			"autoNumberStart": 0,
-			"autoRedirect": null,
-			"allowPrev": null,
-			"printAnswers": null,
-			"ipAddr": null,
-			"ipAnonymize": null,
-			"refUrl": null,
-			"dateCreated": "2023-08-15T14:54:44.000Z",
-			"publicStatistics": null,
-			"publicGraphs": null,
-			"listPublic": null,
-			"sendConfirmation": null,
-			"tokenAnswersPersistence": null,
-			"assessments": null,
-			"useCaptcha": null,
-			"useTokens": false,
-			"bounceEmail": "inherit",
-			"attributeDescriptions": null,
-			"emailResponseTo": "inherit",
-			"emailNotificationTo": "inherit",
-			"tokenLength": -1,
-			"showXQuestions": null,
-			"showGroupInfo": "I",
-			"showNoAnswer": null,
-			"showQNumCode": "I",
-			"bounceTime": null,
-			"bounceProcessing": false,
-			"bounceAccountType": null,
-			"bounceAccountHost": null,
-			"bounceAccountPass": null,
-			"bounceAccountEncryption": null,
-			"bounceAccountUser": null,
-			"showWelcome": null,
-			"showProgress": null,
-			"questionIndex": -1,
-			"navigationDelay": -1,
-			"noKeyboard": null,
-			"allowedItAfterCompletion": null,
-			"googleAnalyticsStyle": null,
-			"googleAnalyticsApiKey": null,
-			"showSurveyPolicyNotice": 0,
-			"template": "inherit",
-			"format": "I",
-			"defaultLanguage": {
-				"sid": 857644,
-				"language": "en",
-				"title": "Survey question delete",
-				"description": "",
-				"welcomeText": "",
-				"endText": "",
-				"policyNotice": "",
-				"policyError": null,
-				"surveyAlias": null,
-				"policyNoticeLabel": "",
-				"url": "",
-				"urlDescription": "",
-				"dateFormat": 9,
-				"numberFormat": 0
-			},
-			"languageSettings": {
-				"en": {
-					"sid": 857644,
-					"language": "en",
-					"title": "Survey question delete",
-					"description": "",
-					"welcomeText": "",
-					"endText": "",
-					"policyNotice": "",
-					"policyError": null,
-					"surveyAlias": null,
-					"policyNoticeLabel": "",
-					"url": "",
-					"urlDescription": "",
-					"dateFormat": 9,
-					"numberFormat": 0
-				}
-			},
-			"templateInherited": "fruity_twentythree",
-			"formatInherited": "G",
-			"languages": [
-				"en"
-			],
-			"previewLink": "\/index.php\/857644?newtest=Y&lang=en",
-			"surveyGroup": {
-				"gsid": "1",
-				"name": "default",
-				"title": "Default",
-				"template": null,
-				"description": "Default survey group",
-				"sortorder": "0",
-				"owner_id": "1",
-				"parent_id": null,
-				"created": "2023-04-28 12:19:53",
-				"modified": "2023-04-28 12:19:53",
-				"created_by": "1",
-				"alwaysavailable": 1
-			},
-			"owner": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 07:37:30",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 07:37:30",
-				"userStatus": "1"
-			},
-			"ownerInherited": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 07:37:30",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 07:37:30",
-				"userStatus": "1"
-			},
-			"questionGroups": [
-				{
-					"gid": 34,
-					"sid": 857644,
-					"groupOrder": 1,
-					"randomizationGroup": "",
-					"gRelevance": "1",
-					"l10ns": {
-						"en": {
-							"id": 52,
-							"gid": 34,
-							"groupName": "My first question group",
-							"description": null,
-							"language": "en"
-						}
-					},
-					"questions": [
-]
-				}
-			]
-		}
-	},
 	"r005": {
 		"survey": {
 			"sid": 241194,
 			"gsid": 1,
-			"ownerId": 1,
 			"active": false,
-			"admin": "inherit",
-			"adminEmail": "inherit",
 			"language": "en",
 			"expires": null,
 			"startDate": null,
@@ -1468,7 +201,7 @@
 			"showGroupInfo": "I",
 			"showNoAnswer": null,
 			"showQNumCode": "I",
-			"bounceTime": null,
+			"bounceTime": 0,
 			"bounceProcessing": false,
 			"bounceAccountType": null,
 			"bounceAccountHost": null,
@@ -1481,11 +214,16 @@
 			"navigationDelay": -1,
 			"noKeyboard": null,
 			"allowedItAfterCompletion": null,
-			"googleAnalyticsStyle": null,
+			"googleAnalyticsStyle": 0,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
 			"template": "inherit",
 			"format": "I",
+			"showQuestionCode": false,
+			"cookieConsent": false,
+			"footerBranding": false,
+			"showDataPolicyButton": false,
+			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 241194,
 				"language": "en",
@@ -1495,7 +233,6 @@
 				"endText": "",
 				"policyNotice": "",
 				"policyError": null,
-				"surveyAlias": null,
 				"policyNoticeLabel": "",
 				"url": "",
 				"urlDescription": "",
@@ -1512,7 +249,6 @@
 					"endText": null,
 					"policyNotice": null,
 					"policyError": null,
-					"surveyAlias": null,
 					"policyNoticeLabel": null,
 					"url": null,
 					"urlDescription": null,
@@ -1528,7 +264,6 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
-					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -1542,53 +277,6 @@
 				"en",
 				"de"
 			],
-			"previewLink": "/index.php/241194?newtest=Y&lang=en",
-			"surveyGroup": {
-				"gsid": "1",
-				"name": "default",
-				"title": "Default",
-				"template": null,
-				"description": "Default survey group",
-				"sortorder": "0",
-				"owner_id": "1",
-				"parent_id": null,
-				"created": "2023-04-28 12:19:53",
-				"modified": "2023-04-28 12:19:53",
-				"created_by": "1",
-				"alwaysavailable": 1
-			},
-			"owner": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 08:37:55",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 08:37:55",
-				"userStatus": "1"
-			},
-			"ownerInherited": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 08:37:55",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 08:37:55",
-				"userStatus": "1"
-			},
 			"questionGroups": [
 				{
 					"gid": 37,
@@ -1651,131 +339,312 @@
 							},
 							"attributes": {
 								"array_filter": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1267,
+										"value": ""
+									}
 								},
 								"array_filter_style": {
-									"": "0"
+									"qid": 96,
+									"": {
+										"qaid": 1268,
+										"value": "0"
+									}
 								},
 								"array_filter_exclude": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1269,
+										"value": ""
+									}
 								},
 								"other_numbers_only": {
-									"": "0"
+									"qid": 96,
+									"": {
+										"qaid": 1270,
+										"value": "0"
+									}
 								},
 								"other_comment_mandatory": {
-									"": "0"
+									"qid": 96,
+									"": {
+										"qaid": 1271,
+										"value": "0"
+									}
 								},
 								"random_group": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1272,
+										"value": ""
+									}
 								},
 								"em_validation_q": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1273,
+										"value": ""
+									}
 								},
 								"em_validation_q_tip": {
-									"en": "",
-									"de": ""
+									"qid": 96,
+									"en": {
+										"qaid": 1274,
+										"value": ""
+									},
+									"de": {
+										"qaid": 1275,
+										"value": ""
+									}
 								},
 								"answer_order": {
-									"": "normal"
+									"qid": 96,
+									"": {
+										"qaid": 1276,
+										"value": "normal"
+									}
 								},
 								"other_replace_text": {
-									"en": "",
-									"de": ""
+									"qid": 96,
+									"en": {
+										"qaid": 1277,
+										"value": ""
+									},
+									"de": {
+										"qaid": 1278,
+										"value": ""
+									}
 								},
 								"hide_tip": {
-									"": "0"
+									"qid": 96,
+									"": {
+										"qaid": 1279,
+										"value": "0"
+									}
 								},
 								"display_columns": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1280,
+										"value": ""
+									}
 								},
 								"hidden": {
-									"": "0"
+									"qid": 96,
+									"": {
+										"qaid": 1281,
+										"value": "0"
+									}
 								},
 								"cssclass": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1282,
+										"value": ""
+									}
 								},
 								"other_position": {
-									"": "default"
+									"qid": 96,
+									"": {
+										"qaid": 1283,
+										"value": "default"
+									}
 								},
 								"other_position_code": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1284,
+										"value": ""
+									}
 								},
 								"printable_help": {
-									"en": "",
-									"de": ""
+									"qid": 96,
+									"en": {
+										"qaid": 1285,
+										"value": ""
+									},
+									"de": {
+										"qaid": 1286,
+										"value": ""
+									}
 								},
 								"page_break": {
-									"": "0"
+									"qid": 96,
+									"": {
+										"qaid": 1287,
+										"value": "0"
+									}
 								},
 								"scale_export": {
-									"": "0"
+									"qid": 96,
+									"": {
+										"qaid": 1288,
+										"value": "0"
+									}
 								},
 								"time_limit": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1289,
+										"value": ""
+									}
 								},
 								"time_limit_action": {
-									"": "1"
+									"qid": 96,
+									"": {
+										"qaid": 1290,
+										"value": "1"
+									}
 								},
 								"time_limit_disable_next": {
-									"": "0"
+									"qid": 96,
+									"": {
+										"qaid": 1291,
+										"value": "0"
+									}
 								},
 								"time_limit_disable_prev": {
-									"": "0"
+									"qid": 96,
+									"": {
+										"qaid": 1292,
+										"value": "0"
+									}
 								},
 								"time_limit_countdown_message": {
-									"en": "",
-									"de": ""
+									"qid": 96,
+									"en": {
+										"qaid": 1293,
+										"value": ""
+									},
+									"de": {
+										"qaid": 1294,
+										"value": ""
+									}
 								},
 								"time_limit_timer_style": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1295,
+										"value": ""
+									}
 								},
 								"time_limit_message_delay": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1296,
+										"value": ""
+									}
 								},
 								"time_limit_message": {
-									"en": "",
-									"de": ""
+									"qid": 96,
+									"en": {
+										"qaid": 1297,
+										"value": ""
+									},
+									"de": {
+										"qaid": 1298,
+										"value": ""
+									}
 								},
 								"time_limit_message_style": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1299,
+										"value": ""
+									}
 								},
 								"time_limit_warning": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1300,
+										"value": ""
+									}
 								},
 								"time_limit_warning_display_time": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1301,
+										"value": ""
+									}
 								},
 								"time_limit_warning_message": {
-									"en": "",
-									"de": ""
+									"qid": 96,
+									"en": {
+										"qaid": 1302,
+										"value": ""
+									},
+									"de": {
+										"qaid": 1303,
+										"value": ""
+									}
 								},
 								"time_limit_warning_style": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1304,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1305,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_display_time": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1306,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_message": {
-									"en": "",
-									"de": ""
+									"qid": 96,
+									"en": {
+										"qaid": 1307,
+										"value": ""
+									},
+									"de": {
+										"qaid": 1308,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_style": {
-									"": ""
+									"qid": 96,
+									"": {
+										"qaid": 1309,
+										"value": ""
+									}
 								},
 								"public_statistics": {
-									"": "0"
+									"qid": 96,
+									"": {
+										"qaid": 1310,
+										"value": "0"
+									}
 								},
 								"statistics_showgraph": {
-									"": "1"
+									"qid": 96,
+									"": {
+										"qaid": 1311,
+										"value": "1"
+									}
 								},
 								"statistics_graphtype": {
-									"": "0"
+									"qid": 96,
+									"": {
+										"qaid": 1312,
+										"value": "0"
+									}
 								},
 								"save_as_default": {
-									"": "N"
+									"qid": 96,
+									"": {
+										"qaid": 1313,
+										"value": "N"
+									}
 								}
 							},
 							"answers": [
@@ -1856,10 +725,7 @@
 		"survey": {
 			"sid": 158868,
 			"gsid": 1,
-			"ownerId": 1,
 			"active": false,
-			"admin": "inherit",
-			"adminEmail": "inherit",
 			"language": "en",
 			"expires": null,
 			"startDate": null,
@@ -1895,7 +761,7 @@
 			"showGroupInfo": "I",
 			"showNoAnswer": null,
 			"showQNumCode": "I",
-			"bounceTime": null,
+			"bounceTime": 0,
 			"bounceProcessing": false,
 			"bounceAccountType": null,
 			"bounceAccountHost": null,
@@ -1908,11 +774,16 @@
 			"navigationDelay": -1,
 			"noKeyboard": null,
 			"allowedItAfterCompletion": null,
-			"googleAnalyticsStyle": null,
+			"googleAnalyticsStyle": 0,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
 			"template": "inherit",
 			"format": "I",
+			"showQuestionCode": false,
+			"cookieConsent": false,
+			"footerBranding": false,
+			"showDataPolicyButton": false,
+			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 158868,
 				"language": "en",
@@ -1922,7 +793,6 @@
 				"endText": "",
 				"policyNotice": "",
 				"policyError": null,
-				"surveyAlias": null,
 				"policyNoticeLabel": "",
 				"url": "",
 				"urlDescription": "",
@@ -1939,7 +809,6 @@
 					"endText": null,
 					"policyNotice": null,
 					"policyError": null,
-					"surveyAlias": null,
 					"policyNoticeLabel": null,
 					"url": null,
 					"urlDescription": null,
@@ -1955,7 +824,6 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
-					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -1969,53 +837,6 @@
 				"en",
 				"de"
 			],
-			"previewLink": "/index.php/158868?newtest=Y&lang=en",
-			"surveyGroup": {
-				"gsid": "1",
-				"name": "default",
-				"title": "Default",
-				"template": null,
-				"description": "Default survey group",
-				"sortorder": "0",
-				"owner_id": "1",
-				"parent_id": null,
-				"created": "2023-04-28 12:19:53",
-				"modified": "2023-04-28 12:19:53",
-				"created_by": "1",
-				"alwaysavailable": 1
-			},
-			"owner": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 09:17:05",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 09:17:05",
-				"userStatus": "1"
-			},
-			"ownerInherited": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 09:17:05",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 09:17:05",
-				"userStatus": "1"
-			},
 			"questionGroups": [
 				{
 					"gid": 38,
@@ -2078,131 +899,312 @@
 							},
 							"attributes": {
 								"answer_order": {
-									"": "normal"
+									"qid": 97,
+									"": {
+										"qaid": 1314,
+										"value": "normal"
+									}
 								},
 								"array_filter": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1315,
+										"value": ""
+									}
 								},
 								"array_filter_exclude": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1316,
+										"value": ""
+									}
 								},
 								"array_filter_style": {
-									"": "0"
+									"qid": 97,
+									"": {
+										"qaid": 1317,
+										"value": "0"
+									}
 								},
 								"cssclass": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1318,
+										"value": ""
+									}
 								},
 								"display_columns": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1319,
+										"value": ""
+									}
 								},
 								"em_validation_q": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1320,
+										"value": ""
+									}
 								},
 								"em_validation_q_tip": {
-									"de": "",
-									"en": ""
+									"qid": 97,
+									"de": {
+										"qaid": 1321,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1322,
+										"value": ""
+									}
 								},
 								"hidden": {
-									"": "0"
+									"qid": 97,
+									"": {
+										"qaid": 1323,
+										"value": "0"
+									}
 								},
 								"hide_tip": {
-									"": "0"
+									"qid": 97,
+									"": {
+										"qaid": 1324,
+										"value": "0"
+									}
 								},
 								"other_comment_mandatory": {
-									"": "0"
+									"qid": 97,
+									"": {
+										"qaid": 1325,
+										"value": "0"
+									}
 								},
 								"other_numbers_only": {
-									"": "0"
+									"qid": 97,
+									"": {
+										"qaid": 1326,
+										"value": "0"
+									}
 								},
 								"other_position": {
-									"": "default"
+									"qid": 97,
+									"": {
+										"qaid": 1327,
+										"value": "default"
+									}
 								},
 								"other_position_code": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1328,
+										"value": ""
+									}
 								},
 								"other_replace_text": {
-									"de": "",
-									"en": ""
+									"qid": 97,
+									"de": {
+										"qaid": 1329,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1330,
+										"value": ""
+									}
 								},
 								"page_break": {
-									"": "0"
+									"qid": 97,
+									"": {
+										"qaid": 1331,
+										"value": "0"
+									}
 								},
 								"printable_help": {
-									"de": "",
-									"en": ""
+									"qid": 97,
+									"de": {
+										"qaid": 1332,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1333,
+										"value": ""
+									}
 								},
 								"public_statistics": {
-									"": "0"
+									"qid": 97,
+									"": {
+										"qaid": 1334,
+										"value": "0"
+									}
 								},
 								"random_group": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1335,
+										"value": ""
+									}
 								},
 								"save_as_default": {
-									"": "N"
+									"qid": 97,
+									"": {
+										"qaid": 1336,
+										"value": "N"
+									}
 								},
 								"scale_export": {
-									"": "0"
+									"qid": 97,
+									"": {
+										"qaid": 1337,
+										"value": "0"
+									}
 								},
 								"statistics_graphtype": {
-									"": "0"
+									"qid": 97,
+									"": {
+										"qaid": 1338,
+										"value": "0"
+									}
 								},
 								"statistics_showgraph": {
-									"": "1"
+									"qid": 97,
+									"": {
+										"qaid": 1339,
+										"value": "1"
+									}
 								},
 								"time_limit": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1340,
+										"value": ""
+									}
 								},
 								"time_limit_action": {
-									"": "1"
+									"qid": 97,
+									"": {
+										"qaid": 1341,
+										"value": "1"
+									}
 								},
 								"time_limit_countdown_message": {
-									"de": "",
-									"en": ""
+									"qid": 97,
+									"de": {
+										"qaid": 1342,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1343,
+										"value": ""
+									}
 								},
 								"time_limit_disable_next": {
-									"": "0"
+									"qid": 97,
+									"": {
+										"qaid": 1344,
+										"value": "0"
+									}
 								},
 								"time_limit_disable_prev": {
-									"": "0"
+									"qid": 97,
+									"": {
+										"qaid": 1345,
+										"value": "0"
+									}
 								},
 								"time_limit_message": {
-									"de": "",
-									"en": ""
+									"qid": 97,
+									"de": {
+										"qaid": 1346,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1347,
+										"value": ""
+									}
 								},
 								"time_limit_message_delay": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1348,
+										"value": ""
+									}
 								},
 								"time_limit_message_style": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1349,
+										"value": ""
+									}
 								},
 								"time_limit_timer_style": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1350,
+										"value": ""
+									}
 								},
 								"time_limit_warning": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1351,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1352,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_display_time": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1353,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_message": {
-									"de": "",
-									"en": ""
+									"qid": 97,
+									"de": {
+										"qaid": 1354,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1355,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_style": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1356,
+										"value": ""
+									}
 								},
 								"time_limit_warning_display_time": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1357,
+										"value": ""
+									}
 								},
 								"time_limit_warning_message": {
-									"de": "",
-									"en": ""
+									"qid": 97,
+									"de": {
+										"qaid": 1358,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1359,
+										"value": ""
+									}
 								},
 								"time_limit_warning_style": {
-									"": ""
+									"qid": 97,
+									"": {
+										"qaid": 1360,
+										"value": ""
+									}
 								}
 							},
 							"answers": [
@@ -2239,10 +1241,7 @@
 		"survey": {
 			"sid": 229791,
 			"gsid": 1,
-			"ownerId": 1,
 			"active": false,
-			"admin": "inherit",
-			"adminEmail": "inherit",
 			"language": "en",
 			"expires": null,
 			"startDate": null,
@@ -2278,7 +1277,7 @@
 			"showGroupInfo": "I",
 			"showNoAnswer": null,
 			"showQNumCode": "I",
-			"bounceTime": null,
+			"bounceTime": 0,
 			"bounceProcessing": false,
 			"bounceAccountType": null,
 			"bounceAccountHost": null,
@@ -2291,11 +1290,16 @@
 			"navigationDelay": -1,
 			"noKeyboard": null,
 			"allowedItAfterCompletion": null,
-			"googleAnalyticsStyle": null,
+			"googleAnalyticsStyle": 0,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
 			"template": "inherit",
 			"format": "I",
+			"showQuestionCode": false,
+			"cookieConsent": false,
+			"footerBranding": false,
+			"showDataPolicyButton": false,
+			"showLegalNoticeButton": false,
 			"defaultLanguage": {
 				"sid": 229791,
 				"language": "en",
@@ -2305,7 +1309,6 @@
 				"endText": "",
 				"policyNotice": "",
 				"policyError": null,
-				"surveyAlias": null,
 				"policyNoticeLabel": "",
 				"url": "",
 				"urlDescription": "",
@@ -2322,7 +1325,6 @@
 					"endText": null,
 					"policyNotice": null,
 					"policyError": null,
-					"surveyAlias": null,
 					"policyNoticeLabel": null,
 					"url": null,
 					"urlDescription": null,
@@ -2338,7 +1340,6 @@
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
-					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -2352,53 +1353,6 @@
 				"en",
 				"de"
 			],
-			"previewLink": "/index.php/229791?newtest=Y&lang=en",
-			"surveyGroup": {
-				"gsid": "1",
-				"name": "default",
-				"title": "Default",
-				"template": null,
-				"description": "Default survey group",
-				"sortorder": "0",
-				"owner_id": "1",
-				"parent_id": null,
-				"created": "2023-04-28 12:19:53",
-				"modified": "2023-04-28 12:19:53",
-				"created_by": "1",
-				"alwaysavailable": 1
-			},
-			"owner": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 09:24:37",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 09:24:37",
-				"userStatus": "1"
-			},
-			"ownerInherited": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 09:24:37",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 09:24:37",
-				"userStatus": "1"
-			},
 			"questionGroups": [
 				{
 					"gid": 39,
@@ -2461,131 +1415,312 @@
 							},
 							"attributes": {
 								"answer_order": {
-									"": "normal"
+									"qid": 98,
+									"": {
+										"qaid": 1361,
+										"value": "normal"
+									}
 								},
 								"array_filter": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1362,
+										"value": ""
+									}
 								},
 								"array_filter_exclude": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1363,
+										"value": ""
+									}
 								},
 								"array_filter_style": {
-									"": "0"
+									"qid": 98,
+									"": {
+										"qaid": 1364,
+										"value": "0"
+									}
 								},
 								"cssclass": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1365,
+										"value": ""
+									}
 								},
 								"display_columns": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1366,
+										"value": ""
+									}
 								},
 								"em_validation_q": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1367,
+										"value": ""
+									}
 								},
 								"em_validation_q_tip": {
-									"de": "",
-									"en": ""
+									"qid": 98,
+									"de": {
+										"qaid": 1368,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1369,
+										"value": ""
+									}
 								},
 								"hidden": {
-									"": "0"
+									"qid": 98,
+									"": {
+										"qaid": 1370,
+										"value": "0"
+									}
 								},
 								"hide_tip": {
-									"": "0"
+									"qid": 98,
+									"": {
+										"qaid": 1371,
+										"value": "0"
+									}
 								},
 								"other_comment_mandatory": {
-									"": "0"
+									"qid": 98,
+									"": {
+										"qaid": 1372,
+										"value": "0"
+									}
 								},
 								"other_numbers_only": {
-									"": "0"
+									"qid": 98,
+									"": {
+										"qaid": 1373,
+										"value": "0"
+									}
 								},
 								"other_position": {
-									"": "default"
+									"qid": 98,
+									"": {
+										"qaid": 1374,
+										"value": "default"
+									}
 								},
 								"other_position_code": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1375,
+										"value": ""
+									}
 								},
 								"other_replace_text": {
-									"de": "",
-									"en": ""
+									"qid": 98,
+									"de": {
+										"qaid": 1376,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1377,
+										"value": ""
+									}
 								},
 								"page_break": {
-									"": "0"
+									"qid": 98,
+									"": {
+										"qaid": 1378,
+										"value": "0"
+									}
 								},
 								"printable_help": {
-									"de": "",
-									"en": ""
+									"qid": 98,
+									"de": {
+										"qaid": 1379,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1380,
+										"value": ""
+									}
 								},
 								"public_statistics": {
-									"": "0"
+									"qid": 98,
+									"": {
+										"qaid": 1381,
+										"value": "0"
+									}
 								},
 								"random_group": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1382,
+										"value": ""
+									}
 								},
 								"save_as_default": {
-									"": "N"
+									"qid": 98,
+									"": {
+										"qaid": 1383,
+										"value": "N"
+									}
 								},
 								"scale_export": {
-									"": "0"
+									"qid": 98,
+									"": {
+										"qaid": 1384,
+										"value": "0"
+									}
 								},
 								"statistics_graphtype": {
-									"": "0"
+									"qid": 98,
+									"": {
+										"qaid": 1385,
+										"value": "0"
+									}
 								},
 								"statistics_showgraph": {
-									"": "1"
+									"qid": 98,
+									"": {
+										"qaid": 1386,
+										"value": "1"
+									}
 								},
 								"time_limit": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1387,
+										"value": ""
+									}
 								},
 								"time_limit_action": {
-									"": "1"
+									"qid": 98,
+									"": {
+										"qaid": 1388,
+										"value": "1"
+									}
 								},
 								"time_limit_countdown_message": {
-									"de": "",
-									"en": ""
+									"qid": 98,
+									"de": {
+										"qaid": 1389,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1390,
+										"value": ""
+									}
 								},
 								"time_limit_disable_next": {
-									"": "0"
+									"qid": 98,
+									"": {
+										"qaid": 1391,
+										"value": "0"
+									}
 								},
 								"time_limit_disable_prev": {
-									"": "0"
+									"qid": 98,
+									"": {
+										"qaid": 1392,
+										"value": "0"
+									}
 								},
 								"time_limit_message": {
-									"de": "",
-									"en": ""
+									"qid": 98,
+									"de": {
+										"qaid": 1393,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1394,
+										"value": ""
+									}
 								},
 								"time_limit_message_delay": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1395,
+										"value": ""
+									}
 								},
 								"time_limit_message_style": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1396,
+										"value": ""
+									}
 								},
 								"time_limit_timer_style": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1397,
+										"value": ""
+									}
 								},
 								"time_limit_warning": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1398,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1399,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_display_time": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1400,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_message": {
-									"de": "",
-									"en": ""
+									"qid": 98,
+									"de": {
+										"qaid": 1401,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1402,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_style": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1403,
+										"value": ""
+									}
 								},
 								"time_limit_warning_display_time": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1404,
+										"value": ""
+									}
 								},
 								"time_limit_warning_message": {
-									"de": "",
-									"en": ""
+									"qid": 98,
+									"de": {
+										"qaid": 1405,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1406,
+										"value": ""
+									}
 								},
 								"time_limit_warning_style": {
-									"": ""
+									"qid": 98,
+									"": {
+										"qaid": 1407,
+										"value": ""
+									}
 								}
 							},
 							"answers": [
@@ -2642,12 +1777,9 @@
 	},
 	"r008": {
 		"survey": {
-			"sid": 229791,
+			"sid": 145252,
 			"gsid": 1,
-			"ownerId": 1,
 			"active": false,
-			"admin": "inherit",
-			"adminEmail": "inherit",
 			"language": "en",
 			"expires": null,
 			"startDate": null,
@@ -2665,7 +1797,7 @@
 			"ipAddr": null,
 			"ipAnonymize": null,
 			"refUrl": null,
-			"dateCreated": "2023-11-21T14:01:39.000Z",
+			"dateCreated": "2023-11-21T14:02:15.000Z",
 			"publicStatistics": null,
 			"publicGraphs": null,
 			"listPublic": null,
@@ -2683,7 +1815,7 @@
 			"showGroupInfo": "I",
 			"showNoAnswer": null,
 			"showQNumCode": "I",
-			"bounceTime": null,
+			"bounceTime": 0,
 			"bounceProcessing": false,
 			"bounceAccountType": null,
 			"bounceAccountHost": null,
@@ -2696,21 +1828,25 @@
 			"navigationDelay": -1,
 			"noKeyboard": null,
 			"allowedItAfterCompletion": null,
-			"googleAnalyticsStyle": null,
+			"googleAnalyticsStyle": 0,
 			"googleAnalyticsApiKey": null,
 			"showSurveyPolicyNotice": 0,
 			"template": "inherit",
 			"format": "I",
+			"showQuestionCode": false,
+			"cookieConsent": false,
+			"footerBranding": false,
+			"showDataPolicyButton": false,
+			"showLegalNoticeButton": false,
 			"defaultLanguage": {
-				"sid": 229791,
+				"sid": 145252,
 				"language": "en",
-				"title": "Updateanswer1",
+				"title": "Updateanswer2",
 				"description": "",
 				"welcomeText": "",
 				"endText": "",
 				"policyNotice": "",
 				"policyError": null,
-				"surveyAlias": null,
 				"policyNoticeLabel": "",
 				"url": "",
 				"urlDescription": "",
@@ -2719,15 +1855,14 @@
 			},
 			"languageSettings": {
 				"de": {
-					"sid": 229791,
+					"sid": 145252,
 					"language": "de",
-					"title": "Updateanswer1",
+					"title": "Updateanswer2",
 					"description": null,
 					"welcomeText": null,
 					"endText": null,
 					"policyNotice": null,
 					"policyError": null,
-					"surveyAlias": null,
 					"policyNoticeLabel": null,
 					"url": null,
 					"urlDescription": null,
@@ -2735,15 +1870,14 @@
 					"numberFormat": 0
 				},
 				"en": {
-					"sid": 229791,
+					"sid": 145252,
 					"language": "en",
-					"title": "Updateanswer1",
+					"title": "Updateanswer2",
 					"description": "",
 					"welcomeText": "",
 					"endText": "",
 					"policyNotice": "",
 					"policyError": null,
-					"surveyAlias": null,
 					"policyNoticeLabel": "",
 					"url": "",
 					"urlDescription": "",
@@ -2757,71 +1891,24 @@
 				"en",
 				"de"
 			],
-			"previewLink": "/index.php/229791?newtest=Y&lang=en",
-			"surveyGroup": {
-				"gsid": "1",
-				"name": "default",
-				"title": "Default",
-				"template": null,
-				"description": "Default survey group",
-				"sortorder": "0",
-				"owner_id": "1",
-				"parent_id": null,
-				"created": "2023-04-28 12:19:53",
-				"modified": "2023-04-28 12:19:53",
-				"created_by": "1",
-				"alwaysavailable": 1
-			},
-			"owner": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 10:09:57",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 10:09:57",
-				"userStatus": "1"
-			},
-			"ownerInherited": {
-				"uid": "1",
-				"name": "admin",
-				"fullName": "Administrator",
-				"parentId": "0",
-				"lang": "en",
-				"email": "your-email@example.net",
-				"htmlEditorMode": "default",
-				"templateEditorMode": "default",
-				"questionSelectorMode": "default",
-				"dateFormat": 1,
-				"lastLogin": "2024-02-20 10:09:57",
-				"created": "2023-04-28 12:19:57",
-				"modified": "2024-02-20 10:09:57",
-				"userStatus": "1"
-			},
 			"questionGroups": [
 				{
-					"gid": 39,
-					"sid": 229791,
+					"gid": 40,
+					"sid": 145252,
 					"groupOrder": 1,
 					"randomizationGroup": "",
 					"gRelevance": "1",
 					"l10ns": {
 						"de": {
-							"id": 59,
-							"gid": 39,
+							"id": 61,
+							"gid": 40,
 							"groupName": "My first question group",
 							"description": null,
 							"language": "de"
 						},
 						"en": {
-							"id": 60,
-							"gid": 39,
+							"id": 62,
+							"gid": 40,
 							"groupName": "My first question group",
 							"description": null,
 							"language": "en"
@@ -2829,9 +1916,9 @@
 					},
 					"questions": [
 						{
-							"qid": 98,
+							"qid": 99,
 							"parentQid": 0,
-							"sid": 229791,
+							"sid": 145252,
 							"type": "L",
 							"title": "Q00",
 							"preg": null,
@@ -2843,21 +1930,21 @@
 							"sameDefault": null,
 							"questionThemeName": "listradio",
 							"moduleName": null,
-							"gid": 39,
+							"gid": 40,
 							"relevance": "1",
 							"sameScript": null,
 							"l10ns": {
 								"de": {
-									"id": 130,
-									"qid": 98,
+									"id": 132,
+									"qid": 99,
 									"question": "A first example question. Please answer this question:",
 									"help": "This is a question help text.",
 									"script": "",
 									"language": "de"
 								},
 								"en": {
-									"id": 131,
-									"qid": 98,
+									"id": 133,
+									"qid": 99,
 									"question": "A first example question. Please answer this question:",
 									"help": "This is a question help text.",
 									"script": "",
@@ -2866,174 +1953,333 @@
 							},
 							"attributes": {
 								"answer_order": {
-									"": "normal"
+									"qid": 99,
+									"": {
+										"qaid": 1408,
+										"value": "normal"
+									}
 								},
 								"array_filter": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1409,
+										"value": ""
+									}
 								},
 								"array_filter_exclude": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1410,
+										"value": ""
+									}
 								},
 								"array_filter_style": {
-									"": "0"
+									"qid": 99,
+									"": {
+										"qaid": 1411,
+										"value": "0"
+									}
 								},
 								"cssclass": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1412,
+										"value": ""
+									}
 								},
 								"display_columns": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1413,
+										"value": ""
+									}
 								},
 								"em_validation_q": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1414,
+										"value": ""
+									}
 								},
 								"em_validation_q_tip": {
-									"de": "",
-									"en": ""
+									"qid": 99,
+									"de": {
+										"qaid": 1415,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1416,
+										"value": ""
+									}
 								},
 								"hidden": {
-									"": "0"
+									"qid": 99,
+									"": {
+										"qaid": 1417,
+										"value": "0"
+									}
 								},
 								"hide_tip": {
-									"": "0"
+									"qid": 99,
+									"": {
+										"qaid": 1418,
+										"value": "0"
+									}
 								},
 								"other_comment_mandatory": {
-									"": "0"
+									"qid": 99,
+									"": {
+										"qaid": 1419,
+										"value": "0"
+									}
 								},
 								"other_numbers_only": {
-									"": "0"
+									"qid": 99,
+									"": {
+										"qaid": 1420,
+										"value": "0"
+									}
 								},
 								"other_position": {
-									"": "default"
+									"qid": 99,
+									"": {
+										"qaid": 1421,
+										"value": "default"
+									}
 								},
 								"other_position_code": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1422,
+										"value": ""
+									}
 								},
 								"other_replace_text": {
-									"de": "",
-									"en": ""
+									"qid": 99,
+									"de": {
+										"qaid": 1423,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1424,
+										"value": ""
+									}
 								},
 								"page_break": {
-									"": "0"
+									"qid": 99,
+									"": {
+										"qaid": 1425,
+										"value": "0"
+									}
 								},
 								"printable_help": {
-									"de": "",
-									"en": ""
+									"qid": 99,
+									"de": {
+										"qaid": 1426,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1427,
+										"value": ""
+									}
 								},
 								"public_statistics": {
-									"": "0"
+									"qid": 99,
+									"": {
+										"qaid": 1428,
+										"value": "0"
+									}
 								},
 								"random_group": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1429,
+										"value": ""
+									}
 								},
 								"save_as_default": {
-									"": "N"
+									"qid": 99,
+									"": {
+										"qaid": 1430,
+										"value": "N"
+									}
 								},
 								"scale_export": {
-									"": "0"
+									"qid": 99,
+									"": {
+										"qaid": 1431,
+										"value": "0"
+									}
 								},
 								"statistics_graphtype": {
-									"": "0"
+									"qid": 99,
+									"": {
+										"qaid": 1432,
+										"value": "0"
+									}
 								},
 								"statistics_showgraph": {
-									"": "1"
+									"qid": 99,
+									"": {
+										"qaid": 1433,
+										"value": "1"
+									}
 								},
 								"time_limit": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1434,
+										"value": ""
+									}
 								},
 								"time_limit_action": {
-									"": "1"
+									"qid": 99,
+									"": {
+										"qaid": 1435,
+										"value": "1"
+									}
 								},
 								"time_limit_countdown_message": {
-									"de": "",
-									"en": ""
+									"qid": 99,
+									"de": {
+										"qaid": 1436,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1437,
+										"value": ""
+									}
 								},
 								"time_limit_disable_next": {
-									"": "0"
+									"qid": 99,
+									"": {
+										"qaid": 1438,
+										"value": "0"
+									}
 								},
 								"time_limit_disable_prev": {
-									"": "0"
+									"qid": 99,
+									"": {
+										"qaid": 1439,
+										"value": "0"
+									}
 								},
 								"time_limit_message": {
-									"de": "",
-									"en": ""
+									"qid": 99,
+									"de": {
+										"qaid": 1440,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1441,
+										"value": ""
+									}
 								},
 								"time_limit_message_delay": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1442,
+										"value": ""
+									}
 								},
 								"time_limit_message_style": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1443,
+										"value": ""
+									}
 								},
 								"time_limit_timer_style": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1444,
+										"value": ""
+									}
 								},
 								"time_limit_warning": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1445,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1446,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_display_time": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1447,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_message": {
-									"de": "",
-									"en": ""
+									"qid": 99,
+									"de": {
+										"qaid": 1448,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1449,
+										"value": ""
+									}
 								},
 								"time_limit_warning_2_style": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1450,
+										"value": ""
+									}
 								},
 								"time_limit_warning_display_time": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1451,
+										"value": ""
+									}
 								},
 								"time_limit_warning_message": {
-									"de": "",
-									"en": ""
+									"qid": 99,
+									"de": {
+										"qaid": 1452,
+										"value": ""
+									},
+									"en": {
+										"qaid": 1453,
+										"value": ""
+									}
 								},
 								"time_limit_warning_style": {
-									"": ""
+									"qid": 99,
+									"": {
+										"qaid": 1454,
+										"value": ""
+									}
 								}
 							},
 							"answers": [
 								{
-									"aid": 47,
-									"qid": 98,
+									"aid": 49,
+									"qid": 99,
 									"code": "AO01",
 									"sortOrder": 0,
 									"assessmentValue": 0,
 									"scaleId": 0,
 									"l10ns": {
 										"de": {
-											"id": 57,
-											"aid": 47,
+											"id": 61,
+											"aid": 49,
 											"answer": "vogel",
 											"language": "de"
 										},
 										"en": {
-											"id": 58,
-											"aid": 47,
+											"id": 62,
+											"aid": 49,
 											"answer": "bird",
-											"language": "en"
-										}
-									}
-								},
-								{
-									"aid": 48,
-									"qid": 98,
-									"code": "AO02",
-									"sortOrder": 1,
-									"assessmentValue": 0,
-									"scaleId": 0,
-									"l10ns": {
-										"de": {
-											"id": 59,
-											"aid": 48,
-											"answer": "hund",
-											"language": "de"
-										},
-										"en": {
-											"id": 60,
-											"aid": 48,
-											"answer": "dog",
 											"language": "en"
 										}
 									}

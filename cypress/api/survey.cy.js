@@ -1,21 +1,11 @@
-
-// survey data can contain data that changes between requests
-// such as dates, sow e must noramlize these values
-const normalizeSurvey = function(survey){
-  var users = [
-    survey?.owner,
-    survey?.ownerInherited
-  ]
-  users.forEach((user) => {
-    if (user) {
-      user.lastLogin = '2024-02-20 11:22:00'
-      user.modified = '2024-02-20 11:22:00'
-    }
-  })
-}
+const {
+  isKeyValuePresent,
+  clearRelativeTimestamps,
+} = require('../support/utils/common')
 
 describe('Survey tests', () => {
   let token, aid
+  const numberOfSurveys = 25
 
   chai.config.truncateThreshold = 0
 
@@ -32,50 +22,76 @@ describe('Survey tests', () => {
     })
   })
 
-  it('survey list', function () {
-    cy.fixture('responses.json')
-      .its('r002')
-      .then((json) => {
-        cy.request({
-          method: 'GET',
-          url: `${Cypress.config('baseUrl')}rest/v1/survey`,
-          headers: {
-            Authorization: `Bearer ${token}`,
-            accept: 'application/json',
-          },
-        }).then((response) => {
-          expect(response.status).to.eq(200)
-          expect(response.body).to.deep.equal(json)
-        })
-      })
+  it('survey list returns all surveys (pageSize=50)', function () {
+    cy.request({
+      method: 'GET',
+      url: `${Cypress.config('baseUrl')}rest/v1/survey`,
+      qs: {
+        pageSize: 50,
+      },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        accept: 'application/json',
+      },
+    }).then((response) => {
+      expect(response.status).to.eq(200)
+      expect(response.body.surveys).to.have.lengthOf(numberOfSurveys)
+      expect(
+        isKeyValuePresent(response.body, 'surveys.0.sid', 145252)
+      ).to.be.true
+    })
+  })
+
+  it('survey list returns second page of surveys (pageSize=10)', function () {
+    cy.request({
+      method: 'GET',
+      url: `${Cypress.config('baseUrl')}rest/v1/survey`,
+      qs: {
+        pageSize: 10,
+        page: 2,
+      },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        accept: 'application/json',
+      },
+    }).then((response) => {
+      expect(response.status).to.eq(200)
+      expect(response.body.surveys).to.have.lengthOf(10)
+      expect(isKeyValuePresent(response.body, 'surveys.0.sid', 582481)).to.be
+        .true
+    })
   })
 
   it('survey detail', function () {
-    cy.fixture('responses.json')
-      .its('r003')
-      .then((json) => {
-        cy.request({
-          method: 'GET',
-          url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/857644`,
-          headers: {
-            Authorization: `Bearer ${token}`,
-            accept: 'application/json',
-          },
-        }).then((response) => {
-          expect(response.status).to.eq(200)
-          expect(
-            normalizeSurvey(json.survey)
-          ).to.deep.equal(
-            normalizeSurvey(response.survey)
-          )
-        })
-      })
+    const sid = 857644
+    cy.request({
+      method: 'GET',
+      url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        accept: 'application/json',
+      },
+    }).then((response) => {
+      expect(response.status).to.eq(200)
+      expect(
+        isKeyValuePresent(response.body, 'survey.sid', 857644)
+      ).to.be.true
+      expect(
+        isKeyValuePresent(
+          response.body,
+          'survey.languageSettings.en.title',
+          'Survey question delete'
+        )
+      ).to.be.true
+    })
   })
 
   it('delete question', function () {
+    const sid = 857644
+
     cy.request({
       method: 'PATCH',
-      url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/857644`,
+      url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
       headers: {
         Authorization: `Bearer ${token}`,
         accept: 'application/json',
@@ -97,31 +113,37 @@ describe('Survey tests', () => {
     })
 
     // check survey
-    cy.fixture('responses.json')
-      .its('r004')
-      .then((json) => {
-        cy.request({
-          method: 'GET',
-          url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/857644`,
-          headers: {
-            Authorization: `Bearer ${token}`,
-            accept: 'application/json',
-          },
-        }).then((response) => {
-          expect(response.status).to.eq(200)
-          expect(
-            normalizeSurvey(json.survey)
-          ).to.deep.equal(
-            normalizeSurvey(response.survey)
-          )
-        })
-      })
+    cy.request({
+      method: 'GET',
+      url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        accept: 'application/json',
+      },
+    }).then((response) => {
+      expect(response.status).to.eq(200)
+      expect(
+        isKeyValuePresent(
+          response.body,
+          'survey.questionGroups.0.questions.0.qid',
+          72
+        )
+      ).to.be.false
+      expect(
+        isKeyValuePresent(
+          response.body,
+          'survey.questionGroups.0.questions.1.qid'
+        )
+      ).to.be.false
+    })
   })
 
   it('create answer', function () {
+    const sid = 241194
+
     cy.request({
       method: 'PATCH',
-      url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/241194`,
+      url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
       headers: {
         Authorization: `Bearer ${token}`,
         accept: 'application/json',
@@ -220,7 +242,7 @@ describe('Survey tests', () => {
       .then((json) => {
         cy.request({
           method: 'GET',
-          url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/241194`,
+          url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
           headers: {
             Authorization: `Bearer ${token}`,
             accept: 'application/json',
@@ -228,18 +250,22 @@ describe('Survey tests', () => {
         }).then((response) => {
           expect(response.status).to.eq(200)
           expect(
-            normalizeSurvey(json.survey)
-          ).to.deep.equal(
-            normalizeSurvey(response.survey)
-          )
+            isKeyValuePresent(
+              response.body,
+              'survey.questionGroups.0.questions.0.answers',
+              json.answers
+            )
+          ).to.be.true
         })
       })
   })
 
   it('create answer deletes not specified answers', function () {
+    const sid = 158868
+
     cy.request({
       method: 'PATCH',
-      url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/158868`,
+      url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
       headers: {
         Authorization: `Bearer ${token}`,
         accept: 'application/json',
@@ -294,7 +320,7 @@ describe('Survey tests', () => {
       .then((json) => {
         cy.request({
           method: 'GET',
-          url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/158868`,
+          url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
           headers: {
             Authorization: `Bearer ${token}`,
             accept: 'application/json',
@@ -302,10 +328,12 @@ describe('Survey tests', () => {
         }).then((response) => {
           expect(response.status).to.eq(200)
           expect(
-            normalizeSurvey(json.survey)
-          ).to.deep.equal(
-            normalizeSurvey(response.survey)
-          )
+            isKeyValuePresent(
+              response.body,
+              'survey.questionGroups.0.questions.0.answers',
+              json.answers
+            )
+          ).to.be.true
         })
       })
   })
@@ -386,10 +414,12 @@ describe('Survey tests', () => {
         }).then((response) => {
           expect(response.status).to.eq(200)
           expect(
-            normalizeSurvey(json.survey)
-          ).to.deep.equal(
-            normalizeSurvey(response.survey)
-          )
+            isKeyValuePresent(
+              response.body,
+              'survey.questionGroups.0.questions.0.answers',
+              json.answers
+            )
+          ).to.be.true
         })
       })
   })
@@ -452,10 +482,12 @@ describe('Survey tests', () => {
         }).then((response) => {
           expect(response.status).to.eq(200)
           expect(
-            normalizeSurvey(json.survey)
-          ).to.deep.equal(
-            normalizeSurvey(response.survey)
-          )
+            isKeyValuePresent(
+              response.body,
+              'survey.questionGroups.0.questions.0.answers',
+              json.answers
+            )
+          ).to.be.true
         })
       })
   })
