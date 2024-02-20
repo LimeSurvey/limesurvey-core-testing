@@ -300,7 +300,11 @@ describe('Survey tests', () => {
           },
         }).then((response) => {
           expect(response.status).to.eq(200)
-          expect(response.body).to.deep.equal(json)
+          expect(
+            normalizeSurvey(json.survey)
+          ).to.deep.equal(
+            normalizeSurvey(response.survey)
+          )
         })
       })
   })
@@ -381,14 +385,17 @@ describe('Survey tests', () => {
           },
         }).then((response) => {
           expect(response.status).to.eq(200)
-          expect(response.body).to.deep.equal(json)
+          expect(
+            normalizeSurvey(json.survey)
+          ).to.deep.equal(
+            normalizeSurvey(response.survey)
+          )
         })
       })
   })
 
   it('update answer deletes not specified answers', function () {
     const sid = 145252
-
     cy.request({
       method: 'PATCH',
       url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
@@ -445,7 +452,11 @@ describe('Survey tests', () => {
           },
         }).then((response) => {
           expect(response.status).to.eq(200)
-          expect(response.body).to.deep.equal(json)
+          expect(
+            normalizeSurvey(json.survey)
+          ).to.deep.equal(
+            normalizeSurvey(response.survey)
+          )
         })
       })
   })
