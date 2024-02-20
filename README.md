@@ -38,7 +38,7 @@ Run the seed script (zsh):
 * ```yarn cypress:e2e:run``` - run e2e tests in headless mode
 
 * ```yarn cypress:e2e:run --browser chrome``` - run e2e tests in headless chrome browser
-* ```yarn cypress:e2e:run --spec cypress/e2e/create_survey.cy.js``` - run tests from specific file
+* ```yarn cypress:e2e:run --spec cypress/e2e/group2/create_survey.cy.js``` - run tests from specific file
 
 These tests expect the application to be configured with 'urlFormat' = 'get'.
 
