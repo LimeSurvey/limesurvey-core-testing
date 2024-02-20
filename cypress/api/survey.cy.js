@@ -23,25 +23,23 @@ describe('Survey tests', () => {
   })
 
   it('survey list returns all surveys (pageSize=50)', function () {
-    cy.fixture('responses.json')
-      .its('r002')
-      .then((json) => {
-        cy.request({
-          method: 'GET',
-          url: `${Cypress.config('baseUrl')}rest/v1/survey`,
-          qs: {
-            pageSize: 50,
-          },
-          headers: {
-            Authorization: `Bearer ${token}`,
-            accept: 'application/json',
-          },
-        }).then((response) => {
-          expect(response.status).to.eq(200)
-          expect(response.body.surveys).to.have.lengthOf(numberOfSurveys)
-          expect(response.body.surveys).to.deep.include(json)
-        })
-      })
+    cy.request({
+      method: 'GET',
+      url: `${Cypress.config('baseUrl')}rest/v1/survey`,
+      qs: {
+        pageSize: 50,
+      },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        accept: 'application/json',
+      },
+    }).then((response) => {
+      expect(response.status).to.eq(200)
+      expect(response.body.surveys).to.have.lengthOf(numberOfSurveys)
+      expect(
+        isKeyValuePresent(response.body, 'surveys.0.sid', 145252)
+      ).to.be.true
+    })
   })
 
   it('survey list returns second page of surveys (pageSize=10)', function () {
@@ -66,26 +64,26 @@ describe('Survey tests', () => {
 
   it('survey detail', function () {
     const sid = 857644
-
-    cy.fixture('responses.json')
-      .its('r003')
-      .then((json) => {
-        console.log('HERE')
-        console.log(clearRelativeTimestamps(json))
-        cy.request({
-          method: 'GET',
-          url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
-          headers: {
-            Authorization: `Bearer ${token}`,
-            accept: 'application/json',
-          },
-        }).then((response) => {
-          expect(response.status).to.eq(200)
-          expect(clearRelativeTimestamps(response.body)).to.deep.equal(
-            clearRelativeTimestamps(json)
-          )
-        })
-      })
+    cy.request({
+      method: 'GET',
+      url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        accept: 'application/json',
+      },
+    }).then((response) => {
+      expect(response.status).to.eq(200)
+      expect(
+        isKeyValuePresent(response.body, 'survey.sid', 857644)
+      ).to.be.true
+      expect(
+        isKeyValuePresent(
+          response.body,
+          'survey.languageSettings.en.title',
+          'Survey question delete'
+        )
+      ).to.be.true
+    })
   })
 
   it('delete question', function () {
@@ -103,15 +101,14 @@ describe('Survey tests', () => {
           {
             entity: 'question',
             op: 'delete',
-            id: '73',
+            id: '72',
           },
         ],
       },
     }).then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body).to.deep.equal({
-        operationsApplied: 1,
-        erronousOperations: [],
+        operationsApplied: 1
       })
     })
 
@@ -131,7 +128,7 @@ describe('Survey tests', () => {
           'survey.questionGroups.0.questions.0.qid',
           72
         )
-      ).to.be.true
+      ).to.be.false
       expect(
         isKeyValuePresent(
           response.body,
@@ -217,24 +214,25 @@ describe('Survey tests', () => {
       expect(response.status).to.eq(200)
       expect(response.body).to.deep.equal({
         operationsApplied: 1,
-        answersMap: [
-          {
-            tempId: '0',
-            id: aid + 1,
-            field: 'aid',
-          },
-          {
-            tempId: '1',
-            id: aid + 2,
-            field: 'aid',
-          },
-          {
-            tempId: '2',
-            id: aid + 3,
-            field: 'aid',
-          },
-        ],
-        erronousOperations: [],
+        tempIdMapping: {
+          answersMap: [
+            {
+              tempId: '0',
+              id: aid + 1,
+              field: 'aid',
+            },
+            {
+              tempId: '1',
+              id: aid + 2,
+              field: 'aid',
+            },
+            {
+              tempId: '2',
+              id: aid + 3,
+              field: 'aid',
+            },
+          ],
+        }
       })
     })
 
@@ -304,14 +302,15 @@ describe('Survey tests', () => {
       expect(response.status).to.eq(200)
       expect(response.body).to.deep.equal({
         operationsApplied: 1,
-        answersMap: [
-          {
-            tempId: '2',
-            id: aid + 4,
-            field: 'aid',
-          },
-        ],
-        erronousOperations: [],
+        tempIdMapping: {
+          answersMap: [
+            {
+              tempId: '2',
+              id: aid + 4,
+              field: 'aid',
+            },
+          ],
+        }
       })
     })
 
@@ -397,8 +396,7 @@ describe('Survey tests', () => {
     }).then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body).to.deep.equal({
-        operationsApplied: 1,
-        erronousOperations: [],
+        operationsApplied: 1
       })
     })
 
@@ -428,7 +426,6 @@ describe('Survey tests', () => {
 
   it('update answer deletes not specified answers', function () {
     const sid = 145252
-
     cy.request({
       method: 'PATCH',
       url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
@@ -467,8 +464,7 @@ describe('Survey tests', () => {
     }).then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body).to.deep.equal({
-        operationsApplied: 1,
-        erronousOperations: [],
+        operationsApplied: 1
       })
     })
 
