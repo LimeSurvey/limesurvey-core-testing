@@ -42,8 +42,7 @@ describe('User management', () => {
       .and('contain', 'Saved permissions successfully.')
 
     // find user in table
-    cy.wait(500)
-    cy.get('#User_users_name').type(`${username}{enter}`)
+    cy.get('#User_users_name').type(`${username}{enter}`, { force: true })
     cy.get('table tbody tr.odd').should('contain', username)
 
     // lougout and try to log in with that user
@@ -102,8 +101,7 @@ describe('User management', () => {
       .and('contain', 'Saved permissions successfully.')
 
     // find user in table
-    cy.wait(500)
-    cy.get('#User_users_name').type(`${username}{enter}`)
+    cy.get('#User_users_name').type(`${username}{enter}`, { force: true })
     cy.get('table tbody tr.odd').should('contain', username)
 
     // lougout and try to log in with that user
@@ -162,8 +160,7 @@ describe('User management', () => {
       .and('contain', 'Saved permissions successfully.')
 
     // find user in table
-    cy.wait(500)
-    cy.get('#User_users_name').type(`${username}{enter}`)
+    cy.get('#User_users_name').type(`${username}{enter}`, { force: true })
     cy.get('table tbody tr.odd').should('contain', username)
 
     // lougout and try to log in with that user
