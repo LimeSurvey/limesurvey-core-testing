@@ -42,6 +42,7 @@ describe('User management', () => {
       .and('contain', 'Saved permissions successfully.')
 
     // find user in table
+    cy.wait(500)
     cy.get('#User_users_name').type(`${username}{enter}`)
     cy.get('table tbody tr.odd').should('contain', username)
 
@@ -101,6 +102,7 @@ describe('User management', () => {
       .and('contain', 'Saved permissions successfully.')
 
     // find user in table
+    cy.wait(500)
     cy.get('#User_users_name').type(`${username}{enter}`)
     cy.get('table tbody tr.odd').should('contain', username)
 
@@ -160,6 +162,7 @@ describe('User management', () => {
       .and('contain', 'Saved permissions successfully.')
 
     // find user in table
+    cy.wait(500)
     cy.get('#User_users_name').type(`${username}{enter}`)
     cy.get('table tbody tr.odd').should('contain', username)
 
