@@ -46,10 +46,10 @@ describe('User management', () => {
     cy.get('table tbody tr.odd').should('contain', username)
 
     // lougout and try to log in with that user
-    cy.get('a').contains('admin').click()
+    cy.get('a').contains('admin').click({ force: true })
     cy.get(
       'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
-    ).click()
+    ).click({ force: true })
     cy.get('input#user').should('be.visible')
 
     cy.login(username, password)
@@ -105,10 +105,10 @@ describe('User management', () => {
     cy.get('table tbody tr.odd').should('contain', username)
 
     // lougout and try to log in with that user
-    cy.get('a').contains('admin').click()
+    cy.get('a').contains('admin').click({ force: true })
     cy.get(
       'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
-    ).click()
+    ).click({ force: true })
     cy.get('input#user').should('be.visible')
 
     cy.login(username, password)
@@ -164,10 +164,10 @@ describe('User management', () => {
     cy.get('table tbody tr.odd').should('contain', username)
 
     // lougout and try to log in with that user
-    cy.get('a').contains('admin').click()
+    cy.get('a').contains('admin').click({ force: true })
     cy.get(
       'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
-    ).click()
+    ).click({ force: true })
     cy.get('input#user').should('be.visible')
 
     cy.login(username, password)
