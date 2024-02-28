@@ -1,7 +1,4 @@
-const {
-  isKeyValuePresent,
-  clearRelativeTimestamps,
-} = require('../support/utils/common')
+const { isKeyValuePresent } = require('../support/utils/common')
 
 describe('Survey tests', () => {
   let token, aid
@@ -36,9 +33,8 @@ describe('Survey tests', () => {
     }).then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body.surveys).to.have.lengthOf(numberOfSurveys)
-      expect(
-        isKeyValuePresent(response.body, 'surveys.0.sid', 145252)
-      ).to.be.true
+      expect(isKeyValuePresent(response.body, 'surveys.0.sid', 145252)).to.be
+        .true
     })
   })
 
@@ -73,9 +69,7 @@ describe('Survey tests', () => {
       },
     }).then((response) => {
       expect(response.status).to.eq(200)
-      expect(
-        isKeyValuePresent(response.body, 'survey.sid', 857644)
-      ).to.be.true
+      expect(isKeyValuePresent(response.body, 'survey.sid', 857644)).to.be.true
       expect(
         isKeyValuePresent(
           response.body,
@@ -108,7 +102,7 @@ describe('Survey tests', () => {
     }).then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body).to.deep.equal({
-        operationsApplied: 1
+        operationsApplied: 1,
       })
     })
 
@@ -232,7 +226,7 @@ describe('Survey tests', () => {
               field: 'aid',
             },
           ],
-        }
+        },
       })
     })
 
@@ -310,7 +304,7 @@ describe('Survey tests', () => {
               field: 'aid',
             },
           ],
-        }
+        },
       })
     })
 
@@ -396,7 +390,7 @@ describe('Survey tests', () => {
     }).then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body).to.deep.equal({
-        operationsApplied: 1
+        operationsApplied: 1,
       })
     })
 
@@ -464,7 +458,7 @@ describe('Survey tests', () => {
     }).then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body).to.deep.equal({
-        operationsApplied: 1
+        operationsApplied: 1,
       })
     })
 
