@@ -86,7 +86,7 @@ describe('Survey questions', () => {
     cy.wait('@xhrRequests')
     cy.wait(3000)
 
-    cy.get('a[data-btntext="Delete"]').eq(1).click()
+    cy.get('a[data-btntext="Delete"]').eq(0).click({force:true})
     cy.get('#confirmation-modal').within(() => {
       cy.get('#actionBtn').click()
     })
