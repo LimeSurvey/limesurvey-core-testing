@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        group: [ 'group1', 'group2', 'api' ]
+        group: [ 'group1', 'group2', 'api', 'question-editor' ]
     runs-on: ubuntu-20.04
     env:
       DBENGINE: INNODB
@@ -33,6 +33,28 @@ jobs:
           path: limesurvey
           repository: LimeSurvey/LimeSurvey
           ref: ${{ github.event.inputs.branch || 'develop' }}
+
+      - name: Checkout question editor
+        uses: actions/checkout@v3
+        if: ${{ contains(matrix.group, 'question-editor') }}
+        with:
+          path: react-app
+          repository: LimeSurvey/react-app
+          ref: ${{ 'develop' }}
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        if: ${{ contains(matrix.group, 'question-editor') }}
+        with:
+          node-version: '20'
+  
+      - name: Install dependencies and start react app
+        if: ${{ contains(matrix.group, 'question-editor') }}
+        working-directory: react-app
+        run: |
+          npm install
+          cp ../cypress/data/.env.local .env.local
+          npm run start
 
       - name: Install PHP
         uses: shivammathur/setup-php@v2
@@ -116,7 +138,7 @@ jobs:
 
       - name: Change config for api tests
         working-directory: limesurvey
-        if: ${{ contains(matrix.group, 'api') }}
+        if: ${{ contains(matrix.group, 'api') || contains(matrix.group, 'question-editor') }}
         run: |
           sed -i '46s/.*/        "urlFormat" => "path",/' application/config/config.php
 
@@ -174,6 +196,20 @@ jobs:
           command: yarn cypress:api:run
           wait-on: 'http://localhost'
 
+      - name: Cypress run
+        id: question-editor-tests
+        uses: cypress-io/github-action@v3
+        if: ${{ contains(matrix.group, 'question-editor') }}
+        continue-on-error: true
+        env:
+          CYPRESS_BASE_URL: 'http://localhost/'
+          CYPRESS_DB_HOST: 127.0.0.1
+          CYPRESS_DB_DATABASE: limesurvey
+        with:
+          working-directory: limesurvey-core-testing
+          command: yarn cypress:qe:run
+          wait-on: 'http://localhost'
+
       # for debugging
       # - name: Setup upterm session
       #   uses: lhotari/action-upterm@v1
@@ -222,5 +258,5 @@ jobs:
           retention-days: 3
 
       - name: Fail workflow if tests fail
-        if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) || (steps.api-tests.outcome != 'success' && contains(matrix.group, 'api')) }}
+        if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) || (steps.api-tests.outcome != 'success' && contains(matrix.group, 'api')) || (steps.question-editor-tests.outcome != 'success' && contains(matrix.group, 'question-editor')) }}
         run: exit 1

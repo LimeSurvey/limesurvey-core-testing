@@ -8,7 +8,9 @@
     "cypress:e2e:run": "cypress run",
     "cypress:api:run": "yarn cypress:e2e:run --config specPattern='cypress/api/*.cy.js'",
     "cypress:api:open": "yarn cypress:e2e:open --config specPattern='cypress/api/*.cy.js'",
-    "format": "prettier --config .prettierrc --write \"cypress/{e2e,support,api}/**/*.js\" \"custom_runner.js\" \"split_tests_into_groups.js\"",
+    "cypress:qe:run": "yarn cypress:e2e:run --config specPattern='cypress/qe/*.cy.js'",
+    "cypress:qe:open": "yarn cypress:e2e:open --config specPattern='cypress/qe/*.cy.js'",
+    "format": "prettier --config .prettierrc --write \"cypress/{e2e,support,api,qe}/**/*.js\" \"custom_runner.js\" \"split_tests_into_groups.js\"",
     "lint": "eslint '**/*.js'",
     "lint:fix": "eslint '**/*.js' --fix",
     "cypress:run": "node custom_runner.js"
