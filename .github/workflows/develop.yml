@@ -57,7 +57,7 @@ jobs:
         working-directory: react-app
         run: |
           npm install
-          cp ../cypress/data/.env.local .env.local
+          cp ../limesurvey-core-testing/cypress/data/.env.local .env.local
           npm run start
 
       - name: Install PHP

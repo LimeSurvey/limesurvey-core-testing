@@ -8,8 +8,11 @@ describe('Test', () => {
       '/admin'
     )
 
-    cy.visit(`${Cypress.config('baseUrl')}EditorLink?noRedirect=1`)
-    cy.visit(`${qeBaseUrl}/#/survey/691384`)
+    cy.visit(
+      `${Cypress.config('baseUrl')}EditorLink?url=${encodeURIComponent(
+        `${qeBaseUrl}/#/survey/691384`
+      )}`
+    )
     cy.wait(3000)
     cy.get('.logo').should('be.visible')
   })
