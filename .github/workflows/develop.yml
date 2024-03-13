@@ -58,7 +58,7 @@ jobs:
         run: |
           npm install
           cp ../limesurvey-core-testing/cypress/data/.env.local .env.local
-          BROWSER=none npm run start | cat - &
+          npm run start
 
       - name: Install PHP
         uses: shivammathur/setup-php@v2
@@ -212,12 +212,12 @@ jobs:
         with:
           working-directory: limesurvey-core-testing
           command: yarn cypress:qe:run
-          wait-on: 'http://localhost'
+          wait-on: 'http://localhost, http://localhost:3000'
 
       # for debugging
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
-        if: ${{ contains(matrix.group, 'question-editor') }}
+      # - name: Setup upterm session
+      #   uses: lhotari/action-upterm@v1
+      #   if: ${{ contains(matrix.group, 'question-editor') }}
 
       - name: Compress run_times.json
         id: run-times-dir
