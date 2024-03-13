@@ -26,21 +26,22 @@ jobs:
     name: Install app and run tests
     steps:
       - name: Checkout current repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: limesurvey-core-testing
 
       - name: Checkout app
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: limesurvey
           repository: LimeSurvey/LimeSurvey
           ref: ${{ github.event.inputs.branch || 'develop' }}
 
       - name: Checkout question editor
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         if: ${{ contains(matrix.group, 'question-editor') }}
         with:
+          token: ${{ secrets.GH_TOKEN }}
           path: react-app
           repository: LimeSurvey/react-app
           ref: ${{ 'develop' }}
