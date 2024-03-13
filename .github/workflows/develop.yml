@@ -55,8 +55,9 @@ jobs:
       - name: Install dependencies and start react app
         if: ${{ contains(matrix.group, 'question-editor') }}
         working-directory: react-app
+        env:
+          RUNNER_TRACKING_ID: ""
         run: |
-          $env:RUNNER_TRACKING_ID=""
           npm install
           cp ../limesurvey-core-testing/cypress/data/.env.local .env.local
           npm run start &
