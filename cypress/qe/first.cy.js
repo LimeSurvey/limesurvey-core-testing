@@ -1,5 +1,5 @@
 describe('Test', () => {
-  const qeBaseUrl = `${Cypress.config('baseUrl')}:3000`.replace('/:', ':')
+  const qeBaseUrl = `${Cypress.config('baseUrl')}:3000`.replace('/index.php/:', ':')
 
   it('user can access new question editor', function () {
     cy.loginByCSRF(
