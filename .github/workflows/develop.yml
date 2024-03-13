@@ -230,6 +230,7 @@ jobs:
           CYPRESS_DB_HOST: 127.0.0.1
           CYPRESS_DB_DATABASE: limesurvey
         with:
+          token: ${{ secrets.GH_TOKEN }}
           working-directory: limesurvey-core-testing
           command: yarn cypress:qe:run
           wait-on: 'http://localhost, http://localhost:3000'
