@@ -235,7 +235,7 @@ jobs:
           CYPRESS_DB_DATABASE: limesurvey
         with:
           working-directory: limesurvey-core-testing
-          command: yarn cypress:qe:run
+          command: yarn cypress:run --browser chrome --spec cypress/qe/*.js
           wait-on: 'http://ls-ce, http://ls-ce:3000'
 
       # for debugging
