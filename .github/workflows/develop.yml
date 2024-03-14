@@ -56,6 +56,7 @@ jobs:
         if: ${{ contains(matrix.group, 'question-editor') }}
         working-directory: react-app
         run: |
+          sudo /bin/sh -c 'echo "127.0.0.1 ls-ce" >> /etc/hosts'
           npm install
           cp ../limesurvey-core-testing/cypress/data/.env.local .env.local
           npm run start &

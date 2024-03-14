@@ -1,9 +1,5 @@
 describe('Test', () => {
-  // 'http://localhost/index.php/'
-  const qeBaseUrl = `${Cypress.config('baseUrl')}`.replace(
-    '/index.php/',
-    ':3000/'
-  )
+  const qeBaseUrl = 'http://ls-ce:3000/'
 
   it('user can access new question editor', function () {
     cy.log(qeBaseUrl)
