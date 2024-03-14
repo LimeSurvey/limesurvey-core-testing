@@ -274,12 +274,12 @@ jobs:
 
       - name: Compress html report
         id: html-report-dir
-        if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) }}
+        if: ${{ (steps.cypress.outcome != 'success' && (contains(matrix.group, 'group') || contains(matrix.group, 'question-editor'))) }}
         run: zip -qq -r html-report-${{ matrix.group }}.zip limesurvey-core-testing/templates/test-result.html
 
       - name: Upload html report
         uses: actions/upload-artifact@v3
-        if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) }}
+        if: ${{ (steps.cypress.outcome != 'success' && (contains(matrix.group, 'group') || contains(matrix.group, 'question-editor'))) }}
         with:
           name: html-report-${{ matrix.group }}
           path: html-report-${{ matrix.group }}.zip
