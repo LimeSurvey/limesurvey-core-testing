@@ -51,12 +51,15 @@ jobs:
         if: ${{ contains(matrix.group, 'question-editor') }}
         with:
           node-version: '20'
+
+      - name: Add hosts to /etc/hosts
+        run: |
+          sudo echo "127.0.0.1 ls-ce" | sudo tee -a /etc/hosts
   
       - name: Install dependencies and start react app
         if: ${{ contains(matrix.group, 'question-editor') }}
         working-directory: react-app
         run: |
-          sudo /bin/sh -c 'echo "127.0.0.1 ls-ce" >> /etc/hosts'
           npm install
           cp ../limesurvey-core-testing/cypress/data/.env.local .env.local
           npm run start &
