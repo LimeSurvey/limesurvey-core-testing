@@ -188,7 +188,7 @@ jobs:
 
       - name: Cypress run
         id: cypress
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v6
         if: ${{ contains(matrix.group, 'group') }}
         continue-on-error: true
         env:
@@ -202,7 +202,7 @@ jobs:
 
       - name: Cypress run
         id: api-tests
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v6
         if: ${{ contains(matrix.group, 'api') }}
         continue-on-error: true
         env:
@@ -235,7 +235,7 @@ jobs:
           CYPRESS_DB_DATABASE: limesurvey
         with:
           working-directory: limesurvey-core-testing
-          command: yarn cypress:run --browser chrome --spec cypress/qe/*.js
+          command: yarn cypress:qe:run
           wait-on: 'http://ls-ce, http://ls-ce:3000'
 
       # for debugging
@@ -256,13 +256,13 @@ jobs:
           path: run-times-${{ matrix.group }}.zip
           retention-days: 3
 
-      # - name: Upload Screenshots
-      #   uses: actions/upload-artifact@v3
-      #   if: steps.cypress.outcome != 'success'
-      #   with:
-      #     name: screenshots
-      #     path: limesurvey-core-testing/cypress/screenshots/
-      #     retention-days: 5
+      - name: Upload Screenshots
+        uses: actions/upload-artifact@v3
+        if: ${{ steps.cypress.outcome != 'success' && contains(matrix.group, 'question-editor') }}
+        with:
+          name: screenshots
+          path: limesurvey-core-testing/cypress/screenshots/
+          retention-days: 5
 
       # - name: Upload Videos
       #   uses: actions/upload-artifact@v3
@@ -274,12 +274,12 @@ jobs:
 
       - name: Compress html report
         id: html-report-dir
-        if: ${{ (steps.cypress.outcome != 'success' && (contains(matrix.group, 'group') || contains(matrix.group, 'question-editor'))) }}
+        if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) }}
         run: zip -qq -r html-report-${{ matrix.group }}.zip limesurvey-core-testing/templates/test-result.html
 
       - name: Upload html report
         uses: actions/upload-artifact@v3
-        if: ${{ (steps.cypress.outcome != 'success' && (contains(matrix.group, 'group') || contains(matrix.group, 'question-editor'))) }}
+        if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) }}
         with:
           name: html-report-${{ matrix.group }}
           path: html-report-${{ matrix.group }}.zip
