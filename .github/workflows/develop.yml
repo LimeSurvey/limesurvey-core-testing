@@ -64,7 +64,7 @@ jobs:
       - name: Wait for React app to be available
         if: ${{ contains(matrix.group, 'question-editor') }}
         run: |
-          APP_URL="http://localhost:3000"
+          APP_URL="http://ls-ce:3000"
           while ! curl -s --head "$APP_URL" | grep "200 OK" > /dev/null; do
             echo "Waiting for the React app to start..."
             sleep 5
@@ -214,7 +214,7 @@ jobs:
       - name: Check if React app is available
         if: ${{ contains(matrix.group, 'question-editor') }}
         run: |
-          APP_URL="http://localhost:3000"
+          APP_URL="http://ls-ce:3000"
           while ! curl -s --head "$APP_URL" | grep "200 OK" > /dev/null; do
             echo "Waiting for the React app to start..."
             sleep 5
@@ -233,7 +233,7 @@ jobs:
         with:
           working-directory: limesurvey-core-testing
           command: yarn cypress:qe:run
-          wait-on: 'http://localhost, http://localhost:3000'
+          wait-on: 'http://localhost, http://ls-ce:3000'
 
       # for debugging
       # - name: Setup upterm session
