@@ -13,8 +13,8 @@ describe('Test', () => {
         `${qeBaseUrl}#/`
       )}&route=survey/691384`
     )
-    
-    cy.origin('http://ls-ce:3000', () => {
+
+    cy.origin(qeBaseUrl, () => {
       cy.wait(3000)
       cy.get('.logo').should('be.visible')
     })
