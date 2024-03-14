@@ -2,7 +2,6 @@ describe('Test', () => {
   const qeBaseUrl = 'http://ls-ce:3000/'
 
   it('user can access new question editor', function () {
-    cy.log(qeBaseUrl)
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
@@ -14,7 +13,10 @@ describe('Test', () => {
         `${qeBaseUrl}#/`
       )}&route=survey/691384`
     )
-    cy.wait(3000)
-    cy.get('.logo').should('be.visible')
+    
+    cy.origin('http://ls-ce:3000', () => {
+      cy.wait(3000)
+      cy.get('.logo').should('be.visible')
+    })
   })
 })
