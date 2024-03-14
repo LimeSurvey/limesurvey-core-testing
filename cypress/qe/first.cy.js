@@ -15,7 +15,7 @@ describe('Test', () => {
     )
 
     cy.origin(qeBaseUrl, () => {
-      cy.wait(3000)
+      cy.wait(6000)
       cy.get('.logo').should('be.visible')
     })
   })
