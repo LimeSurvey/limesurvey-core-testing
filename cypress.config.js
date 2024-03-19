@@ -14,6 +14,7 @@ module.exports = defineConfig({
     DB_USER: 'root',
     DB_PASSWORD: 'root',
     DB_DATABASE: 'ls-ce',
+    REACT_APP_DOMAIN: 'ls-ce',
   },
   scrollBehavior: 'center',
   e2e: {

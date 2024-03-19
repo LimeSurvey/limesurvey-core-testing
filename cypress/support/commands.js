@@ -107,3 +107,17 @@ Cypress.Commands.add('dragAndDrop', (subjectSelector, targetSelector) => {
     .trigger('drop')
   cy.get(subjectSelector).trigger('dragend')
 })
+
+Cypress.Commands.add(
+  'getQESurvey',
+  (username, password, qeBaseUrl, surveyId) => {
+    cy.loginByCSRF(username, password, '/admin')
+
+    cy.visit(
+      `${Cypress.config('baseUrl')}EditorLink?url=${encodeURIComponent(
+        `${qeBaseUrl}#/`
+      )}&route=survey/${surveyId}`
+    )
+    cy.wait(3000)
+  }
+)
