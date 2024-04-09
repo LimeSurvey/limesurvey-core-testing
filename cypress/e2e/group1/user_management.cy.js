@@ -101,6 +101,7 @@ describe('User management', () => {
       .and('contain', 'Saved permissions successfully.')
 
     // find user in table
+    cy.wait(1000)
     cy.get('#User_users_name').type(`${username}{enter}`, { force: true })
     cy.get('table tbody tr.odd').should('contain', username)
 
