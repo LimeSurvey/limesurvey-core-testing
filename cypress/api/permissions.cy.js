@@ -56,10 +56,10 @@ const user_permissions = {
 */
 
 const expected_outcome = {
-  //      0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
-  perm1: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  perm2: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
-  perm3: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //      0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
+  perm1: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  perm2: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  perm3: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 }
 
 describe('Permissions tests', () => {
@@ -616,7 +616,7 @@ describe('Permissions tests', () => {
       })
     })
     // 10
-    it(`question group create - user:${user}`, function () {
+    it(`question group delete - user:${user}`, function () {
       const sid = '514699'
       // question group ids are 50-65
       const gid = (50 + idx).toString()
@@ -653,6 +653,236 @@ describe('Permissions tests', () => {
                 entity: 'questionGroup',
                 id: gid,
                 op: 'delete',
+                context: {
+                  id: sid,
+                },
+              },
+            ],
+          })
+        }
+      })
+    })
+    // 11
+    it(`question group L10n update - user:${user}`, function () {
+      const sid = '984629'
+
+      cy.request({
+        method: 'PATCH',
+        url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          accept: 'application/json',
+        },
+        failOnStatusCode: false,
+        body: {
+          patch: [
+            {
+              entity: 'questionGroupL10n',
+              op: 'update',
+              id: 66,
+              props: {
+                en: {
+                  groupName: `${user} - group EN`,
+                  description: `${user} - description EN`,
+                },
+                de: {
+                  groupName: `${user} - group DE`,
+                  description: `${user} - description DE`,
+                },
+              },
+            },
+          ],
+        },
+      }).then((response) => {
+        expect(response.status).to.eq(200)
+        if (expected_outcome[user][11]) {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 1,
+          })
+        } else {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 0,
+            exceptionErrors: [
+              {
+                error: 'Permission denied',
+                entity: 'questionGroupL10n',
+                id: '66',
+                op: 'update',
+                context: {
+                  id: sid,
+                },
+              },
+            ],
+          })
+        }
+      })
+    })
+    // 12
+    it(`question group L10n update - user:${user}`, function () {
+      const sid = '444656'
+
+      cy.request({
+        method: 'PATCH',
+        url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          accept: 'application/json',
+        },
+        failOnStatusCode: false,
+        body: {
+          patch: [
+            {
+              entity: 'questionGroupReorder',
+              op: 'update',
+              id: 123456,
+              props: {
+                67: {
+                  // question group id
+                  sortOrder: 2,
+                  questions: {
+                    130: {
+                      // question id
+                      sortOrder: 0,
+                    },
+                    129: {
+                      // question id
+                      sortOrder: 1,
+                    },
+                  },
+                },
+                68: {
+                  sortOrder: 1,
+                  questions: {
+                    131: {
+                      sortOrder: 3,
+                    },
+                    132: {
+                      sortOrder: 2,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      }).then((response) => {
+        expect(response.status).to.eq(200)
+        if (expected_outcome[user][12]) {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 1,
+          })
+        } else {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 0,
+            exceptionErrors: [
+              {
+                error: 'Permission denied',
+                entity: 'questionGroupReorder',
+                id: '123456',
+                op: 'update',
+                context: {
+                  id: sid,
+                },
+              },
+            ],
+          })
+        }
+      })
+    })
+    // 13
+    it(`question L10n update - user:${user}`, function () {
+      const sid = '737522'
+      cy.request({
+        method: 'PATCH',
+        url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          accept: 'application/json',
+        },
+        failOnStatusCode: false,
+        body: {
+          patch: [
+            {
+              entity: 'questionL10n',
+              op: 'update',
+              id: 133,
+              props: {
+                en: {
+                  question: `${user} - question EN`,
+                  help: `${user} - help EN`,
+                },
+                de: {
+                  question: `${user} - question DE`,
+                  help: `${user} - help DE`,
+                },
+              },
+            },
+          ],
+        },
+      }).then((response) => {
+        expect(response.status).to.eq(200)
+        if (expected_outcome[user][13]) {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 1,
+          })
+        } else {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 0,
+            exceptionErrors: [
+              {
+                error: 'Access denied',
+                entity: 'questionL10n',
+                id: '133',
+                op: 'update',
+                context: {
+                  id: sid,
+                },
+              },
+            ],
+          })
+        }
+      })
+    })
+    // 14
+    it(`question update - user:${user}`, function () {
+      const sid = '152113'
+      cy.request({
+        method: 'PATCH',
+        url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          accept: 'application/json',
+        },
+        failOnStatusCode: false,
+        body: {
+          patch: [
+            {
+              entity: 'question',
+              op: 'update',
+              id: 134,
+              props: {
+                title: user,
+                mandatory: true,
+                encrypted: true,
+              },
+            },
+          ],
+        },
+      }).then((response) => {
+        expect(response.status).to.eq(200)
+        if (expected_outcome[user][14]) {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 1,
+          })
+        } else {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 0,
+            exceptionErrors: [
+              {
+                error: 'Access denied',
+                entity: 'question',
+                id: '134',
+                op: 'update',
                 context: {
                   id: sid,
                 },
