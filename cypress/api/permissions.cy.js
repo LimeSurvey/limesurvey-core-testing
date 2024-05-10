@@ -78,7 +78,24 @@ const expected_outcome = {
 describe('Permissions tests', () => {
   let token
 
-  let users = ['perm1', 'perm2', 'perm3', 'perm4', 'perm5', 'perm6', 'perm7', 'perm8', 'perm9', 'perm10', 'perm11', 'perm12', 'perm13', 'perm14', 'perm15', 'perm16']
+  let users = [
+    'perm1',
+    'perm2',
+    'perm3',
+    'perm4',
+    'perm5',
+    'perm6',
+    'perm7',
+    'perm8',
+    'perm9',
+    'perm10',
+    'perm11',
+    'perm12',
+    'perm13',
+    'perm14',
+    'perm15',
+    'perm16',
+  ]
 
   chai.config.truncateThreshold = 0
 
