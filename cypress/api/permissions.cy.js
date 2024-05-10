@@ -60,12 +60,25 @@ const expected_outcome = {
   perm1: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   perm2: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   perm3: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  perm4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  perm5: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  perm6: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  perm7: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  perm8: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  perm9: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  perm10: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  perm11: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  perm12: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  perm13: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  perm14: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  perm15: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  perm16: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 }
 
 describe('Permissions tests', () => {
   let token
 
-  let users = ['perm1', 'perm2', 'perm3']
+  let users = ['perm1', 'perm2', 'perm3', 'perm4', 'perm5', 'perm6', 'perm7', 'perm8', 'perm9', 'perm10', 'perm11', 'perm12', 'perm13', 'perm14', 'perm15', 'perm16']
 
   chai.config.truncateThreshold = 0
 
@@ -718,7 +731,7 @@ describe('Permissions tests', () => {
       })
     })
     // 12
-    it(`question group L10n update - user:${user}`, function () {
+    it(`question group reorder - user:${user}`, function () {
       const sid = '444656'
 
       cy.request({
@@ -882,6 +895,243 @@ describe('Permissions tests', () => {
                 error: 'Access denied',
                 entity: 'question',
                 id: '134',
+                op: 'update',
+                context: {
+                  id: sid,
+                },
+              },
+            ],
+          })
+        }
+      })
+    })
+    // 15
+    it(`subquestion update - user:${user}`, function () {
+      const sid = '498131'
+      cy.request({
+        method: 'PATCH',
+        url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          accept: 'application/json',
+        },
+        failOnStatusCode: false,
+        body: {
+          patch: [
+            {
+              entity: 'subquestion',
+              op: 'update',
+              id: 135,
+              props: {
+                0: {
+                  qid: 136,
+                  title: `SQ${idx}`,
+                  l10ns: {
+                    en: {
+                      question: `${user}A`,
+                      language: 'en',
+                    },
+                  },
+                },
+                1: {
+                  qid: 137,
+                  title: `SQ${idx + 1}`,
+                  l10ns: {
+                    en: {
+                      question: `${user}B`,
+                      language: 'en',
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      }).then((response) => {
+        expect(response.status).to.eq(200)
+        if (expected_outcome[user][15]) {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 1,
+          })
+        } else {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 0,
+            exceptionErrors: [
+              {
+                error: 'Access denied',
+                entity: 'subquestion',
+                id: '135',
+                op: 'update',
+                context: {
+                  id: sid,
+                },
+              },
+            ],
+          })
+        }
+      })
+    })
+    // 16
+    it(`subquestion create - user:${user}`, function () {
+      const sid = '347455'
+      let qid
+
+      cy.task('queryDb', 'SELECT MAX(qid) FROM `lime_questions`').then(
+        (result) => {
+          qid = result[0]['MAX(qid)']
+        }
+      )
+
+      cy.request({
+        method: 'PATCH',
+        url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          accept: 'application/json',
+        },
+        failOnStatusCode: false,
+        body: {
+          patch: [
+            {
+              entity: 'subquestion',
+              op: 'create',
+              id: 138,
+              props: {
+                0: {
+                  title: `SQ${idx}`,
+                  tempId: '123',
+                  l10ns: {
+                    en: {
+                      question: `${user}A`,
+                      language: 'en',
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      }).then((response) => {
+        expect(response.status).to.eq(200)
+        if (expected_outcome[user][16]) {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 1,
+            tempIdMapping: {
+              subquestionsMap: [
+                {
+                  tempId: '123',
+                  id: qid + 1,
+                  field: 'qid',
+                },
+              ],
+            },
+          })
+        } else {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 0,
+            exceptionErrors: [
+              {
+                error: 'Access denied',
+                entity: 'subquestion',
+                id: '138',
+                op: 'create',
+                context: {
+                  id: sid,
+                },
+              },
+            ],
+          })
+        }
+      })
+    })
+    // 17
+    it(`subquestion delete - user:${user}`, function () {
+      const sid = '565868'
+      // subquestion ids are 141-156
+      const qid = (141 + idx).toString()
+
+      cy.request({
+        method: 'PATCH',
+        url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          accept: 'application/json',
+        },
+        failOnStatusCode: false,
+        body: {
+          patch: [
+            {
+              entity: 'subquestion',
+              op: 'delete',
+              id: qid,
+            },
+          ],
+        },
+      }).then((response) => {
+        expect(response.status).to.eq(200)
+        if (expected_outcome[user][17]) {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 1,
+          })
+        } else {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 0,
+            exceptionErrors: [
+              {
+                error: 'Access denied',
+                entity: 'subquestion',
+                id: qid,
+                op: 'delete',
+                context: {
+                  id: sid,
+                },
+              },
+            ],
+          })
+        }
+      })
+    })
+    // 18
+    it(`survey update - user:${user}`, function () {
+      const sid = '125919'
+      cy.request({
+        method: 'PATCH',
+        url: `${Cypress.config('baseUrl')}rest/v1/survey-detail/${sid}`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          accept: 'application/json',
+        },
+        failOnStatusCode: false,
+        body: {
+          patch: [
+            {
+              entity: 'survey',
+              op: 'update',
+              props: {
+                anonymized: false,
+                language: 'en',
+                additionalLanguages: ['de'],
+                expires: '2124-03-20 13:28:00',
+                template: 'fruity_twentythree',
+                format: 'G',
+              },
+            },
+          ],
+        },
+      }).then((response) => {
+        expect(response.status).to.eq(200)
+        if (expected_outcome[user][14]) {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 1,
+          })
+        } else {
+          expect(response.body).to.deep.equal({
+            operationsApplied: 0,
+            exceptionErrors: [
+              {
+                error: 'Permission denied',
+                entity: 'survey',
+                id: null,
                 op: 'update',
                 context: {
                   id: sid,
