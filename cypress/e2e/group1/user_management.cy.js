@@ -68,7 +68,7 @@ describe('User management', () => {
     const username = 'testuser2'
     const fullname = 'Test User 2'
     const email = 'testuser2@example.com'
-    const password = 'Pass123!'
+    const password = 'Passqwerty123!'
     const datetime = format(addDays(new Date(), 1), 'dd.MM.yyyy HH:mm')
     cy.log(datetime)
 
@@ -128,7 +128,7 @@ describe('User management', () => {
     const username = 'testuser3'
     const fullname = 'Test User 3'
     const email = 'testuser3@example.com'
-    const password = '$123Pass'
+    const password = '$123Passqwerty'
     const datetime = format(subDays(new Date(), 1), 'dd.MM.yyyy HH:mm')
     cy.log(datetime)
 
