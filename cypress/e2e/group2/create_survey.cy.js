@@ -34,11 +34,11 @@ describe('Survey creation', function () {
       'be.visible'
     )
     // check that the survey was really created
-    cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
-      .contains('Surveys')
-      .click()
     cy.get('@surveyId').then((id) => {
-      cy.contains(id).closest('tr').should('contain', survey_title)
+      cy.visit(
+        `surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=${id}&active=&gsid=&yt0=Search`
+      )
+      cy.get('tr').contains(survey_title).should('be.visible')
     })
   })
 
@@ -86,10 +86,10 @@ describe('Survey creation', function () {
           // cy.url().should('include',`questionAdministration/view&surveyid=${survey_id}`)
 
           // check that the survey was really created
-          cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
-            .contains('Surveys')
-            .click()
-          cy.contains(survey_id).closest('tr').should('contain', survey_title)
+          cy.visit(
+            `surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=${survey_id}&active=&gsid=&yt0=Search`
+          )
+          cy.get('tr').contains(survey_title).should('be.visible')
         })
 
       // after this has been fixed https://bugs.limesurvey.org/view.php?id=18701
@@ -136,10 +136,10 @@ describe('Survey creation', function () {
       themes: 1,
     })
 
-    cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
-      .contains('Surveys')
-      .click()
-    cy.contains(survey_id).closest('tr').should('contain', survey_title)
+    cy.visit(
+      `surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=${survey_id}&active=&gsid=&yt0=Search`
+    )
+    cy.get('tr').contains(survey_title).should('be.visible')
   })
 
   it('user can copy survey; select all exclude and reset options', function () {
@@ -183,9 +183,9 @@ describe('Survey creation', function () {
       themes: 1,
     })
 
-    cy.get('[href="/index.php?r=surveyAdministration/listsurveys"]')
-      .contains('Surveys')
-      .click()
-    cy.contains(survey_id).closest('tr').should('contain', survey_title)
+    cy.visit(
+      `surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=${survey_id}&active=&gsid=&yt0=Search`
+    )
+    cy.get('tr').contains(survey_title).should('be.visible')
   })
 })

@@ -96,7 +96,12 @@ describe('Survey settings - General settings', () => {
     cy.visit(
       'surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=148569&active=&gsid=&yt0=Search'
     )
-    cy.get('tr').contains('148569').parents('tr').contains('johnw')
+    cy.get('button[data-bs-target="#survey-column-filter-modal"]').click()
+    cy.get('.modal-body').should('be.visible')
+    cy.get('input[value="owner"]').check()
+    cy.get('#survey-column-filter-modal-submit').click()
+    cy.get('.modal-body').should('not.be.visible')
+    cy.get('tr').contains('Survey General').parents('tr').contains('johnw')
   })
 
   it('user can change survey group', function () {
@@ -115,7 +120,15 @@ describe('Survey settings - General settings', () => {
     cy.visit(
       'surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=148569&active=&gsid=&yt0=Search'
     )
-    cy.get('tr').contains('148569').parents('tr').contains('Survey settings')
+    cy.get('button[data-bs-target="#survey-column-filter-modal"]').click()
+    cy.get('.modal-body').should('be.visible')
+    cy.get('input[value="group"]').check()
+    cy.get('#survey-column-filter-modal-submit').click()
+    cy.get('.modal-body').should('not.be.visible')
+    cy.get('tr')
+      .contains('Survey General')
+      .parents('tr')
+      .contains('Survey settings')
   })
 
   it('user can change survey format', function () {
