@@ -5,7 +5,7 @@ describe('Survey settings - Privacy policy', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=datasecurity&surveyid=571743'
+      'surveyAdministration/rendersidemenulink?subaction=datasecurity&surveyid=571743'
     )
 
     cy.get('#dataseclabel_en').type('CustomPP-Eng')
@@ -21,7 +21,7 @@ describe('Survey settings - Privacy policy', () => {
     cy.get('#dataseclabel_hr').should('have.value', 'CustomPP-Cro')
 
     // check the survey
-    cy.visit('survey/index&sid=571743&newtest=Y&lang=en')
+    cy.visit('571743?newtest=Y&lang=en')
     cy.get('label[for="datasecurity_accepted"]').should(
       'contain',
       'CustomPP-Eng'
@@ -32,7 +32,7 @@ describe('Survey settings - Privacy policy', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=datasecurity&surveyid=571743'
+      'surveyAdministration/rendersidemenulink?subaction=datasecurity&surveyid=571743'
     )
 
     cy.wait(1000)
@@ -47,14 +47,14 @@ describe('Survey settings - Privacy policy', () => {
       .and('contain', 'Survey settings were successfully saved.')
 
     // check the survey
-    cy.visit('survey/index&sid=571743&newtest=Y&lang=en')
+    cy.visit('571743?newtest=Y&lang=en')
     cy.get('#datasecurity_notice').should(
       'contain',
       'privacy policy message test'
     )
 
     // it should not be changed for croatian
-    cy.visit('survey/index&sid=571743&newtest=Y&lang=hr')
+    cy.visit('571743?newtest=Y&lang=hr')
     cy.get('#datasecurity_notice').should(
       'contain',
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
@@ -65,7 +65,7 @@ describe('Survey settings - Privacy policy', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=datasecurity&surveyid=571743'
+      'surveyAdministration/rendersidemenulink?subaction=datasecurity&surveyid=571743'
     )
 
     cy.wait(1000)
@@ -80,14 +80,14 @@ describe('Survey settings - Privacy policy', () => {
       .and('contain', 'Survey settings were successfully saved.')
 
     // check the survey
-    cy.visit('survey/index&sid=571743&newtest=Y&lang=en')
+    cy.visit('571743?newtest=Y&lang=en')
     cy.get('[value="movenext"]').click()
     cy.get('#datasecurity_error')
       .should('be.visible')
       .and('contain', 'privacy policy error test')
 
     // it should not be changed for croatian
-    cy.visit('survey/index&sid=571743&newtest=Y&lang=hr')
+    cy.visit('571743?newtest=Y&lang=hr')
     cy.get('[value="movenext"]').click()
     cy.get('#datasecurity_error')
       .should('be.visible')

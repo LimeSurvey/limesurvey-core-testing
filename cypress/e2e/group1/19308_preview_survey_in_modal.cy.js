@@ -3,7 +3,7 @@ describe('19308 Preview survey in modal', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'survey/index&sid=841748&newtest=Y&lang=en&popuppreview=true'
+      '/841748?newtest=Y&lang=en&popuppreview=true'
     )
 
     // check that I can see all groups and questions

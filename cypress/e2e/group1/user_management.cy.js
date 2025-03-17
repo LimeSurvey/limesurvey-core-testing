@@ -14,7 +14,7 @@ describe('User management', () => {
     const password = 'Password123!'
 
     cy.get(
-      'button[data-href="/index.php?r=userManagement/addEditUser"]'
+      'button[data-href="/index.php/userManagement/addEditUser"]'
     ).click()
     cy.get('#usermanagement-modal-doalog').should('be.visible')
     cy.wait(500)
@@ -48,13 +48,13 @@ describe('User management', () => {
     // lougout and try to log in with that user
     cy.get('a').contains('admin').click({ force: true })
     cy.get(
-      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
+      'a.dropdown-item[href="/index.php/admin/authentication/sa/logout"]'
     ).click({ force: true })
     cy.get('input#user').should('be.visible')
 
     cy.login(username, password)
     cy.get(
-      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
+      'a.dropdown-item[href="/index.php/admin/authentication/sa/logout"]'
     ).should('exist')
   })
 
@@ -73,7 +73,7 @@ describe('User management', () => {
     cy.log(datetime)
 
     cy.get(
-      'button[data-href="/index.php?r=userManagement/addEditUser"]'
+      'button[data-href="/index.php/userManagement/addEditUser"]'
     ).click()
     cy.get('#usermanagement-modal-doalog').should('be.visible')
     cy.wait(500)
@@ -108,13 +108,13 @@ describe('User management', () => {
     // lougout and try to log in with that user
     cy.get('a').contains('admin').click({ force: true })
     cy.get(
-      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
+      'a.dropdown-item[href="/index.php/admin/authentication/sa/logout"]'
     ).click({ force: true })
     cy.get('input#user').should('be.visible')
 
     cy.login(username, password)
     cy.get(
-      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
+      'a.dropdown-item[href="/index.php/admin/authentication/sa/logout"]'
     ).should('exist')
   })
 
@@ -133,7 +133,7 @@ describe('User management', () => {
     cy.log(datetime)
 
     cy.get(
-      'button[data-href="/index.php?r=userManagement/addEditUser"]'
+      'button[data-href="/index.php/userManagement/addEditUser"]'
     ).click()
     cy.get('#usermanagement-modal-doalog').should('be.visible')
     cy.wait(500)
@@ -167,13 +167,13 @@ describe('User management', () => {
     // lougout and try to log in with that user
     cy.get('a').contains('admin').click({ force: true })
     cy.get(
-      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
+      'a.dropdown-item[href="/index.php/admin/authentication/sa/logout"]'
     ).click({ force: true })
     cy.get('input#user').should('be.visible')
 
     cy.login(username, password)
     cy.get(
-      'a.dropdown-item[href="/index.php?r=admin/authentication/sa/logout"]'
+      'a.dropdown-item[href="/index.php/admin/authentication/sa/logout"]'
     ).should('not.exist')
 
     // user gets feedback

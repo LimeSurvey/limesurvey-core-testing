@@ -3,7 +3,7 @@ describe('Export survey', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&surveyid=841748'
+      'surveyAdministration/view?surveyid=841748'
     )
 
     cy.get('button').contains('Export').click()
@@ -25,7 +25,7 @@ describe('Export survey', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&surveyid=841748'
+      'surveyAdministration/view?surveyid=841748'
     )
 
     cy.get('button').contains('Export').click()

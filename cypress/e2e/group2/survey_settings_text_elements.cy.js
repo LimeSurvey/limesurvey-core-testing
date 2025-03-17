@@ -5,7 +5,7 @@ describe('Survey settings - Text elements', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=surveytexts&surveyid=691384'
+      'surveyAdministration/rendersidemenulink?subaction=surveytexts&surveyid=691384'
     )
 
     cy.get('a.nav-link').contains('Croatian').click()
@@ -17,14 +17,14 @@ describe('Survey settings - Text elements', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
     // check the survey
-    cy.visit('survey/index&sid=691384&newtest=Y&lang=hr')
+    cy.visit('691384?newtest=Y&lang=hr')
     cy.get('.survey-name.large-heading').should(
       'contain',
       'Anketa: textualni elementi'
     )
 
     // is it changed for english?
-    cy.visit('survey/index&sid=691384&newtest=Y&lang=en')
+    cy.visit('691384?newtest=Y&lang=en')
     cy.get('.survey-name.large-heading').should(
       'contain',
       'Survey Text Elements'
@@ -35,7 +35,7 @@ describe('Survey settings - Text elements', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=surveytexts&surveyid=691384'
+      'surveyAdministration/rendersidemenulink?subaction=surveytexts&surveyid=691384'
     )
 
     cy.get('#dateformat_en').select('dd/mm/yyyy')
@@ -45,14 +45,14 @@ describe('Survey settings - Text elements', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
     // check the survey
-    cy.visit('survey/index&sid=691384&newtest=Y&lang=en')
+    cy.visit('691384?newtest=Y&lang=en')
     cy.get('.survey-welcome').then(($e) => {
       cy.log($e.text())
     })
     cy.get('.survey-welcome').should('contain', '21/06/2033')
 
     // is it changed for croatian?
-    cy.visit('survey/index&sid=691384&newtest=Y&lang=hr')
+    cy.visit('691384?newtest=Y&lang=hr')
     cy.get('.survey-welcome').should('contain', '21.6.2033')
   })
 
@@ -60,7 +60,7 @@ describe('Survey settings - Text elements', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=surveytexts&surveyid=691384'
+      'surveyAdministration/rendersidemenulink?subaction=surveytexts&surveyid=691384'
     )
 
     // change it to comma
@@ -71,7 +71,7 @@ describe('Survey settings - Text elements', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
     // check the survey
-    cy.visit('survey/index&sid=691384&newtest=Y&lang=en')
+    cy.visit('691384?newtest=Y&lang=en')
     cy.get('button[value="movenext"]').click()
     cy.get('#answer691384X18X46').type('12.345{enter}')
     cy.get('button[value="movenext"]').click()
@@ -84,7 +84,7 @@ describe('Survey settings - Text elements', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=surveytexts&surveyid=691384'
+      'surveyAdministration/rendersidemenulink?subaction=surveytexts&surveyid=691384'
     )
 
     cy.get('a.nav-link').contains('Croatian').click()
@@ -104,7 +104,7 @@ describe('Survey settings - Text elements', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=surveytexts&surveyid=691384'
+      'surveyAdministration/rendersidemenulink?subaction=surveytexts&surveyid=691384'
     )
 
     getIframeBody('iframe[title="Editor, description_en"]')
@@ -121,7 +121,7 @@ describe('Survey settings - Text elements', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
     // check survey
-    cy.visit('survey/index&sid=691384&newtest=Y&lang=en')
+    cy.visit('691384?newtest=Y&lang=en')
     cy.get('.survey-description').should('contain', 'test_description')
     cy.get('.survey-welcome').should('contain', 'test_welcome')
   })
@@ -130,7 +130,7 @@ describe('Survey settings - Text elements', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=surveytexts&surveyid=691384'
+      'surveyAdministration/rendersidemenulink?subaction=surveytexts&surveyid=691384'
     )
 
     getIframeBody('iframe[title="Editor, endtext_en"]')
@@ -146,7 +146,7 @@ describe('Survey settings - Text elements', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
     // check survey
-    cy.visit('survey/index&sid=691384&newtest=Y&lang=en')
+    cy.visit('691384?newtest=Y&lang=en')
     cy.get('button[value="movenext"]').click()
     cy.get('#answer691384X18X46').should('be.visible')
     cy.get('button[value="movenext"]').click()

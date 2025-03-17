@@ -36,7 +36,7 @@ describe('Survey creation', function () {
     // check that the survey was really created
     cy.get('@surveyId').then((id) => {
       cy.visit(
-        `surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=${id}&active=&gsid=&yt0=Search`
+        `surveyAdministration/listsurveys?Survey%5Bsearched_value%5D=${id}&active=&gsid=`
       )
       cy.get('tr').contains(survey_title).should('be.visible')
     })
@@ -87,7 +87,7 @@ describe('Survey creation', function () {
 
           // check that the survey was really created
           cy.visit(
-            `surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=${survey_id}&active=&gsid=&yt0=Search`
+            `surveyAdministration/listsurveys?Survey%5Bsearched_value%5D=${survey_id}&active=&gsid=`
           )
           cy.get('tr').contains(survey_title).should('be.visible')
         })
@@ -137,7 +137,7 @@ describe('Survey creation', function () {
     })
 
     cy.visit(
-      `surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=${survey_id}&active=&gsid=&yt0=Search`
+      `surveyAdministration/listsurveys?Survey%5Bsearched_value%5D=${survey_id}&active=&gsid=`
     )
     cy.get('tr').contains(survey_title).should('be.visible')
   })
@@ -184,7 +184,7 @@ describe('Survey creation', function () {
     })
 
     cy.visit(
-      `surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=${survey_id}&active=&gsid=&yt0=Search`
+      `surveyAdministration/listsurveys?Survey%5Bsearched_value%5D=${survey_id}&active=&gsid=`
     )
     cy.get('tr').contains(survey_title).should('be.visible')
   })

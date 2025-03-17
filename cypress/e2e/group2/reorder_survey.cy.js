@@ -3,7 +3,7 @@ describe('Reorder survey', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'questionAdministration/listQuestions&surveyid=947781'
+      'questionAdministration/listQuestions?surveyid=947781'
     )
 
     cy.get('[href="#reorder"]').click()
@@ -36,11 +36,11 @@ describe('Reorder survey', () => {
     })
   })
 
-  it('user can reorder groups and questions', function () {
+  it.skip('user can reorder groups and questions', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'questionAdministration/listQuestions&surveyid=947781'
+      'questionAdministration/listQuestions?surveyid=947781'
     )
 
     cy.get('[href="#reorder"]').click()

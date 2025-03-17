@@ -7,7 +7,7 @@ describe('Survey question groups', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&surveyid=219315'
+      'surveyAdministration/view?surveyid=219315'
     )
 
     cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
@@ -21,20 +21,9 @@ describe('Survey question groups', () => {
       .eq(2)
       .find('#dropdownMenuButton1')
       .click()
-    // this is a workaround for an issue described here
-    // https://github.com/cypress-io/cypress/issues/14857
-    cy.window()
-      .document()
-      .then(function (doc) {
-        doc.addEventListener('click', () => {
-          setTimeout(function () {
-            doc.location.reload()
-          }, 5000)
-        })
-        cy.get('a[href$="admin/export/sa/group/surveyid/219315/gid/24"]')
-          .should('be.visible')
-          .click()
-      })
+    cy.get('a[href$="admin/export/sa/group/surveyid/219315/gid/24"]')
+      .should('be.visible')
+      .click()
     cy.readFile(`${Cypress.config('downloadsFolder')}/limesurvey_group_24.lsg`)
   })
 
@@ -44,7 +33,7 @@ describe('Survey question groups', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&surveyid=582481'
+      'surveyAdministration/view?surveyid=582481'
     )
 
     cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
@@ -85,14 +74,14 @@ describe('Survey question groups', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&surveyid=278371'
+      'surveyAdministration/view?surveyid=278371'
     )
 
     cy.intercept(
       'POST',
       `${Cypress.config(
         'baseUrl'
-      )}questionGroupsAdministration/updateOrder&surveyid=278371`,
+      )}questionGroupsAdministration/updateOrder?surveyid=278371`,
       cy.spy().as('updateSurveySpy')
     ).as('updateSurvey')
 
@@ -140,7 +129,7 @@ describe('Survey question groups', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'questionGroupsAdministration/view&surveyid=422915&gid=30'
+      'questionGroupsAdministration/view?surveyid=422915&gid=30'
     )
 
     // edit english question group fields

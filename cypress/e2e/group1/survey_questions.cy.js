@@ -7,7 +7,7 @@ describe('Survey questions', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&iSurveyID=951785'
+      'surveyAdministration/view?iSurveyID=951785'
     )
 
     const questionText = 'How much do you like dogs?'
@@ -16,7 +16,7 @@ describe('Survey questions', () => {
     cy.wait('@xhrRequests')
 
     cy.get(
-      'a[href$="questionGroupsAdministration/view&surveyid=951785&gid=35"]'
+      'a[href$="questionGroupsAdministration/view?surveyid=951785&gid=35"]'
     ).click()
     cy.wait('@xhrRequests')
 
@@ -63,7 +63,7 @@ describe('Survey questions', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&iSurveyID=857644'
+      'surveyAdministration/view?iSurveyID=857644'
     )
 
     cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
@@ -107,7 +107,7 @@ describe('Survey questions', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&iSurveyID=348447'
+      'surveyAdministration/view?iSurveyID=348447'
     )
 
     cy.get('#adminsidepanel__sidebar--selectorStructureButton').click()
@@ -155,7 +155,7 @@ describe('Survey questions', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&iSurveyID=348447'
+      'surveyAdministration/view?iSurveyID=348447'
     )
 
     const newAnswer = 'Parrot'
@@ -190,7 +190,7 @@ describe('Survey questions', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&iSurveyID=348447'
+      'surveyAdministration/view?iSurveyID=348447'
     )
 
     const customLabel = 'Years worked'
