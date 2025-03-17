@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         group: [ 'group1', 'group2', 'api' ]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     env:
       DBENGINE: INNODB
 
@@ -117,9 +117,9 @@ jobs:
           sed -i '46s/.*/        "urlFormat" => "path",/' application/config/config.php
 
       # for debugging
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
-        if: ${{ contains(matrix.group, 'api') }}
+      # - name: Setup upterm session
+      #  uses: lhotari/action-upterm@v1
+      #  if: ${{ contains(matrix.group, 'api') }}
 
       - name: Test the server
         run: |
