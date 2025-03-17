@@ -118,7 +118,7 @@ jobs:
       - name: Test the server
         run: |
           # Test server.
-          wget -O - localhost
+          wget --secure-protocol=TLSv1_2 -O - localhost
           #sudo tail -n 500 /var/log/apache2/error.log || true
           #sudo tail -n 500 /var/log/nginx/error.log || true
           #sudo tail -n 500 /var/log/php7.4-fpm.log || true
