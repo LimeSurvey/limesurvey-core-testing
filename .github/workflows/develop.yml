@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         group: [ 'group1', 'group2', 'api' ]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     env:
       DBENGINE: INNODB
 
