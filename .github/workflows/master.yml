@@ -17,13 +17,13 @@ jobs:
     name: Install app and run tests
     steps:
       - name: Checkout current repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: limesurvey-core-testing
           ref: 'master'
 
       - name: Checkout app
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: limesurvey
           repository: LimeSurvey/LimeSurvey
