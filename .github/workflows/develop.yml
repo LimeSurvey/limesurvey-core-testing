@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         group: [ 'group1', 'group2', 'api' ]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       DBENGINE: INNODB
 
@@ -113,11 +113,6 @@ jobs:
           # NB: There can be a difference in assets used when debug = 0 or 2 (minified version or not)
           # sed -i '60s/.*/        "debug"=>2,/' application/config/config.php
           # cat application/config/config.php
-
-      - name: Change config for api tests
-        working-directory: limesurvey
-        if: ${{ contains(matrix.group, 'api') }}
-        run: |
           sed -i '46s/.*/        "urlFormat" => "path",/' application/config/config.php
 
       - name: Test the server
