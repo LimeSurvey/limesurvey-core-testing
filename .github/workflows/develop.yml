@@ -115,6 +115,11 @@ jobs:
           # cat application/config/config.php
           sed -i '46s/.*/        "urlFormat" => "path",/' application/config/config.php
 
+      # for debugging
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
+        if: ${{ contains(matrix.group, 'api') }}
+
       - name: Test the server
         run: |
           # Test server.
@@ -168,11 +173,6 @@ jobs:
           working-directory: limesurvey-core-testing
           command: yarn cypress:api:run
           wait-on: 'http://localhost'
-
-      # for debugging
-      # - name: Setup upterm session
-      #   uses: lhotari/action-upterm@v1
-      #   if: ${{ contains(matrix.group, 'api') }}
 
       - name: Compress run_times.json
         id: run-times-dir
