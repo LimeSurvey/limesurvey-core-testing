@@ -180,7 +180,7 @@ jobs:
         run: zip -qq -r run-times-${{ matrix.group }}.zip limesurvey-core-testing/run_times.json
 
       - name: Upload run-times.zip
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: steps.cypress.outcome == 'success'
         with:
           name: run-times-${{ matrix.group }}
@@ -188,7 +188,7 @@ jobs:
           retention-days: 3
 
       # - name: Upload Screenshots
-      #   uses: actions/upload-artifact@v3
+      #   uses: actions/upload-artifact@v4
       #   if: steps.cypress.outcome != 'success'
       #   with:
       #     name: screenshots
@@ -196,7 +196,7 @@ jobs:
       #     retention-days: 5
 
       # - name: Upload Videos
-      #   uses: actions/upload-artifact@v3
+      #   uses: actions/upload-artifact@v4
       #   if: steps.cypress.outcome != 'success'
       #   with:
       #     name: videos
@@ -209,7 +209,7 @@ jobs:
         run: zip -qq -r html-report-${{ matrix.group }}.zip limesurvey-core-testing/templates/test-result.html
 
       - name: Upload html report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) }}
         with:
           name: html-report-${{ matrix.group }}
