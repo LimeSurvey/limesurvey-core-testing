@@ -13,9 +13,7 @@ describe('User management', () => {
     const email = 'testuser1@example.com'
     const password = 'Password123!'
 
-    cy.get(
-      'button[data-href="/index.php/userManagement/addEditUser"]'
-    ).click()
+    cy.get('button[data-href="/index.php/userManagement/addEditUser"]').click()
     cy.get('#usermanagement-modal-doalog').should('be.visible')
     cy.wait(500)
     cy.get('#User_Form_users_name').type(username)
@@ -72,9 +70,7 @@ describe('User management', () => {
     const datetime = format(addDays(new Date(), 1), 'dd.MM.yyyy HH:mm')
     cy.log(datetime)
 
-    cy.get(
-      'button[data-href="/index.php/userManagement/addEditUser"]'
-    ).click()
+    cy.get('button[data-href="/index.php/userManagement/addEditUser"]').click()
     cy.get('#usermanagement-modal-doalog').should('be.visible')
     cy.wait(500)
     cy.get('#User_Form_users_name').type(username)
@@ -132,9 +128,7 @@ describe('User management', () => {
     const datetime = format(subDays(new Date(), 1), 'dd.MM.yyyy HH:mm')
     cy.log(datetime)
 
-    cy.get(
-      'button[data-href="/index.php/userManagement/addEditUser"]'
-    ).click()
+    cy.get('button[data-href="/index.php/userManagement/addEditUser"]').click()
     cy.get('#usermanagement-modal-doalog').should('be.visible')
     cy.wait(500)
     cy.get('#User_Form_users_name').type(username)
