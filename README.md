@@ -1,4 +1,4 @@
-# Limesurvey Core Testing 
+# Limesurvey Core Testing
 
 This is the home of automated tests for Limesurvey core application using [Cypress.io](https://www.cypress.io/)
 
@@ -38,7 +38,9 @@ Run the seed script (zsh):
 * ```yarn cypress:e2e:run``` - run e2e tests in headless mode
 
 * ```yarn cypress:e2e:run --browser chrome``` - run e2e tests in headless chrome browser
-* ```yarn cypress:e2e:run --spec cypress/e2e/create_survey.cy.js``` - run tests from specific file
+* ```yarn cypress:e2e:run --spec cypress/e2e/group2/create_survey.cy.js``` - run tests from specific file
+
+These tests expect the application to be configured with 'urlFormat' = 'get'.
 
 ## Parallel runs
 
@@ -46,3 +48,9 @@ Run the seed script (zsh):
 * merge the contents to run_times.json and put this file in the root directory fo this project
 * run the script split_tests_into_groups.js and it will distribute the tests into 2 groups (group1,group2) so that their run time is nearly equal
 * this will ensure the optimal run time of the whole test suite
+
+## Api tests
+
+* ```CYPRESS_BASE_URL=http://ls-ce/ yarn cypress:api:run``` - replace ls-ce with your local dev env
+
+REST API tests expect the application to be configured with 'urlFormat' = 'path'.

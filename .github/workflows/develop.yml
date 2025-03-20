@@ -15,20 +15,20 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        group: [ 'group1', 'group2' ]
-    runs-on: ubuntu-20.04
+        group: [ 'group1', 'group2', 'api' ]
+    runs-on: ubuntu-22.04
     env:
       DBENGINE: INNODB
 
     name: Install app and run tests
     steps:
       - name: Checkout current repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: limesurvey-core-testing
 
       - name: Checkout app
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: limesurvey
           repository: LimeSurvey/LimeSurvey
@@ -37,7 +37,7 @@ jobs:
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.1
+          php-version: 8.3
 
       - name: Start the MySQL service
         run: |
@@ -86,6 +86,7 @@ jobs:
           chmod -R 777 ./tests/tmp
           chmod -R 777 ./application/config
           chmod +x ./tests/bin/lint-*
+          chmod 777 /home/runner
 
       - name: Check MySQL service
         run: |
@@ -113,11 +114,6 @@ jobs:
           # NB: There can be a difference in assets used when debug = 0 or 2 (minified version or not)
           # sed -i '60s/.*/        "debug"=>2,/' application/config/config.php
           # cat application/config/config.php
-
-      - name: Change config for api tests
-        working-directory: limesurvey
-        if: ${{ contains(matrix.group, 'api') }}
-        run: |
           sed -i '46s/.*/        "urlFormat" => "path",/' application/config/config.php
 
       - name: Test the server
@@ -152,7 +148,7 @@ jobs:
         if: ${{ contains(matrix.group, 'group') }}
         continue-on-error: true
         env:
-          CYPRESS_BASE_URL: 'http://localhost/index.php?r='
+          CYPRESS_BASE_URL: 'http://localhost/index.php/'
           CYPRESS_DB_HOST: 127.0.0.1
           CYPRESS_DB_DATABASE: limesurvey
         with:
@@ -160,19 +156,19 @@ jobs:
           command: yarn cypress:run --browser chrome --spec cypress/e2e/${{ matrix.group }}/*.js --parallel y
           wait-on: 'http://localhost'
 
-      # - name: Cypress run
-      #   id: api-tests
-      #   uses: cypress-io/github-action@v3
-      #   if: ${{ contains(matrix.group, 'api') }}
-      #   continue-on-error: true
-      #   env:
-      #     CYPRESS_BASE_URL: 'http://localhost/index.php/'
-      #     CYPRESS_DB_HOST: 127.0.0.1
-      #     CYPRESS_DB_DATABASE: limesurvey
-      #   with:
-      #     working-directory: limesurvey-core-testing
-      #     command: yarn cypress:api:run
-      #     wait-on: 'http://localhost'
+      - name: Cypress run
+        id: api-tests
+        uses: cypress-io/github-action@v3
+        if: ${{ contains(matrix.group, 'api') }}
+        continue-on-error: true
+        env:
+          CYPRESS_BASE_URL: 'http://localhost/index.php/'
+          CYPRESS_DB_HOST: 127.0.0.1
+          CYPRESS_DB_DATABASE: limesurvey
+        with:
+          working-directory: limesurvey-core-testing
+          command: yarn cypress:api:run
+          wait-on: 'http://localhost'
 
       # for debugging
       # - name: Setup upterm session
@@ -185,7 +181,7 @@ jobs:
         run: zip -qq -r run-times-${{ matrix.group }}.zip limesurvey-core-testing/run_times.json
 
       - name: Upload run-times.zip
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: steps.cypress.outcome == 'success'
         with:
           name: run-times-${{ matrix.group }}
@@ -193,7 +189,7 @@ jobs:
           retention-days: 3
 
       # - name: Upload Screenshots
-      #   uses: actions/upload-artifact@v3
+      #   uses: actions/upload-artifact@v4
       #   if: steps.cypress.outcome != 'success'
       #   with:
       #     name: screenshots
@@ -201,7 +197,7 @@ jobs:
       #     retention-days: 5
 
       # - name: Upload Videos
-      #   uses: actions/upload-artifact@v3
+      #   uses: actions/upload-artifact@v4
       #   if: steps.cypress.outcome != 'success'
       #   with:
       #     name: videos
@@ -214,7 +210,7 @@ jobs:
         run: zip -qq -r html-report-${{ matrix.group }}.zip limesurvey-core-testing/templates/test-result.html
 
       - name: Upload html report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ (steps.cypress.outcome != 'success' && contains(matrix.group, 'group')) }}
         with:
           name: html-report-${{ matrix.group }}

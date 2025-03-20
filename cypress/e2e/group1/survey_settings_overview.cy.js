@@ -3,7 +3,7 @@ describe('Survey settings - Overview', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&surveyid=942815'
+      'surveyAdministration/view?surveyid=942815'
     )
 
     cy.get('.card-title')
@@ -18,7 +18,7 @@ describe('Survey settings - Overview', () => {
             cy.get('a').should(
               'have.attr',
               'href',
-              `${Cypress.config('baseUrl')}survey/index&sid=942815&lang=en`
+              `${Cypress.config('baseUrl')}942815?lang=en`
             )
           })
         cy.get('ul.list-group li')
@@ -28,7 +28,7 @@ describe('Survey settings - Overview', () => {
             cy.get('a').should(
               'have.attr',
               'href',
-              `${Cypress.config('baseUrl')}survey/index&sid=942815&lang=hr`
+              `${Cypress.config('baseUrl')}942815?lang=hr`
             )
           })
         // end url is shown
@@ -54,7 +54,7 @@ describe('Survey settings - Overview', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&surveyid=942815'
+      'surveyAdministration/view?surveyid=942815'
     )
 
     cy.get('.card-title')
@@ -65,7 +65,7 @@ describe('Survey settings - Overview', () => {
           .should('have.attr', 'href')
           .and(
             'contain',
-            '/index.php?r=surveyAdministration/rendersidemenulink&subaction=surveytexts&surveyid=942815'
+            '/index.php/surveyAdministration/rendersidemenulink?subaction=surveytexts&surveyid=942815'
           )
 
         cy.get('ul.list-group li')
@@ -158,7 +158,7 @@ describe('Survey settings - Overview', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&surveyid=942815'
+      'surveyAdministration/view?surveyid=942815'
     )
 
     cy.get('.card-title')
@@ -171,7 +171,7 @@ describe('Survey settings - Overview', () => {
           .should('have.attr', 'href')
           .and(
             'contain',
-            '/index.php?r=surveyAdministration/rendersidemenulink&subaction=publication&surveyid=942815'
+            '/index.php/surveyAdministration/rendersidemenulink?subaction=publication&surveyid=942815'
           )
 
         cy.get('ul.list-group li')
@@ -205,7 +205,7 @@ describe('Survey settings - Overview', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&surveyid=942815'
+      'surveyAdministration/view?surveyid=942815'
     )
 
     cy.get('.card-title')
@@ -216,7 +216,7 @@ describe('Survey settings - Overview', () => {
           .should('have.attr', 'href')
           .and(
             'contain',
-            '/index.php?r=surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=942815'
+            '/index.php/surveyAdministration/rendersidemenulink?subaction=generalsettings&surveyid=942815'
           )
 
         cy.get('ul.list-group li')
@@ -246,13 +246,13 @@ describe('Survey settings - Overview', () => {
               .should('have.attr', 'href')
               .and(
                 'contain',
-                '/index.php?r=themeOptions/updateSurvey&surveyid=942815'
+                '/index.php/themeOptions/updateSurvey?surveyid=942815'
               )
             cy.get('a[title="Open theme editor in new window"]')
               .should('have.attr', 'href')
               .and(
                 'contain',
-                '/index.php?r=admin/themes/sa/view&templatename=fruity'
+                '/index.php/admin/themes/sa/view/templatename/fruity_twentythree'
               )
           })
       })
@@ -262,7 +262,7 @@ describe('Survey settings - Overview', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/view&surveyid=942815'
+      'surveyAdministration/view?surveyid=942815'
     )
 
     cy.get('.card-title')

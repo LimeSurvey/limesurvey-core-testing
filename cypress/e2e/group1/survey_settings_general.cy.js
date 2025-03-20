@@ -3,7 +3,7 @@ describe('Survey settings - General settings', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+      'surveyAdministration/rendersidemenulink?subaction=generalsettings&surveyid=148569'
     )
 
     cy.get('ul.select2-selection__rendered').click()
@@ -16,7 +16,7 @@ describe('Survey settings - General settings', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
     //check overview page
-    cy.visit('surveyAdministration/view&surveyid=148569')
+    cy.visit('surveyAdministration/view?surveyid=148569')
     cy.get('.card-title')
       .contains('Share survey')
       .parents('.card.card-primary')
@@ -32,7 +32,7 @@ describe('Survey settings - General settings', () => {
                 cy.get('a').should(
                   'have.attr',
                   'href',
-                  `${Cypress.config('baseUrl')}survey/index&sid=148569&lang=fr`
+                  `${Cypress.config('baseUrl')}148569?lang=fr`
                 )
               })
           })
@@ -43,7 +43,7 @@ describe('Survey settings - General settings', () => {
             cy.get('a').should(
               'have.attr',
               'href',
-              `${Cypress.config('baseUrl')}survey/index&sid=148569&lang=de`
+              `${Cypress.config('baseUrl')}148569?lang=de`
             )
           })
       })
@@ -53,7 +53,7 @@ describe('Survey settings - General settings', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+      'surveyAdministration/rendersidemenulink?subaction=generalsettings&surveyid=148569'
     )
 
     cy.get('li[title=English] > button').click()
@@ -68,7 +68,7 @@ describe('Survey settings - General settings', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+      'surveyAdministration/rendersidemenulink?subaction=generalsettings&surveyid=148569'
     )
 
     cy.get('li[title=Croatian] > button').click()
@@ -84,7 +84,7 @@ describe('Survey settings - General settings', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+      'surveyAdministration/rendersidemenulink?subaction=generalsettings&surveyid=148569'
     )
 
     cy.get('#owner_id').select('johnw - John Wick', { force: true })
@@ -94,16 +94,21 @@ describe('Survey settings - General settings', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
     cy.visit(
-      'surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=148569&active=&gsid=&yt0=Search'
+      'surveyAdministration/listsurveys?Survey%5Bsearched_value%5D=148569&active=&gsid='
     )
-    cy.get('tr').contains('148569').parents('tr').contains('johnw')
+    cy.get('button[data-bs-target="#survey-column-filter-modal"]').click()
+    cy.get('.modal-body').should('be.visible')
+    cy.get('input[value="owner"]').check()
+    cy.get('#survey-column-filter-modal-submit').click()
+    cy.get('.modal-body').should('not.be.visible')
+    cy.get('tr').contains('Survey General').parents('tr').contains('johnw')
   })
 
   it('user can change survey group', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+      'surveyAdministration/rendersidemenulink?subaction=generalsettings&surveyid=148569'
     )
 
     cy.get('#gsid').select('Survey settings', { force: true })
@@ -113,16 +118,24 @@ describe('Survey settings - General settings', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
     cy.visit(
-      'surveyAdministration%2Flistsurveys&Survey%5Bsearched_value%5D=148569&active=&gsid=&yt0=Search'
+      'surveyAdministration/listsurveys?Survey%5Bsearched_value%5D=148569&active=&gsid='
     )
-    cy.get('tr').contains('148569').parents('tr').contains('Survey settings')
+    cy.get('button[data-bs-target="#survey-column-filter-modal"]').click()
+    cy.get('.modal-body').should('be.visible')
+    cy.get('input[value="group"]').check()
+    cy.get('#survey-column-filter-modal-submit').click()
+    cy.get('.modal-body').should('not.be.visible')
+    cy.get('tr')
+      .contains('Survey General')
+      .parents('tr')
+      .contains('Survey settings')
   })
 
   it('user can change survey format', function () {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+      'surveyAdministration/rendersidemenulink?subaction=generalsettings&surveyid=148569'
     )
 
     // check all in one
@@ -132,14 +145,14 @@ describe('Survey settings - General settings', () => {
     cy.get('.alert.alert-success.alert-dismissible')
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
-    cy.visit('survey/index&sid=148569&newtest=Y&lang=en')
+    cy.visit('148569?newtest=Y&lang=en')
     // all questions are visible
     cy.get('#question43').should('be.visible')
     cy.get('#question44').should('be.visible')
     cy.get('#question45').should('be.visible')
 
     cy.visit(
-      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+      'surveyAdministration/rendersidemenulink?subaction=generalsettings&surveyid=148569'
     )
     // check question by question
     cy.get('input[name="format"][value="S"]').check({ force: true })
@@ -148,7 +161,7 @@ describe('Survey settings - General settings', () => {
     cy.get('.alert.alert-success.alert-dismissible')
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
-    cy.visit('survey/index&sid=148569&newtest=Y&lang=en')
+    cy.visit('148569?newtest=Y&lang=en')
     // go through the survey
     cy.get('button[value="movenext"]').click()
     cy.get('#question43').should('be.visible')
@@ -162,7 +175,7 @@ describe('Survey settings - General settings', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+      'surveyAdministration/rendersidemenulink?subaction=generalsettings&surveyid=148569'
     )
 
     cy.get('#template').select('vanilla', { force: true })
@@ -178,7 +191,7 @@ describe('Survey settings - General settings', () => {
       .should('be.visible')
       .and('contain', 'Survey settings were successfully saved.')
     // check survey theme
-    cy.visit('survey/index&sid=148569&newtest=Y&lang=en')
+    cy.visit('148569?newtest=Y&lang=en')
     cy.get('.btn-primary')
       .eq(0)
       .should('have.css', 'background-color', 'rgb(13, 110, 253)')
@@ -189,7 +202,7 @@ describe('Survey settings - General settings', () => {
     cy.loginByCSRF(
       this.auth['admin'].username,
       this.auth['admin'].password,
-      'surveyAdministration/rendersidemenulink&subaction=generalsettings&surveyid=148569'
+      'surveyAdministration/rendersidemenulink?subaction=generalsettings&surveyid=148569'
     )
 
     cy.get('input[name="adminbutton"][value="N"]').check({ force: true })
