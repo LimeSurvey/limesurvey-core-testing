@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        group: [ 'group1', 'group2' ]
+        group: [ 'group1', 'group2', 'api' ]
     runs-on: ubuntu-22.04
     env:
       DBENGINE: INNODB
@@ -30,9 +30,13 @@ jobs:
           ref: 'master'
 
       - name: Install PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.3
+        run: |
+          sudo add-apt-repository ppa:ondrej/php
+          sudo apt update
+          sudo apt -y install php8.3
+          sudo apt-get update > /dev/null
+          sudo apt --fix-broken install php php8.3-ldap php8.3-gd php8.3-intl php8.3-zip php8.3-mysql php8.3-xml php8.3-curl php8.3-mbstring libapache2-mod-php8.3 -y
+          sudo update-alternatives --set php /usr/bin/php8.3
 
       - name: Start the MySQL service
         run: |
@@ -60,8 +64,6 @@ jobs:
         working-directory: limesurvey
         run: |
           # Set up the Apache and PHP
-          sudo apt-get update > /dev/null
-          sudo apt --fix-broken install php php-mysql php8.0-mysql php7.2-mysql libapache2-mod-php8.0 -y
 
           sudo cp -f ./tests/CI-pipeline/github-actions-apache /etc/apache2/sites-available/000-default.conf
           sudo sed -e "s?%CI_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/000-default.conf
@@ -118,8 +120,7 @@ jobs:
           #sudo tail -n 500 /var/log/apache2/error.log || true
           #sudo tail -n 500 /var/log/nginx/error.log || true
           #sudo tail -n 500 /var/log/php7.4-fpm.log || true
-          #sudo tail -n 500 /var/log/php7.2-fpm.log || true
-          #sudo tail -n 500 /var/log/php8.0-fpm.log || true
+          #sudo tail -n 500 /var/log/php8.3-fpm.log || true
           # NOTE: php --version might not be the same as setup in apache. Use fwrite(STDERR, phpversion()); in index.php to be sure.
           #which php
           #php --version
@@ -151,19 +152,19 @@ jobs:
           command: yarn cypress:run --browser chrome --spec cypress/e2e/${{ matrix.group }}/*.js --parallel y
           wait-on: 'http://localhost'
 
-      # - name: Cypress run
-      #   id: api-tests
-      #   uses: cypress-io/github-action@v3
-      #   if: ${{ contains(matrix.group, 'api') }}
-      #   continue-on-error: true
-      #   env:
-      #     CYPRESS_BASE_URL: 'http://localhost/index.php/'
-      #     CYPRESS_DB_HOST: 127.0.0.1
-      #     CYPRESS_DB_DATABASE: limesurvey
-      #   with:
-      #     working-directory: limesurvey-core-testing
-      #     command: yarn cypress:api:run
-      #     wait-on: 'http://localhost'
+      - name: Cypress run
+        id: api-tests
+        uses: cypress-io/github-action@v3
+        if: ${{ contains(matrix.group, 'api') }}
+        continue-on-error: true
+        env:
+          CYPRESS_BASE_URL: 'http://localhost/index.php/'
+          CYPRESS_DB_HOST: 127.0.0.1
+          CYPRESS_DB_DATABASE: limesurvey
+        with:
+          working-directory: limesurvey-core-testing
+          command: yarn cypress:api:run
+          wait-on: 'http://localhost'
 
       # for debugging
       # - name: Setup upterm session
